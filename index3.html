@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonCor - Catering Social y Sostenible</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. VARIABLES Y RESET (CSS Custom Properties)
+           ========================================================================== */
+        :root {
+            --primary-green: #89b83a;
+            --primary-green-dark: #6e9828;
+            --dark-background: #3c423c;
+            --text-dark: #2c2c2c;
+            --text-muted: #666666;
+            --bg-light: #f9fbf8;
+            --bg-white: #ffffff;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           2. NAVEGACIÓN Y ENCABEZADO
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .main-nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--primary-green);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           3. HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                        url('https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title .highlight {
+            color: #c0eb6a;
+            font-style: italic;
+        }
+
+        /* ==========================================================================
+           4. TRES EJES (Compromiso)
+           ========================================================================== */
+        .commitments {
+            padding: 5rem 0;
+            background-color: var(--bg-white);
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-three-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .card-feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background-color: #d1d1d1;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ==========================================================================
+           5. SECCIÓN LA COMPAÑÍA (Fondo Oscuro con Curva SVG)
+           ========================================================================== */
+        .company-section {
+            background-color: var(--dark-background);
+            color: #ffffff;
+            padding: 6rem 0;
+            position: relative;
+            border-radius: 60px 60px 0 0;
+            margin-top: 2rem;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .company-info h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .company-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .company-info p {
+            font-size: 0.92rem;
+            color: #d8d8d8;
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .company-aside {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+            padding-left: 3rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary-green);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-green-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           6. PROYECTO SOCIAL Y GALERÍA (Carrusel/Grid)
+           ========================================================================== */
+        .social-project {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .social-project p {
+            max-width: 850px;
+            margin: 0 auto 1.2rem auto;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 3rem 0 1.5rem 0;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 6px;
+            height: 220px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .expandable-content.open {
+            max-height: 200px;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* ==========================================================================
+           7. COLABORADORES
+           ========================================================================== */
+        .collaborators {
+            background-color: #f4f6f4;
+            padding: 3.5rem 0;
+        }
+
+        .collaborators-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .collaborators h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .logos-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            opacity: 0.8;
+        }
+
+        .logos-wrapper span {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #555;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           8. RESPONSIVE DESIGN
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .grid-three-columns {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .company-aside {
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+                padding-left: 0;
+                padding-top: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-white);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                padding: 1rem 0;
+            }
+
+            .main-nav.active {
+                display: block;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collaborators-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="brand-logo">
+                🌱 Bon<span>Cor</span>
+            </a>
+
+            <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#compromiso" class="active">Nuestro compromiso</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#clientes">Clientes</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contactar">Contactar</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <span>📷 in</span>
+                <span>|</span>
+                <select id="lang-select" style="border:none; background:transparent; cursor:pointer;">
+                    <option value="es">Esp v</option>
+                    <option value="cat">Cat v</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION CON FOTO DE PORTADA -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">más social <span class="highlight">más sostenible</span></h1>
+            </div>
+        </section>
+
+        <!-- 3. TRES EJES DE CATERING SOCIAL -->
+        <section class="commitments" id="compromiso">
+            <div class="container">
+                <h2 class="section-title">NUESTRO COMPROMISO DE CATERING SOCIAL<br>SE BASA EN TRES EJES</h2>
+                
+                <div class="grid-three-columns">
+                    <!-- Eje 1 -->
+                    <article class="card-feature">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#89b83a" stroke-width="1.5">
+                            <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+                        </svg>
+                        <h3 class="card-title">Voluntad de Servicio</h3>
+                        <p class="card-desc">
+                            Para asegurar una atención personalizada, profesional y de calidad estamos a disposición del cliente. La satisfacción del cliente es nuestro objetivo. Apostamos por la mejora continua, para ofrecer un servicio excelente.
+                        </p>
+                    </article>
+
+                    <!-- Eje 2 -->
+                    <article class="card-feature">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#89b83a" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <h3 class="card-title">Voluntad Social</h3>
+                        <p class="card-desc">
+                            Trabajamos con varios colectivos para ayudar de forma directa a personas que se encuentran en situación de riesgo de exclusión social, al que damos formación y trabajo como cocineros, camareros, transportistas, auxiliares de lavandería, mozos de almacén.
+                        </p>
+                    </article>
+
+                    <!-- Eje 3 -->
+                    <article class="card-feature">
+                        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#89b83a" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>
+                        </svg>
+                        <h3 class="card-title">Economía circular</h3>
+                        <p class="card-desc">
+                            Cultivamos y elaboramos muchos de los productos, reutilizamos los restos orgánicos y reciclamos o reutilizamos las no orgánicas. Con el fin de reducir la huella de carbono y ser sostenibles utilizamos materiales reutilizables, reciclados y reciclables y de composición orgánica.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. LA COMPAÑÍA -->
+        <section class="company-section" id="servicios">
+            <div class="container company-grid">
+                <div class="company-info">
+                    <h2>La compañía</h2>
+                    <h3>Una entidad de iniciativa social y sin ánimo de lucro</h3>
+                    <p>
+                        El catering social BonCor es un proyecto de la cooperativa Soluciones Sociales Sostenibles SCCL de iniciativa social y sin ánimo de lucro que tiene como misión posibilitar la inserción de personas en riesgo de exclusión sociolaboral realizando diferentes funciones y tareas en el campo de la restauración.
+                    </p>
+                    <p>
+                        Trabajamos para contribuir en la transformación del modelo económico, para lograr una economía que tenga un impacto social más justo y que sea más sostenible. Asimismo, trabajamos para una transición energética que consiga el cambio de modelo actual.
+                    </p>
+                    <p>
+                        Estamos comprometidos con nuestra sociedad y con el medio ambiente. Uno de los objetivos principales para nosotros es controlar los efectos medioambientales que se derivan de nuestras actividades.
+                    </p>
+                    <p>
+                        De esta actitud consciente ante el consumo y la producción llamamos restauración sostenible. Nos puede encontrar como miembro activo de Barcelona Sostenible.
+                    </p>
+                </div>
+
+                <div class="company-aside">
+                    <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--primary-green); margin-bottom: 0.5rem;">
+                        🌱 BonCor
+                    </div>
+                    <small style="color: #ccc; letter-spacing: 1px;">Cuinem un futur millor</small>
+                    
+                    <button class="cta-btn">DESCUBRE NUESTRA COOPERATIVA SOCIAL</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. NUESTRO PROYECTO SOCIAL -->
+        <section class="social-project" id="blog">
+            <div class="container">
+                <h2 class="section-title">NUESTRO PROYECTO SOCIAL</h2>
+                <p>
+                    Estamos ayudando de forma directa a personas que se encuentran en situación de riesgo de exclusión social, al que damos formación y trabajo como cocineros, camareros, transportistas, lavandería, almacén, etc...
+                </p>
+                <p>
+                    Todos nuestros servicios cuentan con al menos un 50% de profesionales que están aprovechando esta oportunidad para que, una vez terminado este ciclo, puedan incorporarse de nuevo al mercado laboral.
+                </p>
+
+                <!-- GALERÍA DE IMÁGENES REALES -->
+                <div class="gallery-grid" id="galeria">
+                    <!-- Foto 1: Aperitivos / Canapés -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=600&q=80" alt="Aperitivos gourmet y catering">
+                    </div>
+                    <!-- Foto 2: Cocineros / Personal de cocina -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Equipo de cocina preparando platos">
+                    </div>
+                    <!-- Foto 3: Servicio de mesa y buffet -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80" alt="Mesa de evento de catering">
+                    </div>
+                    <!-- Foto 4: Preparación de eventos -->
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Presentación de comida para eventos">
+                    </div>
+                </div>
+
+                <p>
+                    En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones.
+                </p>
+
+                <div class="expandable-content" id="extra-content">
+                    <p>Ofrecemos menús personalizados con ingredientes 100% de proximidad y ecológicos, adaptándonos a cualquier tipo de intolerancia o preferencia alimentaria.</p>
+                </div>
+
+                <button class="toggle-btn" id="toggle-more-btn">Ver más +</button>
+            </div>
+        </section>
+
+        <!-- 6. COLABORADORES -->
+        <section class="collaborators" id="clientes">
+            <div class="container collaborators-container">
+                <h3>Colaboradores</h3>
+                <div class="logos-wrapper">
+                    <span>BARCELONA SOSTENIBLE</span>
+                    <span>acede</span>
+                    <span>COOP CT</span>
+                    <span>AMB</span>
+                    <span>Menja't l'Hort</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. JAVASCRIPT (INTERACTIVIDAD) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Menú Hamburguesa para Móvil
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+
+            // 2. Acordeón / Desplegable "Ver más +"
+            const toggleBtn = document.getElementById('toggle-more-btn');
+            const extraContent = document.getElementById('extra-content');
+
+            toggleBtn.addEventListener('click', () => {
+                extraContent.classList.toggle('open');
+                if (extraContent.classList.contains('open')) {
+                    toggleBtn.textContent = 'Ver menos -';
+                } else {
+                    toggleBtn.textContent = 'Ver más +';
+                }
+            });
+
+            // 3. Smooth Scroll para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        mainNav.classList.remove('active');
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 4. Sombra dinámica en la barra de navegación al hacer scroll
+            const header = document.querySelector('.site-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
