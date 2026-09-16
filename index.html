@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonCor - Catering en Barcelona con sabor y compromiso</title>
+    <!-- FontAwesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           1. RESET & VARIABLES
+           ========================================== */
+        :root {
+            --primary-green: #489947;
+            --secondary-green: #377d36;
+            --olive-green: #97c23a;
+            --dark-gray: #3A3A3C;
+            --light-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --text-dark: #2B2B2B;
+            --text-muted: #6C757D;
+            --border-color: #E2E8F0;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==========================================
+           2. HEADER & NAVEGACIÓN
+           ========================================== */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .logo i {
+            color: #A3D959;
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--olive-green);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--white);
+        }
+
+        .social-icons a {
+            color: var(--white);
+            margin-left: 10px;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.8;
+        }
+
+        .lang-selector {
+            background: transparent;
+            color: var(--white);
+            border: none;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .mobile-toggle {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 100px;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+        }
+
+        /* ==========================================
+           4. CATEGORÍAS (TABS HERO)
+           ========================================== */
+        .service-tabs-banner {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+        }
+
+        .tab-item {
+            padding: 20px;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: filter 0.3s ease;
+        }
+
+        .tab-item:hover {
+            filter: brightness(0.9);
+        }
+
+        .tab-item.tab-1 { background-color: #55A647; }
+        .tab-item.tab-2 { background-color: #489947; }
+        .tab-item.tab-3 { background-color: #A4CA39; }
+
+        .tab-item i {
+            font-size: 1.8rem;
+        }
+
+        /* ==========================================
+           5. ICONOS DE VALORES / CARACTERÍSTICAS
+           ========================================== */
+        .features-bar {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 40px 5%;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            opacity: 0.9;
+        }
+
+        .feature-card p {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            opacity: 0.85;
+        }
+
+        /* ==========================================
+           6. SECCIÓN SOBRE NOSOTROS
+           ========================================== */
+        .about-section {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background-color: var(--white);
+        }
+
+        .about-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .about-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* ==========================================
+           7. SECCIÓN TARJETAS DE SERVICIOS
+           ========================================== */
+        .services-section {
+            padding: 60px 8% 80px;
+            background-color: #FAFAFA;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            padding: 15px;
+            text-align: center;
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+        }
+
+        .card-header.bg-1 { background-color: #55A647; }
+        .card-header.bg-2 { background-color: #489947; }
+        .card-header.bg-3 { background-color: #A4CA39; }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .btn-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            pointer-events: none;
+        }
+
+        .card-body {
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==========================================
+           8. TEXTO CORPORATIVO / BANNER OSCURO
+           ========================================== */
+        .corporate-banner {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 60px 10%;
+            text-align: center;
+            position: relative;
+        }
+
+        .corporate-banner p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* ==========================================
+           9. TESTIMONIOS (SLIDER)
+           ========================================== */
+        .testimonial-section {
+            padding: 80px 8%;
+            background-color: var(--white);
+        }
+
+        .testimonial-card {
+            max-width: 750px;
+            margin: 0 auto;
+            border: 1px solid #EAEAEA;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .testimonial-quote-icon {
+            font-size: 3rem;
+            color: #D1D1D1;
+            line-height: 1;
+        }
+
+        .testimonial-content p {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-author a {
+            color: var(--text-muted);
+            font-weight: 400;
+            text-decoration: underline;
+        }
+
+        .testimonial-nav {
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .testimonial-nav button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .testimonial-nav button:hover {
+            color: var(--primary-green);
+        }
+
+        /* ==========================================
+           10. SECCIÓN COLABORADORES
+           ========================================== */
+        .partners-section {
+            padding: 40px 8%;
+            background-color: var(--light-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .partners-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .partners-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            max-height: 40px;
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* ==========================================
+           11. FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 60px 8% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.5fr 1fr 1fr 1.2fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .footer-social-section .social-links {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-social-section p {
+            font-size: 0.78rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-contact p {
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        /* ==========================================
+           12. RESPONSIVE DESIGN
+           ========================================== */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .header-actions {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark-gray);
+                padding: 20px;
+            }
+
+            .nav-menu.active .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .service-tabs-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================
+         HEADER / NAVEGACIÓN
+         ========================================== -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-apple-whole"></i> BonCor
+        </a>
+
+        <div class="mobile-toggle" id="mobile-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#compromiso">Nuestro compromiso</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contactar</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>|</span>
+                <select class="lang-selector">
+                    <option value="es">Esp</option>
+                    <option value="ca">Cat</option>
+                    <option value="en">Eng</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Un catering en Barcelona con sabor, compromiso social y medioambiental</h1>
+            <p>Nuestros clientes disfrutan de una variada oferta gastronómica saludable, sostenible y de calidad con un servicio altamente profesional. Más que un servicio de catering en barcelona, nuestra razón de ser es la inclusión, apoyando la inserción laboral de personas en riesgo de exclusión social.</p>
+            <a href="#nosotros" class="btn btn-outline">Conócenos</a>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TABS DE SERVICIOS
+         ========================================== -->
+    <div class="service-tabs-banner">
+        <div class="tab-item tab-1">
+            <i class="fa-solid fa-mug-hot"></i>
+            <span>Pausa café</span>
+        </div>
+        <div class="tab-item tab-2">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Aperitivos y Comidas</span>
+        </div>
+        <div class="tab-item tab-3">
+            <i class="fa-solid fa-box"></i>
+            <span>Food box</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         BARRA DE VALORES / CARACTERÍSTICAS
+         ========================================== -->
+    <section class="features-bar">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-leaf"></i>
+                <p>Alimentos frescos de nuestra huerta ecológica</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-handshake"></i>
+                <p>Productos de proximidad y Km 0</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <p>Comercio Justo</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <p>Gastronomía saludable, sostenible y de calidad</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-recycle"></i>
+                <p>Materiales 100% reciclados y reciclables, eliminación del plástico</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-seedling"></i>
+                <p>Generación de abono de los restos orgánicos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SOBRE NOSOTROS
+         ========================================== -->
+    <section class="about-section" id="nosotros">
+        <div class="about-content">
+            <h2>Transformamos eventos en experiencias gastronómicas sostenibles</h2>
+            <p>Nos especializamos en crear experiencias gastronómicas únicas, sostenibles y artesanales, cuidadosamente elaboradas con esmero en nuestros obradores. Trabajamos con productos frescos, de proximidad y ecológicos, asegurando que cada plato no solo sea delicioso, sino también responsable con el medioambiente. Adaptamos cada celebración a las ideas y visiones de nuestros clientes, asegurando una experiencia personalizada y memorable.</p>
+            <div class="about-buttons">
+                <a href="#" class="btn btn-primary">Conócenos</a>
+                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800&auto=format&fit=crop" alt="Catering BonCor Preparación">
+        </div>
+    </section>
+
+    <!-- ==========================================
+         TARJETAS DE SERVICIOS
+         ========================================== -->
+    <section class="services-section" id="servicios">
+        <div class="services-grid">
+            
+            <!-- Tarjeta 1 -->
+            <div class="service-card">
+                <div class="card-header bg-1">Pausa café</div>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600&auto=format&fit=crop" alt="Pausa café">
+                    <span class="btn-overlay">Ver más</span>
+                </div>
+                <div class="card-body">
+                    Personalizamos la pausa café perfecta para su evento, desde un sencillo desayuno de bienvenida hasta opciones completas para jornadas extendidas.
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="service-card">
+                <div class="card-header bg-2">Aperitivos y comidas</div>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=600&auto=format&fit=crop" alt="Aperitivos y comidas">
+                    <span class="btn-overlay">Ver más</span>
+                </div>
+                <div class="card-body">
+                    Ofrecemos un servicio personalizado adaptado a las necesidades de cada cliente, desde Finger Food o un Cóctel, hasta una comida completa, bien sea sentados a la mesa o de pie.
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="service-card">
+                <div class="card-header bg-3">Food box</div>
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?q=80&w=600&auto=format&fit=crop" alt="Food box">
+                    <span class="btn-overlay">Ver más</span>
+                </div>
+                <div class="card-body">
+                    Ideal para desayunos, almuerzos o meriendas, especialmente diseñados para la comodidad de los asistentes, presentados con materiales 100% reciclados y reciclables.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BANNER CORPORATIVO / COMPROMISO
+         ========================================== -->
+    <section class="corporate-banner" id="compromiso">
+        <p>En catering social BonCor, personalizamos nuestros servicios para adaptarnos a cualquier tipo de evento. Ofrecemos una amplia gama de opciones culinarias, incluyendo menús veganos, sin gluten, halal, y adaptaciones para intolerancias. Apostamos por la proximidad y Km0, comprando a productores locales y utilizando alimentos frescos, ecológicos y de comercio justo. Catering BonCor, el catering en barcelona que ofrece experiencias gastronómicas con una esencia sostenible y de compromiso social.</p>
+    </section>
+
+    <!-- ==========================================
+         TESTIMONIOS
+         ========================================== -->
+    <section class="testimonial-section" id="clientes">
+        <div class="testimonial-card">
+            <div class="testimonial-quote-icon">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <div class="testimonial-content">
+                <p>"Hace años que Catering BonCor trabaja con nosotros y siempre han respondido con un alto grado de profesionalidad y con productos de calidad. Queríamos una empresa de catering que ofreciera producto ecológico y que fuera de carácter social y sostenible para que nuestra institución colaborara a ayudar a las personas que más lo necesitan."</p>
+                <div class="testimonial-author">
+                    Francisco Santamaria - Responsable Financiero APD Cataluña <a href="https://www.apd.es" target="_blank">www.apd.es</a>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button id="prev-testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+                <button id="next-testimonial"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         COLABORADORES
+         ========================================== -->
+    <section class="partners-section">
+        <div class="partners-container">
+            <h3 class="partners-title">Colaboradores</h3>
+            <span class="partner-logo" style="font-weight: 700; font-size: 1.1rem; color: #555;">BARCELONA SOSTENIBLE</span>
+            <span class="partner-logo" style="font-weight: 700; font-size: 1.3rem; color: #555;">acede</span>
+            <span class="partner-logo" style="font-weight: 700; font-size: 1.1rem; color: #555;">COOF CT</span>
+            <span class="partner-logo" style="font-weight: 700; font-size: 1.4rem; color: #555;"><i class="fa-solid fa-chevron-up"></i> AMB</span>
+            <span class="partner-logo" style="font-family: cursive; font-size: 1.2rem; color: #555;">Menjar HORT</span>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer id="contacto">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-apple-whole"></i> BonCor
+                </div>
+                <p>Culminem un futur millor</p>
+            </div>
+
+            <div class="footer-social-section">
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Pausa café</a></li>
+                    <li><a href="#">Aperitivos y comidas</a></li>
+                    <li><a href="#">Food box</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Sobre nosotros</h4>
+                <ul>
+                    <li><a href="#">Nuestro compromiso</a></li>
+                    <li><a href="#">Galería</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>C / Font Honrada 2-4,</p>
+                <p>08004 Barcelona, España</p>
+                <p>+34 680 429 120</p>
+                <p>catering@boncor.org</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT NATIVO (VANILLA JS)
+         ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Menú Hamburguesa para Móviles
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // 2. Transición del Header al hacer Scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.background = 'rgba(58, 58, 60, 0.95)';
+                    header.style.transition = 'background 0.3s ease';
+                } else {
+                    header.style.background = 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%)';
+                }
+            });
+
+            // 3. Simulación de Navegación de Testimonios
+            const prevBtn = document.getElementById('prev-testimonial');
+            const nextBtn = document.getElementById('next-testimonial');
+            
+            const testimonials = [
+                {
+                    quote: '"Hace años que Catering BonCor trabaja con nosotros y siempre han respondido con un alto grado de profesionalidad y con productos de calidad. Queríamos una empresa de catering que ofreciera producto ecológico y que fuera de carácter social y sostenible..."',
+                    author: 'Francisco Santamaria - Responsable Financiero APD Cataluña'
+                },
+                {
+                    quote: '"Excelente servicio de catering para eventos corporativos. El compromiso con la sostenibilidad y la calidad de los ingredientes marcaron la diferencia en nuestra convención anual en Barcelona."',
+                    author: 'Maria Pujol - Directora de Eventos'
+                }
+            ];
+
+            let currentIndex = 0;
+
+            function updateTestimonial(index) {
+                const quoteEl = document.querySelector('.testimonial-content p');
+                const authorEl = document.querySelector('.testimonial-author');
+                
+                quoteEl.textContent = testimonials[index].quote;
+                authorEl.textContent = testimonials[index].author;
+            }
+
+            if (nextBtn && prevBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % testimonials.length;
+                    updateTestimonial(currentIndex);
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                    updateTestimonial(currentIndex);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
