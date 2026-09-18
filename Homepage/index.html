@@ -140,6 +140,11 @@
             cursor: pointer;
         }
 
+        .lang-selector option {
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+
         .mobile-toggle {
             display: none;
             color: var(--white);
@@ -375,6 +380,10 @@
         .service-card:hover .card-img-wrapper img {
             transform: scale(1.05);
         }
+    
+        .service-card:active .card-img-wrapper img {
+            transform: scale(0.95);
+        }
 
         .btn-overlay {
             position: absolute;
@@ -388,7 +397,8 @@
             padding: 6px 20px;
             border-radius: 20px;
             font-size: 0.85rem;
-            pointer-events: none;
+            pointer-events: auto;
+            cursor: pointer;
         }
 
         .card-body {
@@ -679,8 +689,8 @@
 
             <div class="header-actions">
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>|</span>
                 <select class="lang-selector">
@@ -699,27 +709,27 @@
         <div class="hero-content">
             <h1>Un catering en Barcelona con sabor, compromiso social y medioambiental</h1>
             <p>Nuestros clientes disfrutan de una variada oferta gastronómica saludable, sostenible y de calidad con un servicio altamente profesional. Más que un servicio de catering en barcelona, nuestra razón de ser es la inclusión, apoyando la inserción laboral de personas en riesgo de exclusión social.</p>
-            <a href="#nosotros" class="btn btn-outline">Conócenos</a>
+            <a href="/NuestroCompromiso/index3.html" class="btn btn-outline">Conócenos</a>
         </div>
     </section>
 
     <!-- ==========================================
          TABS DE SERVICIOS
          ========================================== -->
-    <div class="service-tabs-banner">
-        <div class="tab-item tab-1">
-            <i class="fa-solid fa-mug-hot"></i>
-            <span>Pausa café</span>
-        </div>
-        <div class="tab-item tab-2">
-            <i class="fa-solid fa-utensils"></i>
-            <span>Aperitivos y Comidas</span>
-        </div>
-        <div class="tab-item tab-3">
-            <i class="fa-solid fa-box"></i>
-            <span>Food box</span>
-        </div>
-    </div>
+   <div class="service-tabs-banner">
+    <a href="/Homepage/pausa-cafe.html" class="tab-item tab-1">
+        <i class="fa-solid fa-mug-hot"></i>
+        <span>Pausa café</span>
+    </a>
+    <a href="/Homepage/aperitivos-comidas.html" class="tab-item tab-2">
+        <i class="fa-solid fa-utensils"></i>
+        <span>Aperitivos y Comidas</span>
+    </a>
+    <a href="/Homepage/food-box.html" class="tab-item tab-3">
+        <i class="fa-solid fa-box"></i>
+        <span>Food box</span>
+    </a>
+</div>
 
     <!-- ==========================================
          BARRA DE VALORES / CARACTERÍSTICAS
@@ -761,8 +771,7 @@
             <h2>Transformamos eventos en experiencias gastronómicas sostenibles</h2>
             <p>Nos especializamos en crear experiencias gastronómicas únicas, sostenibles y artesanales, cuidadosamente elaboradas con esmero en nuestros obradores. Trabajamos con productos frescos, de proximidad y ecológicos, asegurando que cada plato no solo sea delicioso, sino también responsable con el medioambiente. Adaptamos cada celebración a las ideas y visiones de nuestros clientes, asegurando una experiencia personalizada y memorable.</p>
             <div class="about-buttons">
-                <a href="#" class="btn btn-primary">Conócenos</a>
-                <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+                <a href="/Contactar/index.html" class="btn btn-primary">Contáctanos</a>
             </div>
         </div>
         <div class="about-image">
@@ -784,7 +793,9 @@
                 <div class="card-img-wrapper">
                     <!-- SE UTILIZA LA IMAGEN 3 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
                     <img src="/Homepage/4.jpg" alt="Pausa café">
-                    <span class="btn-overlay">Ver más</span>
+                    <a href="/Homepage/pausa-cafe.html" class="btn-overlay" style="color: var(--white); text-decoration: none; display: inline-block; z-index: 5;">
+                    Ver más
+                    </a>
                 </div>
                 <div class="card-body">
                     Personalizamos la pausa café perfecta para su evento, desde un sencillo desayuno de bienvenida hasta opciones completas para jornadas extendidas.
@@ -797,7 +808,9 @@
                 <div class="card-img-wrapper">
                     <!-- SE UTILIZA LA IMAGEN 6 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
                     <img src="/Homepage/6.jpg" alt="Aperitivos y comidas">
-                    <span class="btn-overlay">Ver más</span>
+                    <a href="/Homepage/aperitivos-comidas.html" class="btn-overlay" style="color: var(--white); text-decoration: none;">
+                    Ver más
+                </a>
                 </div>
                 <div class="card-body">
                     Ofrecemos un servicio personalizado adaptado a las necesidades de cada cliente, desde Finger Food o un Cóctel, hasta una comida completa, bien sea sentados a la mesa o de pie.
@@ -810,7 +823,9 @@
                 <div class="card-img-wrapper">
                     <!-- SE UTILIZA LA IMAGEN 2 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
                     <img src="/Homepage/3.jpg" alt="Food box">
-                    <span class="btn-overlay">Ver más</span>
+                    <a href="/Homepage/food-box.html" class="btn-overlay" style="color: var(--white); text-decoration: none;">
+                    Ver más
+                </a>
                 </div>
                 <div class="card-body">
                     Ideal para desayunos, almuerzos o meriendas, especialmente diseñados para la comodidad de los asistentes, presentados con materiales 100% reciclados y reciclables.
