@@ -7,16 +7,16 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         /* ==========================================================================
            1. VARIABLES Y RESET (CSS Custom Properties)
            ========================================================================== */
         :root {
-            --primary-green: #89b83a;
-            --primary-green-dark: #6e9828;
+            --primary-green: #5a9e52; /* Color de fondo del footer exacto al de la imagen */
+            --primary-green-dark: #498442;
             --dark-background: #343e34;
             --text-dark: #2c2c2c;
             --text-muted: #666666;
@@ -207,7 +207,7 @@
         }
 
         /* ==========================================================================
-           5. SECCIÓN LA COMPAÑÍA (Fondo Oscuro con Curva SVG)
+           5. SECCIÓN LA COMPAÑÍA
            ========================================================================== */
         .company-section {
             background-color: var(--dark-background);
@@ -277,7 +277,7 @@
         }
 
         /* ==========================================================================
-           6. PROYECTO SOCIAL Y GALERÍA (Carrusel/Grid)
+           6. PROYECTO SOCIAL Y GALERÍA
            ========================================================================== */
         .social-project {
             padding: 5rem 0;
@@ -379,12 +379,117 @@
         }
 
         /* ==========================================================================
-           8. RESPONSIVE DESIGN
+           8. FOOTER REVISION (Diseño fiel a la imagen)
+           ========================================================================== */
+        .site-footer {
+            background-color: var(--primary-green);
+            color: #ffffff;
+            padding: 70px 0 60px;
+            font-family: var(--font-sans);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.6fr 1.1fr 1.1fr 1.3fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .footer-brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .footer-logo img {
+            max-width: 140px;
+            height: auto;
+            filter: brightness(0) invert(1); /* Fuerza que el logo sea blanco si es transparente */
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-social .social-icons a {
+            color: #ffffff;
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .footer-social .social-icons a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-social p {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #ffffff;
+            font-weight: 400;
+            padding-right: 15px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 22px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.88rem;
+            color: #ffffff;
+            font-weight: 400;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-contact h4 {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .footer-contact p {
+            font-size: 0.88rem;
+            margin-bottom: 8px;
+            color: #ffffff;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVE DESIGN
            ========================================================================== */
         @media (max-width: 992px) {
             .grid-three-columns {
                 grid-template-columns: 1fr;
                 gap: 3rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
             }
 
             .company-grid {
@@ -441,7 +546,15 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .footer-brand {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -456,25 +569,25 @@
 
             <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Abrir menú">☰</button>
 
-    <nav class="main-nav" id="main-nav">
-    <ul>
-        <li><a href="/NuestroCompromiso/index3.html" class="active">Nuestro compromiso</a></li>
-        <li><a href="/Servicios/index2.html">Servicios</a></li>
-        <li><a href="/Clientes/index.html">Clientes</a></li>
-        <li><a href="/Blog/index.html">Blog</a></li>
-        <li><a href="/Galeria/index.html">Galería</a></li>
-        <li><a href="/Contactar/index.html">Contactar</a></li>
-    </ul>
-    </nav>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="/NuestroCompromiso/index3.html" class="active">Nuestro compromiso</a></li>
+                    <li><a href="/Servicios/index2.html">Servicios</a></li>
+                    <li><a href="/Clientes/index.html">Clientes</a></li>
+                    <li><a href="/Blog/index.html">Blog</a></li>
+                    <li><a href="/Galeria/index.html">Galería</a></li>
+                    <li><a href="/Contactar/index.html">Contactar</a></li>
+                </ul>
+            </nav>
 
             <div class="header-actions">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon">
-            <i class="fa fa-instagram" style="font-size: 20px;"></i>
-            </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fa-brands fa-instagram" style="font-size: 20px;"></i>
+                </a>
 
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon">
-            <i class="fa fa-linkedin" style="font-size: 20px;"></i>
-            </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
+                </a>
                 <span>|</span>
                 <select id="lang-select" style="border:none; background:transparent; cursor:pointer;">
                     <option value="es">Esp</option>
@@ -485,7 +598,7 @@
     </header>
 
     <main>
-        <!-- 2. HERO SECTION CON FOTO DE PORTADA -->
+        <!-- 2. HERO SECTION -->
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">más social <span class="highlight">más sostenible</span></h1>
@@ -498,7 +611,6 @@
                 <h2 class="section-title">NUESTRO COMPROMISO DE CATERING SOCIAL<br>SE BASA EN TRES EJES</h2>
                 
                 <div class="grid-three-columns">
-                    <!-- Eje 1 -->
                     <article class="card-feature">
                         <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#89b83a" stroke-width="1.5">
                             <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
@@ -509,7 +621,6 @@
                         </p>
                     </article>
 
-                    <!-- Eje 2 -->
                     <article class="card-feature">
                         <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#89b83a" stroke-width="1.5">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -520,7 +631,6 @@
                         </p>
                     </article>
 
-                    <!-- Eje 3 -->
                     <article class="card-feature">
                         <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#89b83a" stroke-width="1.5">
                             <circle cx="12" cy="12" r="10"/>
@@ -573,21 +683,16 @@
                     Todos nuestros servicios cuentan con al menos un 50% de profesionales que están aprovechando esta oportunidad para que, una vez terminado este ciclo, puedan incorporarse de nuevo al mercado laboral.
                 </p>
 
-                <!-- GALERÍA DE IMÁGENES REALES -->
                 <div class="gallery-grid" id="galeria">
-                    <!-- Foto 1: Aperitivos / Canapés -->
                     <div class="gallery-item">
                         <img src="/Nuestrocompromiso/1NC.png" alt="Aperitivos gourmet y catering">
                     </div>
-                    <!-- Foto 2: Cocineros / Personal de cocina -->
                     <div class="gallery-item">
                         <img src="/Nuestrocompromiso/2DNC.png" alt="Equipo de cocina preparando platos">
                     </div>
-                    <!-- Foto 3: Servicio de mesa y buffet -->
                     <div class="gallery-item">
                         <img src="/Nuestrocompromiso/3NC.png" alt="Mesa de evento de catering">
                     </div>
-                    <!-- Foto 4: Preparación de eventos -->
                     <div class="gallery-item">
                         <img src="/Nuestrocompromiso/4DNC.png" alt="Presentación de comida para eventos">
                     </div>
@@ -620,10 +725,64 @@
         </section>
     </main>
 
-    <!-- 7. JAVASCRIPT (INTERACTIVIDAD) -->
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Columna 1: Logo -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="/Homepage/Logo.png" alt="Logotipo BonCor">
+                    </div>
+                </div>
+
+                <!-- Columna 2: Redes e información -->
+                <div class="footer-social">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <p>BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.</p>
+                </div>
+
+                <!-- Columna 3: Servicios -->
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="/Homepage/pausa-cafe.html">Pausa café</a></li>
+                        <li><a href="/Homepage/aperitivos-comidas.html">Aperitivos y comidas</a></li>
+                        <li><a href="/Homepage/food-box.html">Food box</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Sobre nosotros -->
+                <div class="footer-col">
+                    <h4>Sobre nosotros</h4>
+                    <ul>
+                        <li><a href="/NuestroCompromiso/index3.html">Nuestro compromiso</a></li>
+                        <li><a href="/Galería/index.html">Galería</a></li>
+                        <li><a href="/Clientes/index.html">Clientes</a></li>
+                        <li><a href="/Blog/index.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 5: Contacto -->
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>C / Font Honrada 2-4,</p>
+                    <p>08004 Barcelona, España</p>
+                    <p>+34 680 429 120</p>
+                    <p>catering@boncor.org</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. JAVASCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
             // 1. Menú Hamburguesa para Móvil
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mainNav = document.getElementById('main-nav');
@@ -671,7 +830,6 @@
                     header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
                 }
             });
-
         });
     </script>
 </body>
