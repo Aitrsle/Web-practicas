@@ -1,11 +1,476 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactar</title>
+    <title>BonCor - Contacto</title>
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           1. RESET & VARIABLES
+           ========================================== */
+        :root {
+            --primary-green: #599b4d;
+            --secondary-green: #48823e;
+            --olive-text: #9ab85c;
+            --dark-section: #3a3f3b;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --border-color: #d1d1d1;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==========================================
+           2. HEADER & NAVEGACIÓN
+           ========================================== */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--primary-green);
+        }
+
+        .main-nav a.active {
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 4px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 25px;
+            color: var(--text-main);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .divider {
+            color: var(--border-color);
+        }
+
+        .lang-selector {
+            border: none;
+            background: transparent;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           3. FORMULARIO DE CONTACTO
+           ========================================== */
+        .contact-section {
+            padding: 70px 5%;
+            background-color: var(--white);
+            text-align: center;
+            flex: 1; /* Permite que empuje el footer hacia abajo si hay poco contenido */
+        }
+
+        .contact-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--dark-section);
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group textarea {
+            border-radius: 20px;
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-green);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .btn-submit {
+            align-self: center;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 10px 40px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--secondary-green);
+        }
+
+        /* ==========================================
+           4. FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 60px 8% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.5fr 1fr 1fr 1.2fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .footer-brand p {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .footer-social .social-icons {
+            display: flex;
+            gap: 12px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-social .social-icons a {
+            color: var(--white);
+        }
+
+        .footer-social p {
+            font-size: 0.78rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.82rem;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-contact p {
+            font-size: 0.82rem;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+
+        /* ==========================================
+           5. RESPONSIVE
+           ========================================== */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 15px 4%;
+            }
+
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+
+            .main-nav.active {
+                display: block;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>En desarrollo...</h1>
+
+    <!-- ==========================================
+         HEADER / NAVEGACIÓN
+         ========================================== -->
+    <header class="site-header">
+        <a href="/Homepage/index.html" class="logo-container">
+             <img src="/Servicios/Logo2.png" alt="Logotipo BonCor" width="100" height="50">
+        </a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="/NuestroCompromiso/index3.html">Nuestro compromiso</a></li>
+                <li><a href="/Servicios/index2.html">Servicios</a></li>
+                <li><a href="/Clientes/index.html">Clientes</a></li>
+                <li><a href="/Blog/index.html">Blog</a></li>
+                <li><a href="/Galería/index.html">Galería</a></li>
+                <li><a href="/Contactar/index.html" class="active">Contactar</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <div class="social-links">
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram" style="font-size: 20px;"></i></a>
+            </div>
+            <span class="divider">|</span>
+            <select class="lang-selector">
+                <option value="es">Esp</option>
+                <option value="ca">Cat</option>
+                <option value="en">Eng</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         FORMULARIO DE CONTACTO
+         ========================================== -->
+    <section class="contact-section" id="contacto">
+        <h2>Contacta con nosotros</h2>
+        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensaje enviado correctamente');">
+            <div class="form-group">
+                <input type="text" placeholder="Nombre y Apellidos" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Comentario" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar</button>
+            <p style="margin-top:1rem;font-size:.85rem;">
+            O Escríbenos a 
+            <a href="mailto:catering@boncor.cat" style="font-style:italic;font-weight: bold;">catering@boncor.cat</a>
+            <p style="margin-top:0.5rem;font-size:.85rem;">
+            O Llámanos al
+            <a href="tel:+34680429120" style="font-style:italic;font-weight: bold;">680 429 120</a>
+            </p>
+        </form>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                   <img src="/Homepage/Logo.png" alt="Logotipo BonCor" width="100" height="50">
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <p>BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#">Pausa café</a></li>
+                    <li><a href="#">Aperitivos y comidas</a></li>
+                    <li><a href="#">Food box</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Sobre nosotros</h4>
+                <ul>
+                    <li><a href="#">Nuestro compromiso</a></li>
+                    <li><a href="#">Galería</a></li>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>C / Font Honrada 2-4,</p>
+                <p>08004 Barcelona, España</p>
+                <p>+34 680 429 120</p>
+                <p>catering@boncor.org</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT NATIVO (VANILLA JS)
+         ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Alternar Menú Hamburguesa en versión móvil
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
