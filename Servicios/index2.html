@@ -349,6 +349,7 @@
             display: flex;
             align-items: center;
             gap: 40px;
+            margin-bottom: 60px;    
         }
 
         .clients-info {
@@ -419,74 +420,6 @@
             filter: grayscale(20%);
         }
 
-        /* ==========================================
-           6. FORMULARIO DE CONTACTO
-           ========================================== */
-        .contact-section {
-            padding: 70px 5%;
-            background-color: var(--white);
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            color: var(--dark-section);
-            margin-bottom: 40px;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 25px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        .form-group textarea {
-            border-radius: 20px;
-            resize: vertical;
-            min-height: 130px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary-green);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #aaa;
-        }
-
-        .btn-submit {
-            align-self: center;
-            background-color: var(--primary-green);
-            color: var(--white);
-            border: none;
-            padding: 10px 40px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            background-color: var(--secondary-green);
-        }
 
         /* ==========================================
            7. FOOTER
@@ -495,6 +428,7 @@
             background-color: var(--primary-green);
             color: var(--white);
             padding: 60px 8% 40px;
+            margin-top: 60px;
         }
 
         .footer-grid {
@@ -775,28 +709,6 @@
     </section>
 
     <!-- ==========================================
-         FORMULARIO DE CONTACTO
-         ========================================== -->
-    <section class="contact-section" id="contacto">
-        <h2>Contacta con nosotros</h2>
-        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensaje enviado correctamente');">
-            <div class="form-group">
-                <input type="text" placeholder="Nombre y Apellidos" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" placeholder="Teléfono" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Correo electrónico" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Comentario" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Enviar</button>
-        </form>
-    </section>
-
-    <!-- ==========================================
          FOOTER
          ========================================== -->
     <footer class="site-footer">
@@ -812,7 +724,7 @@
                     <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto.</p>
+                <p>BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.</p>
             </div>
 
             <div class="footer-col">
