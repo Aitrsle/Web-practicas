@@ -138,13 +138,21 @@
     </header>
 
     <!-- HERO SECTION (Fotografía de catering con texto superpuesto en serif blanca) -->
-    <section class="relative bg-hero-catering h-[450px] sm:h-[520px] md:h-[580px] flex items-center justify-start text-white px-6 sm:px-12 lg:px-24">
-        <div class="max-w-2xl z-10 reveal active">
-            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-white drop-shadow-md">
-                Colaboradores y clientes trabajamos juntos para ayudar a las personas más vulnerables.
-            </h1>
-        </div>
-        <!-- Gradiente decorativo inferior para conectar con el cuerpo -->
+     <div class="relative w-full h-96 overflow-hidden flex items-center">
+    <!-- Imagen de fondo -->
+    <img src="/Clientes/fondo.jpg" alt="Imagen de catering" class="absolute inset-0 w-full h-full object-cover z-0">
+    
+    <!-- Capa oscura opcional para mejorar la legibilidad del texto -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+    <!-- Contenido encima de la imagen -->
+    <div class="relative z-20 container mx-auto px-6 sm:px-12 max-w-4xl">
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-white drop-shadow-md">
+            Colaboradores y clientes trabajamos juntos para ayudar a las personas más vulnerables.
+        </h1>
+    </div>
+</div>
+          <!-- Gradiente decorativo inferior para conectar con el cuerpo -->
         <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#fbfcfb] to-transparent"></div>
     </section>
 
