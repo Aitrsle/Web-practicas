@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
+    <title>Clientes - BonCor</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -41,13 +41,6 @@
             backdrop-filter: blur(10px);
         }
 
-        .bg-hero-catering {
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.1) 100%), 
-                              url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-
         .reveal {
             opacity: 0;
             transform: translateY(25px);
@@ -73,39 +66,53 @@
             background-color: #4e924b;
             border-radius: 2px;
         }
+
+        .lang-select {
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4e924b;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-700 bg-[#fbfcfb] antialiased selection:bg-boncor selection:text-white overflow-x-hidden">
 
-    <!-- HEADER & NAVEGACIÓN (Conservado al 100% según la imagen) -->
+    <!-- HEADER & NAVEGACIÓN -->
     <header class="sticky top-0 z-50 glass-nav border-b border-gray-100 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
-                <!-- Logo BonCor (Manzana verde + tipografía) -->
-                 <a href="/Homepage/index.html" class="logo-container">
-                <img src="/Servicios/Logo2.png" alt="Logotipo BonCor" width="100" height="50">
+                <!-- Logo BonCor -->
+                <a href="/Homepage/index.html" class="logo-container">
+                    <img src="/Servicios/Logo2.png" alt="Logotipo BonCor" width="100" height="50">
                 </a>
+
                 <!-- Navegación principal -->
                 <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-600">
-                    <a href="/NuestroCompromiso/index3.html" class="hover:text-boncor transition-colors">Nuestro compromiso</a>
-                    <a href="/Servicios/index2.html" class="hover:text-boncor transition-colors">Servicios</a>
-                    <a href="/Clientes/index.html" class="text-boncor font-semibold nav-active-line">Clientes</a>
-                    <a href="/Blog/index.html" class="hover:text-boncor transition-colors">Blog</a>
-                    <a href="/Galería/index.html" class="hover:text-boncor transition-colors">Galería</a>
-                    <a href="/Contactar/index.html" class="hover:text-boncor transition-colors">Contactar</a>
+                    <a href="/NuestroCompromiso/index3.html" class="hover:text-boncor transition-colors" data-i18n="nav_compromiso">Nuestro compromiso</a>
+                    <a href="/Servicios/index2.html" class="hover:text-boncor transition-colors" data-i18n="nav_servicios">Servicios</a>
+                    <a href="/Clientes/index.html" class="text-boncor font-semibold nav-active-line" data-i18n="nav_clientes">Clientes</a>
+                    <a href="/Blog/index.html" class="hover:text-boncor transition-colors" data-i18n="nav_blog">Blog</a>
+                    <a href="/Galería/index.html" class="hover:text-boncor transition-colors" data-i18n="nav_galeria">Galería</a>
+                    <a href="/Contactar/index.html" class="hover:text-boncor transition-colors" data-i18n="nav_contactar">Contactar</a>
 
                     <div class="flex items-center space-x-3 text-gray-500 pl-2 border-l border-gray-200">
-                        <a href="https://www.instagram.com" aria-label="Instagram" class="hover:text-boncor transition-colors">
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="hover:text-boncor transition-colors">
                             <i class="fa-brands fa-instagram text-base"></i>
                         </a>
-                        <a href="https://www.linkedin.com" aria-label="LinkedIn" class="hover:text-boncor transition-colors">
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="hover:text-boncor transition-colors">
                             <i class="fa-brands fa-linkedin-in text-base"></i>
                         </a>
                         <div class="flex items-center space-x-1 text-xs font-semibold text-gray-600 pl-1">
-                            <span class="text-boncor cursor-pointer">Esp <i class="fa-solid fa-chevron-down text-[9px]"></i></span>
-                            <span class="text-gray-300">|</span>
-                            <a href="#" class="hover:text-boncor transition-colors">Cat</a>
+                            <!-- Selector de Idioma -->
+                            <select id="lang-selector" class="lang-select">
+                                <option value="es">Esp</option>
+                                <option value="ca">Cat</option>
+                                <option value="en">Eng</option>
+                            </select>
                         </div>
                     </div>
                 </nav>
@@ -119,79 +126,79 @@
 
         <!-- Menú Móvil Desplegable -->
         <div id="mobileDropdown" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3">
-            <a href="/NuestroCompromiso/index3.html" class="block text-gray-600 hover:text-boncor py-1">Nuestro compromiso</a>
-            <a href="/Servicios/index2.html" class="block text-gray-600 hover:text-boncor py-1">Servicios</a>
-            <a href="/Clientes/index.html" class="block text-boncor font-bold py-1">Clientes</a>
-            <a href="/Blog/index.html" class="block text-gray-600 hover:text-boncor py-1">Blog</a>
-            <a href="/Galería/index.html" class="block text-gray-600 hover:text-boncor py-1">Galería</a>
-            <a href="/Contactar/index.html" class="block text-gray-600 hover:text-boncor py-1">Contactar</a>
+            <a href="/NuestroCompromiso/index3.html" class="block text-gray-600 hover:text-boncor py-1" data-i18n="nav_compromiso">Nuestro compromiso</a>
+            <a href="/Servicios/index2.html" class="block text-gray-600 hover:text-boncor py-1" data-i18n="nav_servicios">Servicios</a>
+            <a href="/Clientes/index.html" class="block text-boncor font-bold py-1" data-i18n="nav_clientes">Clientes</a>
+            <a href="/Blog/index.html" class="block text-gray-600 hover:text-boncor py-1" data-i18n="nav_blog">Blog</a>
+            <a href="/Galería/index.html" class="block text-gray-600 hover:text-boncor py-1" data-i18n="nav_galeria">Galería</a>
+            <a href="/Contactar/index.html" class="block text-gray-600 hover:text-boncor py-1" data-i18n="nav_contactar">Contactar</a>
             <div class="pt-3 border-t border-gray-100 flex items-center justify-between">
                 <div class="flex space-x-4 text-gray-600">
                     <a href="https://www.instagram.com" target="_blank" class="hover:text-boncor"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com" target="_blank" class="hover:text-boncor"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <div class="text-xs font-semibold text-gray-600">
-                    <span class="text-boncor">Esp v</span> | <a href="#" class="hover:text-boncor">Cat</a>
+                    <select id="lang-selector-mobile" class="lang-select">
+                        <option value="es">Esp</option>
+                        <option value="ca">Cat</option>
+                        <option value="en">Eng</option>
+                    </select>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION (Fotografía de catering con texto superpuesto en serif blanca) -->
-     <div class="relative w-full h-96 overflow-hidden flex items-center">
-    <!-- Imagen de fondo -->
-    <img src="/Clientes/fondo.jpg" alt="Imagen de catering" class="absolute inset-0 w-full h-full object-cover z-0">
-    
-    <!-- Capa oscura opcional para mejorar la legibilidad del texto -->
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
+    <!-- HERO SECTION -->
+    <section class="relative w-full h-96 overflow-hidden flex items-center">
+        <!-- Imagen de fondo -->
+        <img src="/Clientes/fondo.jpg" alt="Imagen de catering" class="absolute inset-0 w-full h-full object-cover z-0">
+        
+        <!-- Capa oscura para legibilidad del texto -->
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
 
-    <!-- Contenido encima de la imagen -->
-    <div class="relative z-20 container mx-auto px-6 sm:px-12 max-w-4xl">
-        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-white drop-shadow-md">
-            Colaboradores y clientes trabajamos juntos para ayudar a las personas más vulnerables.
-        </h1>
-    </div>
-</div>
-          <!-- Gradiente decorativo inferior para conectar con el cuerpo -->
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#fbfcfb] to-transparent"></div>
+        <!-- Contenido encima de la imagen -->
+        <div class="relative z-20 container mx-auto px-6 sm:px-12 max-w-4xl">
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight text-white drop-shadow-md" data-i18n="hero_title">
+                Colaboradores y clientes trabajamos juntos para ayudar a las personas más vulnerables.
+            </h1>
+        </div>
+        <!-- Gradiente decorativo inferior -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#fbfcfb] to-transparent z-20"></div>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL (Texto original exacto + Contador Interactivo para el 800) -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 pb-24 space-y-12">
         
-        <!-- Tarjeta Elegante con el Mensaje Central Completo -->
+        <!-- Tarjeta Elegante con el Mensaje Central -->
         <div class="bg-white rounded-3xl shadow-xl shadow-gray-200/50 p-8 sm:p-12 md:p-16 border border-gray-100/80 reveal">
-            
             <div class="space-y-6 text-gray-700 text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto text-left">
                 
-                <p class="text-boncor font-serif text-xl md:text-2xl font-medium italic border-l-4 border-boncor pl-4">
+                <p class="text-boncor font-serif text-xl md:text-2xl font-medium italic border-l-4 border-boncor pl-4" data-i18n="quote_text">
                     Con las pequeñas colaboraciones se consigue superar grandes retos.
                 </p>
 
-                <p class="text-gray-800 font-medium">
+                <p class="text-gray-800 font-medium" data-i18n="p1_text">
                     Nuestros colaboradores y clientes sois el alma de nuestro proyecto social.
                 </p>
 
-                <p class="text-gray-600">
+                <p class="text-gray-600" data-i18n="p2_text">
                     Sin vosotros no podríamos llegar a marcar la diferencia en la vida de personas socialmente desfavorecidas.
                 </p>
 
-                <p class="text-gray-600">
+                <p class="text-gray-600" data-i18n="p3_text">
                     Es gracias a vosotros que podemos llevar a cabo un gran número de iniciativas sociales que inciden directamente en la vida de estas personas.
                 </p>
 
                 <div class="pt-6 border-t border-gray-100">
-                    <p class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-gray-900 uppercase">
+                    <p class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-gray-900 uppercase" data-i18n="thanks_text">
                         ¡MUCHAS GRACIAS POR ESTAR!
                     </p>
                 </div>
 
             </div>
-
         </div>
 
         <!-- TARJETA DESTACADA DEL CONTADOR DE CLIENTES -->
-        <!-- Integra el texto exacto: "Más de 800 clientes creen y confían en nosotros" con el contador interactivo -->
         <div class="bg-gradient-to-br from-boncor-soft via-white to-emerald-50/60 rounded-3xl p-8 md:p-12 border border-boncor/20 shadow-md text-center reveal">
             <div class="max-w-xl mx-auto space-y-4">
                 
@@ -204,10 +211,10 @@
                 </div>
 
                 <p class="font-serif text-2xl sm:text-3xl text-gray-800 font-medium">
-                    Más de <span class="text-boncor font-semibold">800</span> clientes creen y confían en nosotros
+                    <span data-i18n="counter_prefix">Más de </span><span class="text-boncor font-semibold">800</span> <span data-i18n="counter_suffix">clientes creen y confían en nosotros</span>
                 </p>
 
-                <p class="text-sm text-gray-500 font-light">
+                <p class="text-sm text-gray-500 font-light" data-i18n="counter_subtext">
                     Comprometidos con el impacto social positivo y la sostenibilidad en Barcelona
                 </p>
             </div>
@@ -215,60 +222,57 @@
 
     </main>
 
-    <!-- FOOTER VERDE INSTITUCIONAL (#4e924b - Mantiene estructura y contenido exacto) -->
+    <!-- FOOTER VERDE INSTITUCIONAL -->
     <footer class="bg-boncor-footer text-white pt-16 pb-8 border-t border-emerald-600/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Grid del Footer -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/20">
                 
-                <!-- Columna 1: Logo, Redes y Descripción -->
+                <!-- Columna 1 -->
                 <div class="space-y-4">
-                    <!-- Logo BonCor Blanco -->
-                     <a href="/Homepage/index.html" class="logo-container">
-             <img src="/Homepage/Logo.png" alt="Logotipo BonCor" width="100" height="50">
-        </a>
+                    <a href="/Homepage/index.html" class="logo-container">
+                        <img src="/Homepage/Logo.png" alt="Logotipo BonCor" width="100" height="50">
+                    </a>
 
-                    <!-- Redes sociales -->
                     <div class="flex items-center space-x-3 text-white pt-1">
-                        <a href="https://www.instagram.com" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center transition-colors">
+                        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center transition-colors">
                             <i class="fa-brands fa-instagram text-sm"></i>
                         </a>
-                        <a href="https://www.linkedin.com" aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center transition-colors">
+                        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-white/15 hover:bg-white/30 flex items-center justify-center transition-colors">
                             <i class="fa-brands fa-linkedin-in text-sm"></i>
                         </a>
                     </div>
 
-                    <!-- Texto descriptivo -->
-                    <p class="text-sm text-emerald-50 font-light leading-relaxed pr-2">
+                    <p class="text-sm text-emerald-50 font-light leading-relaxed pr-2" data-i18n="footer_about">
                         BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.
                     </p>
                 </div>
 
-                <!-- Columna 2: Servicios -->
+                <!-- Columna 2 -->
                 <div>
-                    <h3 class="font-serif font-bold text-lg mb-4 text-white">Servicios</h3>
+                    <h3 class="font-serif font-bold text-lg mb-4 text-white" data-i18n="nav_servicios">Servicios</h3>
                     <ul class="space-y-2.5 text-sm text-emerald-100 font-light">
-                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline hover:text-white transition-colors">Pausa café</a></li>
-                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline hover:text-white transition-colors">Aperitivos y comidas</a></li>
-                        <li><a href="/Homepage/food-box.html" class="hover:underline hover:text-white transition-colors">Food box</a></li>
+                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline hover:text-white transition-colors" data-i18n="srv_coffee">Pausa café</a></li>
+                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline hover:text-white transition-colors" data-i18n="srv_appetizers">Aperitivos y comidas</a></li>
+                        <li><a href="/Homepage/food-box.html" class="hover:underline hover:text-white transition-colors" data-i18n="srv_foodbox">Food box</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Sobre nosotros -->
+                <!-- Columna 3 -->
                 <div>
-                    <h3 class="font-serif font-bold text-lg mb-4 text-white">Sobre nosotros</h3>
+                    <h3 class="font-serif font-bold text-lg mb-4 text-white" data-i18n="footer_about_title">Sobre nosotros</h3>
                     <ul class="space-y-2.5 text-sm text-emerald-100 font-light">
-                        <li><a href="/NuestroCompromiso/index3.html" class="hover:underline hover:text-white transition-colors">Nuestro compromiso</a></li>
-                        <li><a href="/Galería/index.html" class="hover:underline hover:text-white transition-colors">Galería</a></li>
-                        <li><a href="/Clientes/index.html" class="hover:underline text-white font-semibold transition-colors">Clientes</a></li>
-                        <li><a href="/Blog/index.html" class="hover:underline hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/NuestroCompromiso/index3.html" class="hover:underline hover:text-white transition-colors" data-i18n="nav_compromiso">Nuestro compromiso</a></li>
+                        <li><a href="/Galería/index.html" class="hover:underline hover:text-white transition-colors" data-i18n="nav_galeria">Galería</a></li>
+                        <li><a href="/Clientes/index.html" class="hover:underline text-white font-semibold transition-colors" data-i18n="nav_clientes">Clientes</a></li>
+                        <li><a href="/Blog/index.html" class="hover:underline hover:text-white transition-colors" data-i18n="nav_blog">Blog</a></li>
                     </ul>
                 </div>
 
-                <!-- Columna 4: Contacto -->
+                <!-- Columna 4 -->
                 <div>
-                    <h3 class="font-serif font-bold text-lg mb-4 text-white">Contacto</h3>
+                    <h3 class="font-serif font-bold text-lg mb-4 text-white" data-i18n="nav_contactar">Contacto</h3>
                     <ul class="space-y-2.5 text-sm text-emerald-100 font-light">
                         <li class="flex items-start space-x-2">
                             <span>C / Font Honrada 2-4, 08004 Barcelona, España</span>
@@ -284,20 +288,122 @@
 
             </div>
 
-            <!-- Separador e información legal -->
+            <!-- Separador legal -->
             <div class="pt-8 text-center text-xs text-emerald-100 font-light">
                 <p>
-                    <a href="#" class="hover:underline">Aviso legal</a> · 
-                    <a href="#" class="hover:underline">Política de privacidad</a> · 
-                    <a href="#" class="hover:underline">Política de cookies</a>
+                    <a href="#" class="hover:underline" data-i18n="legal_notice">Aviso legal</a> · 
+                    <a href="#" class="hover:underline" data-i18n="privacy_policy">Política de privacidad</a> · 
+                    <a href="#" class="hover:underline" data-i18n="cookies_policy">Política de cookies</a>
                 </p>
             </div>
 
         </div>
     </footer>
 
-    <!-- LOGICA JAVASCRIPT (Animación de scroll y contador) -->
+    <!-- LÓGICA JAVASCRIPT CON TRADUCCIONES -->
     <script>
+        // Diccionario completo de traducciones
+        const translations = {
+            es: {
+                nav_compromiso: "Nuestro compromiso",
+                nav_servicios: "Servicios",
+                nav_clientes: "Clientes",
+                nav_blog: "Blog",
+                nav_galeria: "Galería",
+                nav_contactar: "Contactar",
+                hero_title: "Colaboradores y clientes trabajamos juntos para ayudar a las personas más vulnerables.",
+                quote_text: "Con las pequeñas colaboraciones se consigue superar grandes retos.",
+                p1_text: "Nuestros colaboradores y clientes sois el alma de nuestro proyecto social.",
+                p2_text: "Sin vosotros no podríamos llegar a marcar la diferencia en la vida de personas socialmente desfavorecidas.",
+                p3_text: "Es gracias a vosotros que podemos llevar a cabo un gran número de iniciativas sociales que inciden directamente en la vida de estas personas.",
+                thanks_text: "¡MUCHAS GRACIAS POR ESTAR!",
+                counter_prefix: "Más de ",
+                counter_suffix: "clientes creen y confían en nosotros",
+                counter_subtext: "Comprometidos con el impacto social positivo y la sostenibilidad en Barcelona",
+                footer_about: "BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.",
+                srv_coffee: "Pausa café",
+                srv_appetizers: "Aperitivos y comidas",
+                srv_foodbox: "Food box",
+                footer_about_title: "Sobre nosotros",
+                legal_notice: "Aviso legal",
+                privacy_policy: "Política de privacidad",
+                cookies_policy: "Política de cookies"
+            },
+            ca: {
+                nav_compromiso: "El nostre compromís",
+                nav_servicios: "Serveis",
+                nav_clientes: "Clients",
+                nav_blog: "Blog",
+                nav_galeria: "Galeria",
+                nav_contactar: "Contactar",
+                hero_title: "Col·laboradors i clients treballem junts per ajudar les persones més vulnerables.",
+                quote_text: "Amb les petites col·laboracions s'aconsegueix superar grans reptes.",
+                p1_text: "Els nostres col·laboradors i clients sou l'ànima del nostre projecte social.",
+                p2_text: "Sense vosaltres no podríem arribar a marcar la diferència en la vida de persones socialment afavorides.",
+                p3_text: "És gràcies a vosaltres que podem dur a terme un gran nombre d'iniciatives socials que incideixen directament en la vida d'aquestes persones.",
+                thanks_text: "MOLTES GRÀCIES PER SER-HI!",
+                counter_prefix: "Més de ",
+                counter_suffix: "clients creuen i confien en nosaltres",
+                counter_subtext: "Compromesos amb l'impacte social positiu i la sostenibilitat a Barcelona",
+                footer_about: "BonCor és el càtering de Solucions Socials Sostenibles: gastronomia sostenible i de proximitat que genera oportunitats laborals reals.",
+                srv_coffee: "Pausa cafè",
+                srv_appetizers: "Aperitius i àpats",
+                srv_foodbox: "Food box",
+                footer_about_title: "Sobre nosaltres",
+                legal_notice: "Avís legal",
+                privacy_policy: "Política de privacitat",
+                cookies_policy: "Política de cookies"
+            },
+            en: {
+                nav_compromiso: "Our commitment",
+                nav_servicios: "Services",
+                nav_clientes: "Clients",
+                nav_blog: "Blog",
+                nav_galeria: "Gallery",
+                nav_contactar: "Contact",
+                hero_title: "Partners and clients working together to support the most vulnerable people.",
+                quote_text: "Great challenges are overcome through small collaborations.",
+                p1_text: "Our partners and clients are the heart and soul of our social project.",
+                p2_text: "Without you, we couldn't make a real difference in the lives of socially disadvantaged people.",
+                p3_text: "Thanks to you, we can carry out numerous social initiatives that directly impact their daily lives.",
+                thanks_text: "THANK YOU SO MUCH FOR BEING THERE!",
+                counter_prefix: "More than ",
+                counter_suffix: "clients believe and trust in us",
+                counter_subtext: "Committed to positive social impact and sustainability in Barcelona",
+                footer_about: "BonCor is the catering service of Solucions Socials Sostenibles: sustainable, local gastronomy generating real job opportunities.",
+                srv_coffee: "Coffee break",
+                srv_appetizers: "Appetizers & meals",
+                srv_foodbox: "Food box",
+                footer_about_title: "About us",
+                legal_notice: "Legal notice",
+                privacy_policy: "Privacy policy",
+                cookies_policy: "Cookies policy"
+            }
+        };
+
+        // Función para cambiar el idioma
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Sincronizar los dos selectores (Escritorio y Móvil)
+            const desktopSelect = document.getElementById('lang-selector');
+            const mobileSelect = document.getElementById('lang-selector-mobile');
+
+            if (desktopSelect) desktopSelect.value = lang;
+            if (mobileSelect) mobileSelect.value = lang;
+
+            localStorage.setItem('boncor_lang', lang);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
 
             // Toggle menú móvil
@@ -310,7 +416,21 @@
                 });
             }
 
-            // Animación de entrada al scroll (Fade/Reveal)
+            // Inicialización de idioma
+            const savedLang = localStorage.getItem('boncor_lang') || 'es';
+            setLanguage(savedLang);
+
+            const desktopSelect = document.getElementById('lang-selector');
+            const mobileSelect = document.getElementById('lang-selector-mobile');
+
+            if (desktopSelect) {
+                desktopSelect.addEventListener('change', (e) => setLanguage(e.target.value));
+            }
+            if (mobileSelect) {
+                mobileSelect.addEventListener('change', (e) => setLanguage(e.target.value));
+            }
+
+            // Animación Reveal en Scroll
             const reveals = document.querySelectorAll('.reveal');
             const handleReveal = () => {
                 const windowHeight = window.innerHeight;
