@@ -78,20 +78,19 @@
     <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-xs transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Brand Logo with Fallback -->
-               <a href="/Homepage/index.html" class="brand-logo">
+            <!-- Brand Logo -->
+            <a href="/Homepage/index.html" class="brand-logo">
                 <img src="/Servicios/Logo2.png" alt="Logo BonCor" style="height: 75px;">
-            </a>
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-700">
-                <a href="/Nuestrocompromiso/index3.html" class="hover:text-brand-green transition-colors py-1">Nuestro compromiso</a>
-                <a href="/Servicios/index2.html" class="hover:text-brand-green transition-colors py-1">Servicios</a>
-                <a href="/Clientes/index.html" class="hover:text-brand-green transition-colors py-1">Clientes</a>
-                <a href="/Blog/index.html" class="text-brand-green border-b-2 border-brand-green pb-1 font-semibold">Blog</a>
-                <a href="/Galería/index.html" class="hover:text-brand-green transition-colors py-1">Galería</a>
-                <a href="/Contactar/index.html" class="hover:text-brand-green transition-colors py-1">Contactar</a>
+                <a href="/Nuestrocompromiso/index3.html" class="hover:text-brand-green transition-colors py-1" data-i18n="navCompromiso">Nuestro compromiso</a>
+                <a href="/Servicios/index2.html" class="hover:text-brand-green transition-colors py-1" data-i18n="navServicios">Servicios</a>
+                <a href="/Clientes/index.html" class="hover:text-brand-green transition-colors py-1" data-i18n="navClientes">Clientes</a>
+                <a href="/Blog/index.html" class="text-brand-green border-b-2 border-brand-green pb-1 font-semibold" data-i18n="navBlog">Blog</a>
+                <a href="/Galería/index.html" class="hover:text-brand-green transition-colors py-1" data-i18n="navGaleria">Galería</a>
+                <a href="/Contactar/index.html" class="hover:text-brand-green transition-colors py-1" data-i18n="navContactar">Contactar</a>
             </nav>
 
             <!-- Social Links & Language Switcher -->
@@ -104,14 +103,15 @@
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
                 </div>
-                <div class="relative group cursor-pointer py-1">
-                    <div class="flex items-center space-x-1">
-                        <span class="font-bold text-brand-green">Esp</span>
-                        <i class="fa-solid fa-chevron-down text-[10px] text-gray-400 group-hover:rotate-180 transition-transform"></i>
-                    </div>
+                
+                <!-- Selector de idioma Desktop (Esp | Cat | Eng) -->
+                <div class="flex items-center space-x-1.5">
+                    <button onclick="setLanguage('es')" class="hover:text-brand-green transition-colors font-semibold" id="btn-es">Esp</button>
+                    <span class="text-gray-300">|</span>
+                    <button onclick="setLanguage('cat')" class="hover:text-brand-green transition-colors font-semibold" id="btn-cat">Cat</button>
+                    <span class="text-gray-300">|</span>
+                    <button onclick="setLanguage('en')" class="hover:text-brand-green transition-colors font-semibold" id="btn-en">Eng</button>
                 </div>
-                <span class="text-gray-300">|</span>
-                <a href="#" class="hover:text-brand-green transition-colors">Cat</a>
             </div>
 
             <!-- Mobile Hamburger Button -->
@@ -122,22 +122,25 @@
 
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3 shadow-lg transition-all duration-300">
-            <a href="/Nuestrocompromiso/index3.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Nuestro compromiso</a>
-            <a href="/Servicios/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Servicios</a>
-            <a href="/Clientes/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Clientes</a>
-            <a href="/Blog/index.html" class="block py-2 text-brand-green font-semibold border-l-4 border-brand-green pl-2">Blog</a>
-            <a href="/Galería/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Galería</a>
-            <a href="/Contactar/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium">Contactar</a>
+            <a href="/Nuestrocompromiso/index3.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium" data-i18n="navCompromiso">Nuestro compromiso</a>
+            <a href="/Servicios/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium" data-i18n="navServicios">Servicios</a>
+            <a href="/Clientes/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium" data-i18n="navClientes">Clientes</a>
+            <a href="/Blog/index.html" class="block py-2 text-brand-green font-semibold border-l-4 border-brand-green pl-2" data-i18n="navBlog">Blog</a>
+            <a href="/Galería/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium" data-i18n="navGaleria">Galería</a>
+            <a href="/Contactar/index.html" class="block py-2 text-gray-700 hover:text-brand-green font-medium" data-i18n="navContactar">Contactar</a>
             
             <div class="pt-4 border-t border-gray-100 flex items-center justify-between text-sm text-gray-600">
                 <div class="flex space-x-4">
                     <a href="https://www.instagram.com" class="hover:text-brand-green"><i class="fa-brands fa-instagram text-lg"></i></a>
                     <a href="https://www.linkedin.com" class="hover:text-brand-green"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
                 </div>
+                <!-- Selector de idioma Mobile -->
                 <div class="flex space-x-2 font-medium">
-                    <span class="font-bold text-brand-green">Esp</span>
+                    <button onclick="setLanguage('es')" class="hover:text-brand-green font-bold" id="m-btn-es">Esp</button>
                     <span>|</span>
-                    <a href="#" class="hover:text-brand-green">Cat</a>
+                    <button onclick="setLanguage('cat')" class="hover:text-brand-green font-bold" id="m-btn-cat">Cat</button>
+                    <span>|</span>
+                    <button onclick="setLanguage('en')" class="hover:text-brand-green font-bold" id="m-btn-en">Eng</button>
                 </div>
             </div>
         </div>
@@ -145,16 +148,14 @@
 
     <!-- HERO SECTION -->
     <section class="relative w-full h-[320px] sm:h-[380px] lg:h-[420px] overflow-hidden bg-gray-900">
-        <!-- Background Image with Overlay -->
         <img src="/Blog/1.jpg"
             alt="BonCor Catering Gourmet Setup" 
             class="w-full h-full object-cover object-center opacity-85 scale-105 hover:scale-100 transition-transform duration-1000 ease-out"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-        <!-- Banner Title -->
         <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif-title font-medium text-white tracking-tight animate-fade-in-up">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif-title font-medium text-white tracking-tight animate-fade-in-up" data-i18n="heroTitle">
                 Blog
             </h1>
         </div>
@@ -163,15 +164,15 @@
     <!-- MAIN CONTENT -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 w-full">
         
-        <!-- Featured Articles Section (Matching Screenshot Text) -->
+        <!-- Featured Articles Section -->
         <div class="space-y-12 max-w-4xl mb-16">
             
             <!-- Article 1 -->
             <article class="animate-fade-in-up delay-100 group">
-                <h2 class="text-xl sm:text-2xl lg:text-[26px] font-serif-title font-bold text-gray-900 group-hover:text-brand-green transition-colors duration-200 leading-snug mb-3">
+                <h2 class="text-xl sm:text-2xl lg:text-[26px] font-serif-title font-bold text-gray-900 group-hover:text-brand-green transition-colors duration-200 leading-snug mb-3" data-i18n="article1Title">
                     ¿Por qué BonCor destaca entre las empresas de catering en Barcelona?
                 </h2>
-                <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
+                <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-light" data-i18n="article1Desc">
                     BonCor es una de las empresas de catering en Barcelona más destacadas por ofrecer menús únicos con sabor gourmet y alma sostenible y social.
                 </p>
                 <div class="mt-4 flex items-center text-sm font-semibold text-brand-green group-hover:translate-x-1 transition-transform">
@@ -182,10 +183,10 @@
 
             <!-- Article 2 -->
             <article class="animate-fade-in-up delay-200 group">
-                <h2 class="text-xl sm:text-2xl lg:text-[26px] font-serif-title font-bold text-gray-900 group-hover:text-brand-green transition-colors duration-200 leading-snug mb-3">
+                <h2 class="text-xl sm:text-2xl lg:text-[26px] font-serif-title font-bold text-gray-900 group-hover:text-brand-green transition-colors duration-200 leading-snug mb-3" data-i18n="article2Title">
                     BonCor: El Catering ecológico en Barcelona que marca la diferencia
                 </h2>
-                <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
+                <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-light" data-i18n="article2Desc">
                     BonCor es la empresa de catering ecológico Barcelona líder en el sector. Nuestros menús saludables y sostenibles harán de tu evento un éxito memorable.
                 </p>
                 <div class="mt-4 flex items-center text-sm font-semibold text-brand-green group-hover:translate-x-1 transition-transform">
@@ -197,7 +198,7 @@
         <!-- Extended Interactive Blog Grid -->
         <div class="mt-16 pt-12 border-t border-gray-200">
             <h3 class="text-2xl font-serif-title font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <span>Más publicaciones e historias</span>
+                <span data-i18n="morePostsTitle">Más publicaciones e historias</span>
                 <span class="h-0.5 flex-grow bg-gray-200 rounded"></span>
             </h3>
 
@@ -207,18 +208,18 @@
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col group">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop" alt="Catering de proximidad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-brand-green text-white text-xs font-semibold px-2.5 py-1 rounded-full">Sostenibilidad</span>
+                        <span class="absolute top-3 left-3 bg-brand-green text-white text-xs font-semibold px-2.5 py-1 rounded-full" data-i18n="tagSustainability">Sostenibilidad</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-xs text-gray-400 mb-2">18 Septiembre, 2026</p>
-                        <h4 class="font-serif-title font-bold text-lg text-gray-900 group-hover:text-brand-green transition-colors mb-2">
+                        <h4 class="font-serif-title font-bold text-lg text-gray-900 group-hover:text-brand-green transition-colors mb-2" data-i18n="card1Title">
                             Ingredientes de Km 0: La clave de nuestro sabor responsable
                         </h4>
-                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 font-light">
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 font-light" data-i18n="card1Desc">
                             Descubre cómo trabajamos directamente con productores locales para reducir la huella de carbono y llevar frescura absoluta a tu mesa.
                         </p>
                         <a href="/Homepage/aperitivos-comidas.html" class="mt-auto inline-flex items-center text-sm font-medium text-brand-green hover:underline">
-                            Saber más <i class="fa-solid fa-angle-right ml-1 text-xs"></i>
+                            <span data-i18n="readMore">Saber más</span> <i class="fa-solid fa-angle-right ml-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -227,18 +228,18 @@
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col group">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=600&auto=format&fit=crop" alt="Eventos corporativos ecologicos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-brand-green text-white text-xs font-semibold px-2.5 py-1 rounded-full">Eventos</span>
+                        <span class="absolute top-3 left-3 bg-brand-green text-white text-xs font-semibold px-2.5 py-1 rounded-full" data-i18n="tagEvents">Eventos</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-xs text-gray-400 mb-2">05 Septiembre, 2026</p>
-                        <h4 class="font-serif-title font-bold text-lg text-gray-900 group-hover:text-brand-green transition-colors mb-2">
+                        <h4 class="font-serif-title font-bold text-lg text-gray-900 group-hover:text-brand-green transition-colors mb-2" data-i18n="card2Title">
                             Cómo organizar una pausa café corporativa 100% residuo cero
                         </h4>
-                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 font-light">
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 font-light" data-i18n="card2Desc">
                             Consejos prácticos para empresas que buscan transformar sus eventos de networking en experiencias conscientes e impecables.
                         </p>
                         <a href="/Homepage/pausa-cafe.html" class="mt-auto inline-flex items-center text-sm font-medium text-brand-green hover:underline">
-                            Saber más <i class="fa-solid fa-angle-right ml-1 text-xs"></i>
+                            <span data-i18n="readMore">Saber más</span> <i class="fa-solid fa-angle-right ml-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -247,18 +248,18 @@
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col group">
                     <div class="relative h-48 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=600&auto=format&fit=crop" alt="Opciones veganas y saludables" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-brand-green text-white text-xs font-semibold px-2.5 py-1 rounded-full">Gastronomía</span>
+                        <span class="absolute top-3 left-3 bg-brand-green text-white text-xs font-semibold px-2.5 py-1 rounded-full" data-i18n="tagGastronomy">Gastronomía</span>
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <p class="text-xs text-gray-400 mb-2">22 Agosto, 2026</p>
-                        <h4 class="font-serif-title font-bold text-lg text-gray-900 group-hover:text-brand-green transition-colors mb-2">
+                        <h4 class="font-serif-title font-bold text-lg text-gray-900 group-hover:text-brand-green transition-colors mb-2" data-i18n="card3Title">
                             Menús inclusivos: Opciones veganas y sin alérgenos sin perder el toque gourmet
                         </h4>
-                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 font-light">
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 font-light" data-i18n="card3Desc">
                             I+D en cocina para asegurar que todos los asistentes a tu celebración disfruten por igual de cada aperitivo.
                         </p>
                         <a href="/Homepage/food-box.html" class="mt-auto inline-flex items-center text-sm font-medium text-brand-green hover:underline">
-                            Saber más <i class="fa-solid fa-angle-right ml-1 text-xs"></i>
+                            <span data-i18n="readMore">Saber más</span> <i class="fa-solid fa-angle-right ml-1 text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -273,14 +274,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12">
                 
-                <!-- Col 1: Logo Placeholder Container matching screenshot -->
-                <div class>
-                    <div class>
-                        <img src="/Homepage/Logo.png " alt="BonCor Catering Logo Footer">
+                <!-- Col 1: Logo -->
+                <div>
+                    <div>
+                        <img src="/Homepage/Logo.png" alt="BonCor Catering Logo Footer">
                     </div>
                 </div>
 
-                <!-- Col 2: Brand Description & Socials -->
+                <!-- Col 2: Brand Description -->
                 <div class="lg:col-span-1 space-y-4">
                     <div class="flex items-center space-x-3 text-white text-lg">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-gray-200 transition-colors" title="Instagram">
@@ -290,35 +291,35 @@
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
                     </div>
-                    <p class="text-xs leading-relaxed text-white/90 font-light">
+                    <p class="text-xs leading-relaxed text-white/90 font-light" data-i18n="footerAbout">
                         BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.
                     </p>
                 </div>
 
                 <!-- Col 3: Servicios -->
                 <div class="space-y-3">
-                    <h5 class="font-serif-title text-base font-semibold">Servicios</h5>
+                    <h5 class="font-serif-title text-base font-semibold" data-i18n="footerServiciosTitle">Servicios</h5>
                     <ul class="space-y-2 text-xs text-white/90 font-light">
-                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline">Pausa café</a></li>
-                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline">Aperitivos y comidas</a></li>
-                        <li><a href="/Homepage/food-box.html  index.html" class="hover:underline">Food box</a></li>
+                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline" data-i18n="footerPausaCafe">Pausa café</a></li>
+                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline" data-i18n="footerAperitivos">Aperitivos y comidas</a></li>
+                        <li><a href="/Homepage/food-box.html" class="hover:underline" data-i18n="footerFoodBox">Food box</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 4: Sobre nosotros -->
                 <div class="space-y-3">
-                    <h5 class="font-serif-title text-base font-semibold">Sobre nosotros</h5>
+                    <h5 class="font-serif-title text-base font-semibold" data-i18n="footerAboutTitle">Sobre nosotros</h5>
                     <ul class="space-y-2 text-xs text-white/90 font-light">
-                        <li><a href="/Nuestrocompromiso/index3.html" class="hover:underline">Nuestro compromiso</a></li>
-                        <li><a href="/Galería/index.html" class="hover:underline">Galería</a></li>
-                        <li><a href="/Clientes/index.html" class="hover:underline">Clientes</a></li>
-                        <li><a href="/Blog/index.html" class="hover:underline">Blog</a></li>
+                        <li><a href="/Nuestrocompromiso/index3.html" class="hover:underline" data-i18n="navCompromiso">Nuestro compromiso</a></li>
+                        <li><a href="/Galería/index.html" class="hover:underline" data-i18n="navGaleria">Galería</a></li>
+                        <li><a href="/Clientes/index.html" class="hover:underline" data-i18n="navClientes">Clientes</a></li>
+                        <li><a href="/Blog/index.html" class="hover:underline" data-i18n="navBlog">Blog</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 5: Contacto -->
                 <div class="space-y-3 text-xs text-white/90 font-light">
-                    <h5 class="font-serif-title text-base font-semibold text-white">Contacto</h5>
+                    <h5 class="font-serif-title text-base font-semibold text-white" data-i18n="footerContactoTitle">Contacto</h5>
                     <p>C / Font Honrada 2-4,<br>08004 Barcelona, España</p>
                     <p><a href="tel:+34680429120" class="hover:underline">+34 680 429 120</a></p>
                     <p><a href="mailto:catering@boncor.cat" class="hover:underline">catering@boncor.cat</a></p>
@@ -329,20 +330,166 @@
             <!-- Bottom Border Line & Legal -->
             <div class="border-t border-white/20 pt-6 text-xs text-white/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1 font-light">
-                    <a href="#" class="hover:underline">Aviso legal</a>
+                    <a href="#" class="hover:underline" data-i18n="legalNotice">Aviso legal</a>
                     <span>·</span>
-                    <a href="#" class="hover:underline">Política de privacidad</a>
+                    <a href="#" class="hover:underline" data-i18n="privacyPolicy">Política de privacidad</a>
                     <span>·</span>
-                    <a href="#" class="hover:underline">Política de cookies</a>
+                    <a href="#" class="hover:underline" data-i18n="cookiesPolicy">Política de cookies</a>
                 </div>
-                <p class="text-[11px] text-white/70">© 2026 BonCor Catering. Todos los derechos reservados.</p>
+                <p class="text-[11px] text-white/70" data-i18n="footerRights">© 2026 BonCor Catering. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
+        // Diccionario de Traducciones (ES, CAT, EN)
+        const translations = {
+            es: {
+                navCompromiso: "Nuestro compromiso",
+                navServicios: "Servicios",
+                navClientes: "Clientes",
+                navBlog: "Blog",
+                navGaleria: "Galería",
+                navContactar: "Contactar",
+                heroTitle: "Blog",
+                article1Title: "¿Por qué BonCor destaca entre las empresas de catering en Barcelona?",
+                article1Desc: "BonCor es una de las empresas de catering en Barcelona más destacadas por ofrecer menús únicos con sabor gourmet y alma sostenible y social.",
+                article2Title: "BonCor: El Catering ecológico en Barcelona que marca la diferencia",
+                article2Desc: "BonCor es la empresa de catering ecológico Barcelona líder en el sector. Nuestros menús saludables y sostenibles harán de tu evento un éxito memorable.",
+                morePostsTitle: "Más publicaciones e historias",
+                tagSustainability: "Sostenibilidad",
+                tagEvents: "Eventos",
+                tagGastronomy: "Gastronomía",
+                card1Title: "Ingredientes de Km 0: La clave de nuestro sabor responsable",
+                card1Desc: "Descubre cómo trabajamos directamente con productores locales para reducir la huella de carbono y llevar frescura absoluta a tu mesa.",
+                card2Title: "Cómo organizar una pausa café corporativa 100% residuo cero",
+                card2Desc: "Consejos prácticos para empresas que buscan transformar sus eventos de networking en experiencias conscientes e impecables.",
+                card3Title: "Menús inclusivos: Opciones veganas y sin alérgenos sin perder el toque gourmet",
+                card3Desc: "I+D en cocina para asegurar que todos los asistentes a tu celebración disfruten por igual de cada aperitivo.",
+                readMore: "Saber más",
+                footerAbout: "BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.",
+                footerServiciosTitle: "Servicios",
+                footerPausaCafe: "Pausa café",
+                footerAperitivos: "Aperitivos y comidas",
+                footerFoodBox: "Food box",
+                footerAboutTitle: "Sobre nosotros",
+                footerContactoTitle: "Contacto",
+                legalNotice: "Aviso legal",
+                privacyPolicy: "Política de privacidad",
+                cookiesPolicy: "Política de cookies",
+                footerRights: "© 2026 BonCor Catering. Todos los derechos reservados."
+            },
+            cat: {
+                navCompromiso: "El nostre compromís",
+                navServicios: "Serveis",
+                navClientes: "Clients",
+                navBlog: "Blog",
+                navGaleria: "Galeria",
+                navContactar: "Contactar",
+                heroTitle: "Blog",
+                article1Title: "Per què BonCor destaca entre les empreses de càtering a Barcelona?",
+                article1Desc: "BonCor és una de les empreses de càtering a Barcelona més destacades per oferir menús únics amb gust gourmet i ànima sostenible i social.",
+                article2Title: "BonCor: El Càtering ecològic a Barcelona que marca la diferència",
+                article2Desc: "BonCor és l'empresa de càtering ecològic a Barcelona líder al sector. Els nostres menús saludables i sostenibles faran del teu esdeveniment un èxit memorable.",
+                morePostsTitle: "Més publicacions i històries",
+                tagSustainability: "Sostenibilitat",
+                tagEvents: "Esdeveniments",
+                tagGastronomy: "Gastronomia",
+                card1Title: "Ingredients de Km 0: La clau del nostre gust responsable",
+                card1Desc: "Descobreix com treballem directament amb productors locals per reduir l'empremta de carboni i portar frescor absoluta a la teva taula.",
+                card2Title: "Com organitzar una pausa cafè corporativa 100% residu zero",
+                card2Desc: "Consells pràctics per a empreses que busquen transformar els seus esdeveniments de networking en experiències conscients i impecables.",
+                card3Title: "Menús inclusius: Opcions veganes i sense al·lèrgens sense perdre el toc gourmet",
+                card3Desc: "R+D en cuina per assegurar que tots els assistents a la teva celebració gaudeixin per igual de cada aperitiu.",
+                readMore: "Saber-ne més",
+                footerAbout: "BonCor és el càtering de Solucions Socials Sostenibles: gastronomia sostenible i de proximitat que genera oportunitats laborals reals.",
+                footerServiciosTitle: "Serveis",
+                footerPausaCafe: "Pausa cafè",
+                footerAperitivos: "Aperitius i dinars",
+                footerFoodBox: "Food box",
+                footerAboutTitle: "Sobre nosaltres",
+                footerContactoTitle: "Contacte",
+                legalNotice: "Avís legal",
+                privacyPolicy: "Política de privacitat",
+                cookiesPolicy: "Política de cookies",
+                footerRights: "© 2026 BonCor Catering. Tots els drets reservats."
+            },
+            en: {
+                navCompromiso: "Our Commitment",
+                navServicios: "Services",
+                navClientes: "Clients",
+                navBlog: "Blog",
+                navGaleria: "Gallery",
+                navContactar: "Contact",
+                heroTitle: "Blog",
+                article1Title: "Why does BonCor stand out among catering companies in Barcelona?",
+                article1Desc: "BonCor is one of Barcelona's premier catering companies, offering unique menus with gourmet flavor and a sustainable, social heart.",
+                article2Title: "BonCor: The Eco-friendly Catering in Barcelona making a difference",
+                article2Desc: "BonCor is the leading organic catering company in Barcelona. Our healthy and sustainable menus will make your event a memorable success.",
+                morePostsTitle: "More Posts & Stories",
+                tagSustainability: "Sustainability",
+                tagEvents: "Events",
+                tagGastronomy: "Gastronomy",
+                card1Title: "Zero-Kilometer Ingredients: The key to our responsible flavor",
+                card1Desc: "Discover how we work directly with local farmers to lower carbon footprint and bring absolute freshness to your table.",
+                card2Title: "How to organize a 100% zero-waste corporate coffee break",
+                card2Desc: "Practical advice for companies looking to turn networking events into conscious, flawless experiences.",
+                card3Title: "Inclusive Menus: Vegan and allergen-free choices with a gourmet touch",
+                card3Desc: "Culinary R&D to ensure all your event guests enjoy every appetizer equally.",
+                readMore: "Read more",
+                footerAbout: "BonCor is the catering arm of Solucions Socials Sostenibles: sustainable, local gastronomy generating real job opportunities.",
+                footerServiciosTitle: "Services",
+                footerPausaCafe: "Coffee break",
+                footerAperitivos: "Appetizers & meals",
+                footerFoodBox: "Food box",
+                footerAboutTitle: "About us",
+                footerContactoTitle: "Contact",
+                legalNotice: "Legal Notice",
+                privacyPolicy: "Privacy Policy",
+                cookiesPolicy: "Cookies Policy",
+                footerRights: "© 2026 BonCor Catering. All rights reserved."
+            }
+        };
+
+        /**
+         * Función principal para cambiar el idioma
+         */
+        function setLanguage(lang) {
+            const currentLang = translations[lang] ? lang : 'es';
+            const data = translations[currentLang];
+
+            // Cambiar todos los textos marcados con data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (data[key]) {
+                    el.textContent = data[key];
+                }
+            });
+
+            // Resaltar los botones del idioma seleccionado (Desktop & Mobile)
+            ['es', 'cat', 'en'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                const mBtn = document.getElementById(`m-btn-${l}`);
+                if (btn) {
+                    if (l === currentLang) btn.classList.add('text-brand-green');
+                    else btn.classList.remove('text-brand-green');
+                }
+                if (mBtn) {
+                    if (l === currentLang) mBtn.classList.add('text-brand-green');
+                    else mBtn.classList.remove('text-brand-green');
+                }
+            });
+
+            // Guardar preferencia
+            localStorage.setItem('preferred_lang', currentLang);
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
+            // Cargar idioma guardado o predeterminado
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+            setLanguage(savedLang);
+
             // Mobile Menu Toggle
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
