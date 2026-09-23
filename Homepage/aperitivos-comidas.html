@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aperitivos y Comidas - BonCor Catering</title>
+    <title data-i18n="pageTitle">Aperitivos y Comidas - BonCor Catering</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -165,7 +165,7 @@
             gap: 40px;
             position: relative;
             margin-bottom: 50px;
-            padding-right: 30px; /* Espacio reservado para los puntos */
+            padding-right: 30px;
         }
 
         .option-title {
@@ -461,69 +461,22 @@
            RESPONSIVE DESIGN (MEDIA QUERIES)
         ========================================== */
         @media (max-width: 1024px) {
-            .header {
-                gap: 15px;
-            }
-            .nav-links {
-                gap: 12px;
-                font-size: 0.88rem;
-            }
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .header { gap: 15px; }
+            .nav-links { gap: 12px; font-size: 0.88rem; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 820px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                width: 100%;
-                order: 3;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                gap: 10px;
-                padding-top: 15px;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .menu-container {
-                grid-template-columns: 1fr;
-                padding-right: 40px;
-            }
-
-            .dietary-content {
-                grid-template-columns: 1fr;
-            }
-
-            .dietary-text {
-                text-align: center;
-            }
-
-            .action-buttons {
-                align-items: stretch;
-                width: 100%;
-            }
-
-            .service-footer-wrapper {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .km0-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px 20px;
-            }
+            .menu-toggle { display: block; }
+            .nav-menu { width: 100%; order: 3; }
+            .nav-links { display: none; flex-direction: column; width: 100%; gap: 10px; padding-top: 15px; }
+            .nav-links.show { display: flex; }
+            .menu-container { grid-template-columns: 1fr; padding-right: 40px; }
+            .dietary-content { grid-template-columns: 1fr; }
+            .dietary-text { text-align: center; }
+            .action-buttons { align-items: stretch; width: 100%; }
+            .service-footer-wrapper { flex-direction: column; align-items: center; text-align: center; }
+            .km0-card { flex-direction: column; text-align: center; padding: 25px 20px; }
         }
 
         @media (max-width: 600px) {
@@ -535,23 +488,10 @@
                 margin-top: 20px;
                 grid-column: 1 / -1;
             }
-
-            .menu-container {
-                padding-right: 0;
-            }
-
-            .image-strip {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header-utility {
-                gap: 10px;
-                font-size: 0.85rem;
-            }
+            .menu-container { padding-right: 0; }
+            .image-strip { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .header-utility { gap: 10px; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -569,14 +509,14 @@
 
         <nav class="nav-menu">
             <ul class="nav-links" id="navLinks">
-                <li><a href="/Nuestrocompromiso/index3.html">Nuestro compromiso</a></li>
+                <li><a href="/Nuestrocompromiso/index3.html" data-i18n="navCommitment">Nuestro compromiso</a></li>
                 <li class="dropdown">
-                    <a href="/Servicios/index2.html">Servicios</a>
+                    <a href="/Servicios/index2.html" data-i18n="navServices">Servicios</a>
                 </li>
-                <li><a href="/Clientes/index.html">Clientes</a></li>
-                <li><a href="/Blog/index.html">Blog</a></li>
-                <li><a href="/Galeria/index.html">Galería</a></li>
-                <li><a href="/Contactar/index.html">Contactar</a></li>
+                <li><a href="/Clientes/index.html" data-i18n="navClients">Clientes</a></li>
+                <li><a href="/Blog/index.html" data-i18n="navBlog">Blog</a></li>
+                <li><a href="/Galeria/index.html" data-i18n="navGallery">Galería</a></li>
+                <li><a href="/Contactar/index.html" data-i18n="navContact">Contactar</a></li>
             </ul>
         </nav>
 
@@ -597,31 +537,31 @@
     <!-- MAIN SECTION: APERITIVOS Y COMIDAS -->
     <main>
         <section class="service-detail-section">
-            <h1 class="main-title">Aperitivos y comidas</h1>
+            <h1 class="main-title" data-i18n="mainTitle">Aperitivos y comidas</h1>
 
             <div class="menu-container" id="menuContent">
                 <h2 class="option-title">Opción gourmet</h2>
 
                 <!-- Left Column Menu -->
                 <div class="menu-list">
-                    <div class="menu-item">Sorbo de verduras variadas ecológicas o gazpacho (según temporada).</div>
-                    <div class="menu-item">Rollito de Salmón fumado con cebolletas y aguacate.</div>
-                    <div class="menu-item">Brocheta de salmón ahumado y queso fresco.</div>
-                    <div class="menu-item">Rossejat de fideos con gambas y almejas.</div>
-                    <div class="menu-item">Mine aliñada Cèsar o Mediterráneo.</div>
-                    <div class="menu-item">Surtido de mini sandwiches.</div>
-                    <div class="menu-item">Dátil rellenado de foie.</div>
-                    <div class="menu-item">Brocheta de fruta ecológica de temporada y proximidad.</div>
-                    <div class="menu-item">Mine tartaleta con crema y frutos rojos.</div>
+                    <div class="menu-item" data-i18n="menuItem1">Sorbo de verduras variadas ecológicas o gazpacho (según temporada).</div>
+                    <div class="menu-item" data-i18n="menuItem2">Rollito de Salmón ahumado con cebolletas y aguacate.</div>
+                    <div class="menu-item" data-i18n="menuItem3">Brocheta de salmón ahumado y queso fresco.</div>
+                    <div class="menu-item" data-i18n="menuItem4">Rossejat de fideos con gambas y almejas.</div>
+                    <div class="menu-item" data-i18n="menuItem5">Mini aliñada César o Mediterráneo.</div>
+                    <div class="menu-item" data-i18n="menuItem6">Surtido de mini sandwiches.</div>
+                    <div class="menu-item" data-i18n="menuItem7">Dátil rellenado de foie.</div>
+                    <div class="menu-item" data-i18n="menuItem8">Brocheta de fruta ecológica de temporada y proximidad.</div>
+                    <div class="menu-item" data-i18n="menuItem9">Mini tartaleta con crema y frutos rojos.</div>
                 </div>
 
                 <!-- Right Column Menu -->
                 <div class="menu-list">
-                    <div class="menu-item">Café · Tieso · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.</div>
-                    <div class="menu-item">Agua mineral.</div>
-                    <div class="menu-item">Refrescos variados.</div>
-                    <div class="menu-item">Vino tinto ecológico Can Suriol DO Penedès.</div>
-                    <div class="menu-item">Cava Can Suriol ecológico Sucio Nature DO Penedès.</div>
+                    <div class="menu-item" data-i18n="menuItem10">Café · Té · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.</div>
+                    <div class="menu-item" data-i18n="menuItem11">Agua mineral.</div>
+                    <div class="menu-item" data-i18n="menuItem12">Refrescos variados.</div>
+                    <div class="menu-item" data-i18n="menuItem13">Vino tinto ecológico Can Suriol DO Penedès.</div>
+                    <div class="menu-item" data-i18n="menuItem14">Cava Can Suriol ecológico Brut Nature DO Penedès.</div>
                 </div>
 
                 <!-- Side Pagination Dots -->
@@ -637,37 +577,37 @@
 
             <!-- Footer notes & Call To Actions -->
             <div class="service-footer-wrapper">
-                <p class="service-footer-note">
-                    En totes les opcions d'Aperitiu-Dinar s'inclou de manera gratuïta tot el parament i cristalería necesaria per realitzar el servei contractat.
+                <p class="service-footer-note" data-i18n="footerNote">
+                    En todas las opciones de Aperitivo-Comida se incluye de forma gratuita todo el menaje y cristalería necesaria para realizar el servicio contratado.
                 </p>
 
                 <div class="action-buttons">
-                    <button class="btn-green">Descarrega Aperitiu-Dinar</button>
-                    <a href="/Contactar/index.html" class="btn-outline-dark">Contactar</a>
+                    <button class="btn-green" data-i18n="btnDownload">Descargar Aperitivo-Comida</button>
+                    <a href="/Contactar/index.html" class="btn-outline-dark" data-i18n="btnContact">Contactar</a>
                 </div>
             </div>
         </section>
 
         <!-- DIETADAPTATIONS SECTION -->
         <section class="dietary-section">
-            <h2 class="dietary-title">Adaptaciones dietéticas</h2>
+            <h2 class="dietary-title" data-i18n="dietaryTitle">Adaptaciones dietéticas</h2>
             <div class="dietary-content">
                 <div class="dietary-icons">
                     <div class="diet-card">
                         <div class="icon-circle"><i class="fa-solid fa-leaf"></i></div>
-                        <h4>Vegano</h4>
+                        <h4 data-i18n="dietVegan">Vegano</h4>
                     </div>
                     <div class="diet-card">
                         <div class="icon-circle"><i class="fa-solid fa-wheat-awn-circle-exclamation"></i></div>
-                        <h4>Sin gluten</h4>
+                        <h4 data-i18n="dietGluten">Sin gluten</h4>
                     </div>
                     <div class="diet-card">
                         <div class="icon-circle"><i class="fa-solid fa-certificate"></i></div>
-                        <h4>Jalal</h4>
+                        <h4 data-i18n="dietHalal">Halal</h4>
                     </div>
                     <div class="diet-card">
                         <div class="icon-circle"><i class="fa-solid fa-prescription-bottle"></i></div>
-                        <h4>Intolerancias</h4>
+                        <h4 data-i18n="dietIntolerances">Intolerancias</h4>
                     </div>
                 </div>
             </div>
@@ -687,7 +627,7 @@
             <div class="km0-card">
                 <div class="km0-icon"><i class="fa-solid fa-bag-shopping"></i></div>
                 <div class="km0-text">
-                    <h3 id="sliderTitle">Productos de proximidad i Km0</h3>
+                    <h3 id="sliderTitle">Productos de proximidad y Km0</h3>
                     <p id="sliderDesc">En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones, desde reuniones.</p>
                 </div>
             </div>
@@ -707,26 +647,26 @@
             </div>
 
             <div class="footer-col">
-                <h4>Gastronomia</h4>
+                <h4 data-i18n="footerGastronomy">Gastronomía</h4>
                 <ul>
-                    <li><a href="/Homepage/aperitivos-comidas.html">Pausa café</a></li>
-                    <li><a href="/Homepage/aperitivos-comidas.html">Aperitivos y comidas</a></li>
+                    <li><a href="/Homepage/aperitivos-comidas.html" data-i18n="footerCoffee">Pausa café</a></li>
+                    <li><a href="/Homepage/aperitivos-comidas.html" data-i18n="footerAppetizers">Aperitivos y comidas</a></li>
                     <li><a href="/Homepage/food-box.html">Food box</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Sobre nosotros</h4>
+                <h4 data-i18n="footerAbout">Sobre nosotros</h4>
                 <ul>
-                    <li><a href="/NuestroCompromiso/index3.html">Quiénes somos</a></li>
-                    <li><a href="/Catering/index.html">Catering</a></li>
-                    <li><a href="/Galería/index.html">Galeria</a></li>
-                    <li><a href="/Clientes/index.html">Clientes</a></li>
+                    <li><a href="/NuestroCompromiso/index3.html" data-i18n="footerAboutUs">Quiénes somos</a></li>
+                    <li><a href="/Catering/index.html" data-i18n="footerCatering">Catering</a></li>
+                    <li><a href="/Galería/index.html" data-i18n="footerGallery">Galería</a></li>
+                    <li><a href="/Clientes/index.html" data-i18n="footerClients">Clientes</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Contacto</h4>
+                <h4 data-i18n="footerContact">Contacto</h4>
                 <ul>
                     <li>C / Font Honrada 2-4.</li>
                     <li>08004 Barcelona, España</li>
@@ -747,57 +687,251 @@
             navLinks.classList.toggle('show');
         });
 
-        // Data for Side Menu Navigator
-        const menuOptions = [
-            { id: 1, name: "Opción gourmet" },
-            { id: 2, name: "Opción tradicional" },
-            { id: 3, name: "Opción executive" },
-            { id: 4, name: "Opción saludable" },
-            { id: 5, name: "Opción vegetal" }
-        ];
+        // Diccionario de Traducciones
+        const i18n = {
+            es: {
+                pageTitle: "Aperitivos y Comidas - BonCor Catering",
+                navCommitment: "Nuestro compromiso",
+                navServices: "Servicios",
+                navClients: "Clientes",
+                navBlog: "Blog",
+                navGallery: "Galería",
+                navContact: "Contactar",
+                mainTitle: "Aperitivos y comidas",
+                menuOptions: [
+                    "Opción gourmet",
+                    "Opción tradicional",
+                    "Opción executive",
+                    "Opción saludable",
+                    "Opción vegetal"
+                ],
+                menuItem1: "Sorbo de verduras variadas ecológicas o gazpacho (según temporada).",
+                menuItem2: "Rollito de Salmón ahumado con cebolletas y aguacate.",
+                menuItem3: "Brocheta de salmón ahumado y queso fresco.",
+                menuItem4: "Rossejat de fideos con gambas y almejas.",
+                menuItem5: "Mini aliñada César o Mediterráneo.",
+                menuItem6: "Surtido de mini sandwiches.",
+                menuItem7: "Dátil rellenado de foie.",
+                menuItem8: "Brocheta de fruta ecológica de temporada y proximidad.",
+                menuItem9: "Mini tartaleta con crema y frutos rojos.",
+                menuItem10: "Café · Té · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.",
+                menuItem11: "Agua mineral.",
+                menuItem12: "Refrescos variados.",
+                menuItem13: "Vino tinto ecológico Can Suriol DO Penedès.",
+                menuItem14: "Cava Can Suriol ecológico Brut Nature DO Penedès.",
+                footerNote: "En todas las opciones de Aperitivo-Comida se incluye de forma gratuita todo el menaje y cristalería necesaria para realizar el servicio contratado.",
+                btnDownload: "Descargar Aperitivo-Comida",
+                btnContact: "Contactar",
+                dietaryTitle: "Adaptaciones dietéticas",
+                dietVegan: "Vegano",
+                dietGluten: "Sin gluten",
+                dietHalal: "Halal",
+                dietIntolerances: "Intolerancias",
+                slides: [
+                    {
+                        title: "Productos de proximidad y Km0",
+                        desc: "En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones, desde reuniones."
+                    },
+                    {
+                        title: "Compromiso medioambiental",
+                        desc: "Utilizamos envases biodegradables y compostables, minimizando el impacto ambiental en cada uno de nuestros servicios de catering."
+                    }
+                ],
+                footerGastronomy: "Gastronomía",
+                footerCoffee: "Pausa café",
+                footerAppetizers: "Aperitivos y comidas",
+                footerAbout: "Sobre nosotros",
+                footerAboutUs: "Quiénes somos",
+                footerCatering: "Catering",
+                footerGallery: "Galería",
+                footerClients: "Clientes",
+                footerContact: "Contacto"
+            },
+            cat: {
+                pageTitle: "Aperitius i Dinar - BonCor Catering",
+                navCommitment: "El nostre compromís",
+                navServices: "Serveis",
+                navClients: "Clients",
+                navBlog: "Blog",
+                navGallery: "Galeria",
+                navContact: "Contactar",
+                mainTitle: "Aperitius i dinars",
+                menuOptions: [
+                    "Opció gourmet",
+                    "Opció tradicional",
+                    "Opció executive",
+                    "Opció saludable",
+                    "Opció vegetal"
+                ],
+                menuItem1: "Sorb de verdures variades ecològiques o gaspatxo (segons temporada).",
+                menuItem2: "Rullet de salmó fumat amb cebollat i alvocat.",
+                menuItem3: "Broqueta de salmó fumat i formatge fresc.",
+                menuItem4: "Rossejat de fideus amb gambes i cloïsses.",
+                menuItem5: "Mini amanida Cèsar o Mediterrània.",
+                menuItem6: "Surtit de mini sandvitxos.",
+                menuItem7: "Dàtil farcit de foie.",
+                menuItem8: "Broqueta de fruita ecològica de temporada i proximitat.",
+                menuItem9: "Mini tartaleta amb crema i fruits vermells.",
+                menuItem10: "Cafè · Te · Llet · Llet de Soja i infusions ecològiques i de comerç just.",
+                menuItem11: "Aigua mineral.",
+                menuItem12: "Refrescs variats.",
+                menuItem13: "Vi negre ecològic Can Suriol DO Penedès.",
+                menuItem14: "Cava Can Suriol ecològic Brut Nature DO Penedès.",
+                footerNote: "En totes les opcions d'Aperitiu-Dinar s'inclou de manera gratuïta tot el parament i cristalleria necessària per realitzar el servei contractat.",
+                btnDownload: "Descarrega Aperitiu-Dinar",
+                btnContact: "Contactar",
+                dietaryTitle: "Adaptacions dietètiques",
+                dietVegan: "Vegà",
+                dietGluten: "Sense gluten",
+                dietHalal: "Halal",
+                dietIntolerances: "Intoleràncies",
+                slides: [
+                    {
+                        title: "Productes de proximitat i Km0",
+                        desc: "A BonCor Catering, transformem cada esdeveniment en una experiència única i memorable. La nostra oferta inclou esmorzars, berenars, aperitius i dinars per a tot tipus d'ocasions."
+                    },
+                    {
+                        title: "Compromís mediambiental",
+                        desc: "Utilitzem envasos biodegradables i compostables, minimitzant l'impacte ambiental en cadascun dels nostres serveis de càtering."
+                    }
+                ],
+                footerGastronomy: "Gastronomia",
+                footerCoffee: "Pausa cafè",
+                footerAppetizers: "Aperitius i dinars",
+                footerAbout: "Sobre nosaltres",
+                footerAboutUs: "Qui som",
+                footerCatering: "Càtering",
+                footerGallery: "Galeria",
+                footerClients: "Clients",
+                footerContact: "Contacte"
+            },
+            en: {
+                pageTitle: "Appetizers & Lunch - BonCor Catering",
+                navCommitment: "Our commitment",
+                navServices: "Services",
+                navClients: "Clients",
+                navBlog: "Blog",
+                navGallery: "Gallery",
+                navContact: "Contact",
+                mainTitle: "Appetizers and lunches",
+                menuOptions: [
+                    "Gourmet option",
+                    "Traditional option",
+                    "Executive option",
+                    "Healthy option",
+                    "Vegetal option"
+                ],
+                menuItem1: "Organic vegetable shot or gazpacho (seasonal).",
+                menuItem2: "Smoked salmon roll with chives and avocado.",
+                menuItem3: "Smoked salmon and fresh cheese skewer.",
+                menuItem4: "Rossejat noodle paella with prawns and clams.",
+                menuItem5: "Mini Caesar or Mediterranean salad.",
+                menuItem6: "Assorted mini sandwiches.",
+                menuItem7: "Foie-stuffed date.",
+                menuItem8: "Organic seasonal and local fruit skewer.",
+                menuItem9: "Mini tartlet with cream and red berries.",
+                menuItem10: "Coffee · Tea · Milk · Soy milk and fair-trade organic infusions.",
+                menuItem11: "Mineral water.",
+                menuItem12: "Assorted soft drinks.",
+                menuItem13: "Can Suriol DO Penedès organic red wine.",
+                menuItem14: "Can Suriol DO Penedès organic Brut Nature cava.",
+                footerNote: "All Appetizer-Lunch options include all necessary tableware and glassware free of charge for the contracted service.",
+                btnDownload: "Download Appetizer-Lunch",
+                btnContact: "Contact us",
+                dietaryTitle: "Dietary adaptations",
+                dietVegan: "Vegan",
+                dietGluten: "Gluten-free",
+                dietHalal: "Halal",
+                dietIntolerances: "Intolerances",
+                slides: [
+                    {
+                        title: "Local and Km0 products",
+                        desc: "At BonCor Catering, we transform every event into a unique and memorable experience. Our offer includes breakfasts, snacks, appetizers, and lunches for all kinds of occasions."
+                    },
+                    {
+                        title: "Environmental commitment",
+                        desc: "We use biodegradable and compostable packaging, minimizing environmental impact in every catering service."
+                    }
+                ],
+                footerGastronomy: "Gastronomy",
+                footerCoffee: "Coffee break",
+                footerAppetizers: "Appetizers & lunch",
+                footerAbout: "About us",
+                footerAboutUs: "Who we are",
+                footerCatering: "Catering",
+                footerGallery: "Gallery",
+                footerClients: "Clients",
+                footerContact: "Contact"
+            }
+        };
 
+        let currentLang = "es";
+        let currentMenuIdx = 0;
+        let currentSlide = 0;
+
+        // Language Switcher Handler
+        const langSelect = document.getElementById('langSelect');
+        langSelect.addEventListener('change', (e) => {
+            changeLanguage(e.target.value);
+        });
+
+        function changeLanguage(lang) {
+            if (!i18n[lang]) return;
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            // Translate elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (key === 'pageTitle') {
+                    document.title = i18n[lang][key];
+                } else if (i18n[lang][key]) {
+                    el.innerText = i18n[lang][key];
+                }
+            });
+
+            // Update current menu title option
+            const titleElement = document.querySelector('.option-title');
+            if (titleElement) {
+                titleElement.innerText = i18n[lang].menuOptions[currentMenuIdx];
+            }
+
+            // Update active slider text
+            updateSlide();
+        }
+
+        // Side Navigation Menu Switcher
         function switchMenu(index) {
+            currentMenuIdx = index;
             document.getElementById('navIndex').innerText = index + 1;
             const dots = document.querySelectorAll('.dot-nav');
             dots.forEach((dot, i) => {
-                if(i === index) {
+                if (i === index) {
                     dot.classList.add('active');
                 } else {
                     dot.classList.remove('active');
                 }
             });
             const titleElement = document.querySelector('.option-title');
-            if(titleElement) {
-                titleElement.innerText = menuOptions[index].name;
+            if (titleElement) {
+                titleElement.innerText = i18n[currentLang].menuOptions[index];
             }
         }
 
-        // KM0 Slider Data
-        const slides = [
-            {
-                title: "Productos de proximidad i Km0",
-                desc: "En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones, desde reuniones."
-            },
-            {
-                title: "Compromiso medioambiental",
-                desc: "Utilizamos envases biodegradables y compostables, minimizando el impacto ambiental en cada uno de nuestros servicios de catering."
-            }
-        ];
-
-        let currentSlide = 0;
-
+        // KM0 Slider Data & Functions
         function updateSlide() {
-            document.getElementById('sliderTitle').innerText = slides[currentSlide].title;
-            document.getElementById('sliderDesc').innerText = slides[currentSlide].desc;
+            const slideData = i18n[currentLang].slides[currentSlide];
+            document.getElementById('sliderTitle').innerText = slideData.title;
+            document.getElementById('sliderDesc').innerText = slideData.desc;
         }
 
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
+            currentSlide = (currentSlide + 1) % i18n[currentLang].slides.length;
             updateSlide();
         }
 
         function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            currentSlide = (currentSlide - 1 + i18n[currentLang].slides.length) % i18n[currentLang].slides.length;
             updateSlide();
         }
     </script>
