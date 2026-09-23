@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BonCor - Catering en Barcelona con sabor y compromiso</title>
+    <title data-i18n="meta_title">BonCor - Catering en Barcelona con sabor y compromiso</title>
     <!-- FontAwesome para Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -158,7 +158,6 @@
         .hero {
             position: relative;
             min-height: 85vh;
-            /* SE UTILIZA LA IMAGEN 5 DE FONDO DE UNPSLASH POR LA PROPORCIONADA */
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
                         url('/Homepage/5.jpg') center/cover no-repeat;
             display: flex;
@@ -465,12 +464,14 @@
             color: var(--text-dark);
             line-height: 1.6;
             margin-bottom: 15px;
+            transition: opacity 0.3s ease;
         }
 
         .testimonial-author {
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--text-dark);
+            transition: opacity 0.3s ease;
         }
 
         .testimonial-author a {
@@ -670,12 +671,12 @@
 
         <nav class="nav-menu" id="nav-menu">
             <ul class="nav-links">
-                <li><a href="/NuestroCompromiso/index3.html">Nuestro compromiso</a></li>
-                <li><a href="/Servicios/index2.html">Servicios</a></li>
-                <li><a href="/Clientes/index.html">Clientes</a></li>
-                <li><a href="/Blog/index.html">Blog</a></li>
-                <li><a href="/Galería/index.html">Galería</a></li>
-                <li><a href="/Contactar/index.html">Contactar</a></li>
+                <li><a href="/NuestroCompromiso/index3.html" data-i18n="nav_compromise">Nuestro compromiso</a></li>
+                <li><a href="/Servicios/index2.html" data-i18n="nav_services">Servicios</a></li>
+                <li><a href="/Clientes/index.html" data-i18n="nav_clients">Clientes</a></li>
+                <li><a href="/Blog/index.html" data-i18n="nav_blog">Blog</a></li>
+                <li><a href="/Galería/index.html" data-i18n="nav_gallery">Galería</a></li>
+                <li><a href="/Contactar/index.html" data-i18n="nav_contact">Contactar</a></li>
             </ul>
 
             <div class="header-actions">
@@ -684,7 +685,7 @@
                     <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>|</span>
-                <select class="lang-selector">
+                <select class="lang-selector" id="lang-selector">
                     <option value="es">Esp</option>
                     <option value="ca">Cat</option>
                     <option value="en">Eng</option>
@@ -698,9 +699,9 @@
          ========================================== -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Un catering en Barcelona con sabor, compromiso social y medioambiental</h1>
-            <p>Nuestros clientes disfrutan de una variada oferta gastronómica saludable, sostenible y de calidad con un servicio altamente profesional. Más que un servicio de catering en barcelona, nuestra razón de ser es la inclusión, apoyando la inserción laboral de personas en riesgo de exclusión social.</p>
-            <a href="/NuestroCompromiso/index3.html" class="btn btn-outline">Conócenos</a>
+            <h1 data-i18n="hero_title">Un catering en Barcelona con sabor, compromiso social y medioambiental</h1>
+            <p data-i18n="hero_desc">Nuestros clientes disfrutan de una variada oferta gastronómica saludable, sostenible y de calidad con un servicio altamente profesional. Más que un servicio de catering en barcelona, nuestra razón de ser es la inclusión, apoyando la inserción laboral de personas en riesgo de exclusión social.</p>
+            <a href="/NuestroCompromiso/index3.html" class="btn btn-outline" data-i18n="hero_btn">Conócenos</a>
         </div>
     </section>
 
@@ -710,15 +711,15 @@
    <div class="service-tabs-banner">
     <a href="/Homepage/pausa-cafe.html" class="tab-item tab-1">
         <i class="fa-solid fa-mug-hot"></i>
-        <span>Pausa café</span>
+        <span data-i18n="tab_coffee">Pausa café</span>
     </a>
     <a href="/Homepage/aperitivos-comidas.html" class="tab-item tab-2">
         <i class="fa-solid fa-utensils"></i>
-        <span>Aperitivos y Comidas</span>
+        <span data-i18n="tab_appetizers">Aperitivos y Comidas</span>
     </a>
     <a href="/Homepage/food-box.html" class="tab-item tab-3">
         <i class="fa-solid fa-box"></i>
-        <span>Food box</span>
+        <span data-i18n="tab_foodbox">Food box</span>
     </a>
 </div>
 
@@ -729,27 +730,27 @@
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fa-solid fa-leaf"></i>
-                <p>Alimentos frescos de nuestra huerta ecológica</p>
+                <p data-i18n="feat_1">Alimentos frescos de nuestra huerta ecológica</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-handshake"></i>
-                <p>Productos de proximidad y Km 0</p>
+                <p data-i18n="feat_2">Productos de proximidad y Km 0</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-scale-balanced"></i>
-                <p>Comercio Justo</p>
+                <p data-i18n="feat_3">Comercio Justo</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-heart-pulse"></i>
-                <p>Gastronomía saludable, sostenible y de calidad</p>
+                <p data-i18n="feat_4">Gastronomía saludable, sostenible y de calidad</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-recycle"></i>
-                <p>Materiales 100% reciclados y reciclables, eliminación del plástico</p>
+                <p data-i18n="feat_5">Materiales 100% reciclados y reciclables, eliminación del plástico</p>
             </div>
             <div class="feature-card">
                 <i class="fa-solid fa-seedling"></i>
-                <p>Generación de abono de los restos orgánicos</p>
+                <p data-i18n="feat_6">Generación de abono de los restos orgánicos</p>
             </div>
         </div>
     </section>
@@ -759,15 +760,13 @@
          ========================================== -->
     <section class="about-section" id="nosotros">
         <div class="about-content">
-            <h2>Transformamos eventos en experiencias gastronómicas sostenibles</h2>
-            <p>Nos especializamos en crear experiencias gastronómicas únicas, sostenibles y artesanales, cuidadosamente elaboradas con esmero en nuestros obradores. Trabajamos con productos frescos, de proximidad y ecológicos, asegurando que cada plato no solo sea delicioso, sino también responsable con el medioambiente. Adaptamos cada celebración a las ideas y visiones de nuestros clientes, asegurando una experiencia personalizada y memorable.</p>
+            <h2 data-i18n="about_title">Transformamos eventos en experiencias gastronómicas sostenibles</h2>
+            <p data-i18n="about_desc">Nos especializamos en crear experiencias gastronómicas únicas, sostenibles y artesanales, cuidadosamente elaboradas con esmero en nuestros obradores. Trabajamos con productos frescos, de proximidad y ecológicos, asegurando que cada plato no solo sea delicioso, sino también responsable con el medioambiente. Adaptamos cada celebración a las ideas y visiones de nuestros clientes, asegurando una experiencia personalizada y memorable.</p>
             <div class="about-buttons">
-                <a href="/Contactar/index.html" class="btn btn-primary">Contáctanos</a>
+                <a href="/Contactar/index.html" class="btn btn-primary" data-i18n="about_btn">Contáctanos</a>
             </div>
         </div>
         <div class="about-image">
-    <!-- SE UTILIZA LA IMAGEN 1 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
-    <!-- Se han añadido atributos width y height con valores de ejemplo. Ajusta según tus necesidades. -->
             <img src="/Homepage/2m.png" alt="Catering BonCor Preparación" width="400" height="400">
         </div>
     </section>
@@ -780,45 +779,42 @@
             
             <!-- Tarjeta 1 -->
             <div class="service-card">
-                <div class="card-header bg-1">Pausa café</div>
+                <div class="card-header bg-1" data-i18n="card1_title">Pausa café</div>
                 <div class="card-img-wrapper">
-                    <!-- SE UTILIZA LA IMAGEN 3 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
                     <img src="/Homepage/4.jpg" alt="Pausa café">
-                    <a href="/Homepage/pausa-cafe.html" class="btn-overlay" style="color: var(--white); text-decoration: none; display: inline-block; z-index: 5;">
+                    <a href="/Homepage/pausa-cafe.html" class="btn-overlay" style="color: var(--white); text-decoration: none; display: inline-block; z-index: 5;" data-i18n="see_more">
                     Ver más
                     </a>
                 </div>
-                <div class="card-body">
+                <div class="card-body" data-i18n="card1_body">
                     Personalizamos la pausa café perfecta para su evento, desde un sencillo desayuno de bienvenida hasta opciones completas para jornadas extendidas.
                 </div>
             </div>
 
             <!-- Tarjeta 2 -->
             <div class="service-card">
-                <div class="card-header bg-2">Aperitivos y comidas</div>
+                <div class="card-header bg-2" data-i18n="card2_title">Aperitivos y comidas</div>
                 <div class="card-img-wrapper">
-                    <!-- SE UTILIZA LA IMAGEN 6 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
                     <img src="/Homepage/6.jpg" alt="Aperitivos y comidas">
-                    <a href="/Homepage/aperitivos-comidas.html" class="btn-overlay" style="color: var(--white); text-decoration: none;">
+                    <a href="/Homepage/aperitivos-comidas.html" class="btn-overlay" style="color: var(--white); text-decoration: none;" data-i18n="see_more">
                     Ver más
                 </a>
                 </div>
-                <div class="card-body">
+                <div class="card-body" data-i18n="card2_body">
                     Ofrecemos un servicio personalizado adaptado a las necesidades de cada cliente, desde Finger Food o un Cóctel, hasta una comida completa, bien sea sentados a la mesa o de pie.
                 </div>
             </div>
 
             <!-- Tarjeta 3 -->
             <div class="service-card">
-                <div class="card-header bg-3">Food box</div>
+                <div class="card-header bg-3" data-i18n="card3_title">Food box</div>
                 <div class="card-img-wrapper">
-                    <!-- SE UTILIZA LA IMAGEN 2 DE FONDO DE UNPSLASH POR LA PROPORCIONADA -->
                     <img src="/Homepage/3.jpg" alt="Food box">
-                    <a href="/Homepage/food-box.html" class="btn-overlay" style="color: var(--white); text-decoration: none;">
+                    <a href="/Homepage/food-box.html" class="btn-overlay" style="color: var(--white); text-decoration: none;" data-i18n="see_more">
                     Ver más
                 </a>
                 </div>
-                <div class="card-body">
+                <div class="card-body" data-i18n="card3_body">
                     Ideal para desayunos, almuerzos o meriendas, especialmente diseñados para la comodidad de los asistentes, presentados con materiales 100% reciclados y reciclables.
                 </div>
             </div>
@@ -830,7 +826,7 @@
          BANNER CORPORATIVO / COMPROMISO
          ========================================== -->
     <section class="corporate-banner" id="compromiso">
-        <p>En catering social BonCor, personalizamos nuestros servicios para adaptarnos a cualquier tipo de evento. Ofrecemos una amplia gama de opciones culinarias, incluyendo menús veganos, sin gluten, halal, y adaptaciones para intolerancias. Apostamos por la proximidad y Km0, comprando a productores locales y utilizando alimentos frescos, ecológicos y de comercio justo. Catering BonCor, el catering en barcelona que ofrece experiencias gastronómicas con una essence sostenible y de compromiso social.</p>
+        <p data-i18n="corporate_text">En catering social BonCor, personalizamos nuestros servicios para adaptarnos a cualquier tipo de evento. Ofrecemos una amplia gama de opciones culinarias, incluyendo menús veganos, sin gluten, halal, y adaptaciones para intolerancias. Apostamos por la proximidad y Km0, comprando a productores locales y utilizando alimentos frescos, ecológicos y de comercio justo. Catering BonCor, el catering en barcelona que ofrece experiencias gastronómicas con una essence sostenible y de compromiso social.</p>
     </section>
 
     <!-- ==========================================
@@ -842,8 +838,8 @@
                 <i class="fa-solid fa-quote-left"></i>
             </div>
             <div class="testimonial-content">
-                <p>"Hace años que Catering BonCor trabaja con nosotros y siempre han respondido con un alto grado de profesionalidad y con productos de calidad. Queríamos una empresa de catering que ofreciera producto ecológico y que fuera de carácter social y sostenible para que nuestra institución colaborara a ayudar a las personas que más lo necesitan."</p>
-                <div class="testimonial-author">
+                <p id="testimonial-quote">"Hace años que Catering BonCor trabaja con nosotros y siempre han respondido con un alto grado de profesionalidad y con productos de calidad..."</p>
+                <div class="testimonial-author" id="testimonial-author">
                     Francisco Santamaria - Responsable Financiero APD Cataluña <a href="https://www.apd.es" target="_blank">www.apd.es</a>
                 </div>
             </div>
@@ -859,7 +855,7 @@
          ========================================== -->
     <section class="partners-section">
     <div class="partners-container">
-        <h3 class="partners-title">Colaboradores</h3>
+        <h3 class="partners-title" data-i18n="partners_title">Colaboradores</h3>
         <img src="/Homepage/7.png" alt="Barcelona Sostenible" class="partner-logo" style="height: 80px; width: auto;">
         <img src="/Homepage/8.png" alt="acede" class="partner-logo" style="height: 80px; width: auto;">
         <img src="/Homepage/9.png" alt="COOF CT" class="partner-logo" style="height: 80px; width: auto;">
@@ -886,30 +882,30 @@
                     <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto.</p>
+                <p data-i18n="footer_social_text">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto.</p>
             </div>
 
             <div class="footer-col">
-                <h4>Servicios</h4>
+                <h4 data-i18n="nav_services">Servicios</h4>
                 <ul>
-                    <li><a href="/Homepage/pausa-cafe.html">Pausa café</a></li>
-                    <li><a href="/Homepage/aperitivos-comidas.html">Aperitivos y comidas</a></li>
-                    <li><a href="/Homepage/food-box.html">Food box</a></li>
+                    <li><a href="/Homepage/pausa-cafe.html" data-i18n="tab_coffee">Pausa café</a></li>
+                    <li><a href="/Homepage/aperitivos-comidas.html" data-i18n="tab_appetizers">Aperitivos y comidas</a></li>
+                    <li><a href="/Homepage/food-box.html" data-i18n="tab_foodbox">Food box</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Sobre nosotros</h4>
+                <h4 data-i18n="footer_about_us">Sobre nosotros</h4>
                 <ul>
-                    <li><a href="/NuestroCompromiso/index3.html">Nuestro compromiso</a></li>
-                    <li><a href="/Galería/index.html">Galería</a></li>
-                    <li><a href="/Clientes/index.html">Clientes</a></li>
-                    <li><a href="/Blog/index.html">Blog</a></li>
+                    <li><a href="/NuestroCompromiso/index3.html" data-i18n="nav_compromise">Nuestro compromiso</a></li>
+                    <li><a href="/Galería/index.html" data-i18n="nav_gallery">Galería</a></li>
+                    <li><a href="/Clientes/index.html" data-i18n="nav_clients">Clientes</a></li>
+                    <li><a href="/Blog/index.html" data-i18n="nav_blog">Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-contact">
-                <h4>Contacto</h4>
+                <h4 data-i18n="footer_contact_title">Contacto</h4>
                 <p>C / Font Honrada 2-4,</p>
                 <p>08004 Barcelona, España</p>
                 <p>+34 680 429 120</p>
@@ -922,7 +918,152 @@
          JAVASCRIPT NATIVO (VANILLA JS)
          ========================================== -->
     <script>
+        // Diccionario con todas las traducciones
+        const translations = {
+            es: {
+                meta_title: "BonCor - Catering en Barcelona con sabor y compromiso",
+                nav_compromise: "Nuestro compromiso",
+                nav_services: "Servicios",
+                nav_clients: "Clientes",
+                nav_blog: "Blog",
+                nav_gallery: "Galería",
+                nav_contact: "Contactar",
+                hero_title: "Un catering en Barcelona con sabor, compromiso social y medioambiental",
+                hero_desc: "Nuestros clientes disfrutan de una variada oferta gastronómica saludable, sostenible y de calidad con un servicio altamente profesional. Más que un servicio de catering en barcelona, nuestra razón de ser es la inclusión, apoyando la inserción laboral de personas en riesgo de exclusión social.",
+                hero_btn: "Conócenos",
+                tab_coffee: "Pausa café",
+                tab_appetizers: "Aperitivos y Comidas",
+                tab_foodbox: "Food box",
+                feat_1: "Alimentos frescos de nuestra huerta ecológica",
+                feat_2: "Productos de proximidad y Km 0",
+                feat_3: "Comercio Justo",
+                feat_4: "Gastronomía saludable, sostenible y de calidad",
+                feat_5: "Materiales 100% reciclados y reciclables, eliminación del plástico",
+                feat_6: "Generación de abono de los restos orgánicos",
+                about_title: "Transformamos eventos en experiencias gastronómicas sostenibles",
+                about_desc: "Nos especializamos en crear experiencias gastronómicas únicas, sostenibles y artesanales, cuidadosamente elaboradas con esmero en nuestros obradores. Trabajamos con productos frescos, de proximidad y ecológicos, asegurando que cada plato no solo sea delicioso, sino también responsable con el medioambiente. Adaptamos cada celebración a las ideas y visiones de nuestros clientes, asegurando una experiencia personalizada y memorable.",
+                about_btn: "Contáctanos",
+                card1_title: "Pausa café",
+                card1_body: "Personalizamos la pausa café perfecta para su evento, desde un sencillo desayuno de bienvenida hasta opciones completas para jornadas extendidas.",
+                card2_title: "Aperitivos y comidas",
+                card2_body: "Ofrecemos un servicio personalizado adaptado a las necesidades de cada cliente, desde Finger Food o un Cóctel, hasta una comida completa, bien sea sentados a la mesa o de pie.",
+                card3_title: "Food box",
+                card3_body: "Ideal para desayunos, almuerzos o meriendas, especialmente diseñados para la comodidad de los asistentes, presentados con materiales 100% reciclados y reciclables.",
+                see_more: "Ver más",
+                corporate_text: "En catering social BonCor, personalizamos nuestros servicios para adaptarnos a cualquier tipo de evento. Ofrecemos una amplia gama de opciones culinarias, incluyendo menús veganos, sin gluten, halal, y adaptaciones para intolerancias. Apostamos por la proximidad y Km0, comprando a productores locales y utilizando alimentos frescos, ecológicos y de comercio justo. Catering BonCor, el catering en barcelona que ofrece experiencias gastronómicas con una essence sostenible y de compromiso social.",
+                partners_title: "Colaboradores",
+                footer_social_text: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto.",
+                footer_about_us: "Sobre nosotros",
+                footer_contact_title: "Contacto",
+                testimonials: [
+                    {
+                        quote: '"Hace años que Catering BonCor trabaja con nosotros y siempre han respondido con un alto grado de profesionalidad y con productos de calidad. Queríamos una empresa de catering que ofreciera producto ecológico y que fuera de carácter social y sostenible para que nuestra institución colaborara a ayudar a las personas que más lo necesitan."',
+                        author: 'Francisco Santamaria - Responsable Financiero APD Cataluña <a href="https://www.apd.es" target="_blank">www.apd.es</a>'
+                    },
+                    {
+                        quote: '"Excelente servicio de catering para eventos corporativos. El compromiso con la sostenibilidad y la calidad de los ingredientes marcaron la diferencia en nuestra convención anual en Barcelona."',
+                        author: 'Maria Pujol - Directora de Eventos'
+                    }
+                ]
+            },
+            ca: {
+                meta_title: "BonCor - Catering a Barcelona amb gust i compromís",
+                nav_compromise: "El nostre compromís",
+                nav_services: "Serveis",
+                nav_clients: "Clients",
+                nav_blog: "Blog",
+                nav_gallery: "Galeria",
+                nav_contact: "Contactar",
+                hero_title: "Un càtering a Barcelona amb gust, compromís social i mediambiental",
+                hero_desc: "Els nostres clients gaudeixen d'una oferta gastronòmica variada, saludable, sostenible i de qualitat amb un servei altament professional. Més que un servei de càtering a Barcelona, la nostra raó de ser és la inclusió, donant suport a la inserció laboral de persones en risc d'exclusió social.",
+                hero_btn: "Coneix-nos",
+                tab_coffee: "Pausa cafè",
+                tab_appetizers: "Aperitius i Àpats",
+                tab_foodbox: "Food box",
+                feat_1: "Aliments frescos del nostre horta ecològica",
+                feat_2: "Productes de proximitat i Km 0",
+                feat_3: "Comerç Just",
+                feat_4: "Gastronomia saludable, sostenible i de qualitat",
+                feat_5: "Materials 100% reciclats i reciclables, eliminació del plàstic",
+                feat_6: "Generació de compost de les restes orgàniques",
+                about_title: "Transformem esdeveniments en experiències gastronòmiques sostenibles",
+                about_desc: "Ens especialitzem a crear experiències gastronòmiques úniques, sostenibles i artesanals, curosament elaborades als nostres obradors. Treballem amb productes frescos, de proximitat i ecològics, assegurant que cada plat no només sigui deliciós, sinó també responsable amb el medi ambient. Adaptem cada celebració a les idees i visions dels nostres clients.",
+                about_btn: "Contacta'ns",
+                card1_title: "Pausa cafè",
+                card1_body: "Personalitzem la pausa cafè perfecta per al seu esdeveniment, des d'un senzill esmorzar de benvinguda fins a opcions completes per a jornades mantingudes.",
+                card2_title: "Aperitius i àpats",
+                card2_body: "Oferim un servei personalitzat adaptat a les necessitats de cada client, des de Finger Food o un Còctel, fins a un àpat complet, sigui asseguts a la taula o drecera.",
+                card3_title: "Food box",
+                card3_body: "Ideal per a esmorzars, dinars o berenars, especialment dissenyats per a la comoditat dels assistents, presentats amb materials 100% reciclats i reciclables.",
+                see_more: "Veure més",
+                corporate_text: "En càtering social BonCor, personalitzem els nostres serveis per adaptar-nos a qualsevol tipus d'esdeveniment. Oferim una àmplia gamma d'opcions culinàries, incloent menús vegans, sense gluten, halal i adaptacions per a intoleràncies. Apostem per la proximitat i Km0, comprant a productors locals i utilitzant aliments frescos, ecològics i de comerç just.",
+                partners_title: "Col·laboradors",
+                footer_social_text: "Lorem Ipsum és simplement el text de reomplert de les impremtes i arxius de text.",
+                footer_about_us: "Sobre nosaltres",
+                footer_contact_title: "Contacte",
+                testimonials: [
+                    {
+                        quote: '"Fa anys que Catering BonCor treballa amb nosaltres i sempre han respost amb un alt grau de professionalitat i amb productes de qualitat. Volíem una empresa de càtering que oferís producte ecològic i que fos de caràcter social i sostenible..."',
+                        author: 'Francisco Santamaria - Responsable Financer APD Catalunya <a href="https://www.apd.es" target="_blank">www.apd.es</a>'
+                    },
+                    {
+                        quote: '"Excel·lent servei de càtering per a esdeveniments corporatius. El compromís amb la sostenibilitat i la qualitat dels ingredients van marcar la diferència en la nostra convenció anual a Barcelona."',
+                        author: 'Maria Pujol - Directora d\'Esdeveniments'
+                    }
+                ]
+            },
+            en: {
+                meta_title: "BonCor - Catering in Barcelona with flavor and commitment",
+                nav_compromise: "Our commitment",
+                nav_services: "Services",
+                nav_clients: "Clients",
+                nav_blog: "Blog",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                hero_title: "Catering in Barcelona with flavor, social and environmental commitment",
+                hero_desc: "Our clients enjoy a varied, healthy, sustainable, and high-quality gastronomic offer with highly professional service. More than just a catering service in Barcelona, our mission is social inclusion, supporting the employment of people at risk of social exclusion.",
+                hero_btn: "Get to know us",
+                tab_coffee: "Coffee break",
+                tab_appetizers: "Appetizers & Meals",
+                tab_foodbox: "Food box",
+                feat_1: "Fresh food from our organic garden",
+                feat_2: "Local and Km 0 products",
+                feat_3: "Fair Trade",
+                feat_4: "Healthy, sustainable, and quality gastronomy",
+                feat_5: "100% recycled and recyclable materials, plastic-free",
+                feat_6: "Compost generation from organic waste",
+                about_title: "We transform events into sustainable gastronomic experiences",
+                about_desc: "We specialize in creating unique, sustainable, and handcrafted gastronomic experiences, carefully prepared in our kitchens. We work with fresh, local, and organic products, ensuring every dish is not only delicious but also environmentally responsible.",
+                about_btn: "Contact us",
+                card1_title: "Coffee break",
+                card1_body: "We customize the perfect coffee break for your event, from a simple welcome breakfast to full options for full-day sessions.",
+                card2_title: "Appetizers and meals",
+                card2_body: "We offer tailored service adapted to each client's needs, from Finger Food or Cocktails to a full seated or standing meal.",
+                card3_title: "Food box",
+                card3_body: "Ideal for breakfasts, lunches, or snacks, specially designed for guest convenience and presented in 100% recycled and recyclable packaging.",
+                see_more: "See more",
+                corporate_text: "At BonCor social catering, we customize our services for any type of event. We offer vegan, gluten-free, halal menus, and allergy adaptations. We prioritize local Km0 suppliers and organic fair-trade ingredients.",
+                partners_title: "Partners",
+                footer_social_text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                footer_about_us: "About us",
+                footer_contact_title: "Contact",
+                testimonials: [
+                    {
+                        quote: '"Catering BonCor has worked with us for years and has always responded with high professionalism and quality products. We wanted a catering company that offered organic products with a social and sustainable focus..."',
+                        author: 'Francisco Santamaria - Financial Manager APD Catalonia <a href="https://www.apd.es" target="_blank">www.apd.es</a>'
+                    },
+                    {
+                        quote: '"Excellent catering service for corporate events. The commitment to sustainability and ingredient quality made the difference in our annual convention in Barcelona."',
+                        author: 'Maria Pujol - Event Director'
+                    }
+                ]
+            }
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
+            let currentLang = 'es';
+            let currentIndex = 0;
+
             // 1. Menú Hamburguesa para Móviles
             const mobileToggle = document.getElementById('mobile-toggle');
             const navMenu = document.getElementById('nav-menu');
@@ -944,33 +1085,52 @@
                 }
             });
 
-            // 3. Simulación de Navegación de Testimonios
+            // 3. Sistema de Traducciones e Idiomas
+            const langSelect = document.getElementById('lang-selector');
+
+            function changeLanguage(lang) {
+                if (!translations[lang]) return;
+                currentLang = lang;
+                document.documentElement.lang = lang;
+
+                // Actualizar textos HTML estáticos
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        if (key === 'meta_title') {
+                            document.title = translations[lang][key];
+                        } else {
+                            el.textContent = translations[lang][key];
+                        }
+                    }
+                });
+
+                // Actualizar testimonio actual al cambiar idioma
+                updateTestimonial(currentIndex);
+            }
+
+            if (langSelect) {
+                langSelect.addEventListener('change', (e) => {
+                    changeLanguage(e.target.value);
+                });
+            }
+
+            // 4. Navegación de Testimonios
             const prevBtn = document.getElementById('prev-testimonial');
             const nextBtn = document.getElementById('next-testimonial');
-            
-            const testimonials = [
-                {
-                    quote: '"Hace años que Catering BonCor trabaja con nosotros y siempre han respondido con un alto grado de profesionalidad y con productos de calidad. Queríamos una empresa de catering que ofreciera producto ecológico y que fuera de carácter social y sostenible..."',
-                    author: 'Francisco Santamaria - Responsable Financiero APD Cataluña'
-                },
-                {
-                    quote: '"Excelente servicio de catering para eventos corporativos. El compromiso con la sostenibilidad y la calidad de los ingredientes marcaron la diferencia en nuestra convención anual en Barcelona."',
-                    author: 'Maria Pujol - Directora de Eventos'
-                }
-            ];
-
-            let currentIndex = 0;
+            const quoteEl = document.getElementById('testimonial-quote');
+            const authorEl = document.getElementById('testimonial-author');
 
             function updateTestimonial(index) {
-                const quoteEl = document.querySelector('.testimonial-content p');
-                const authorEl = document.querySelector('.testimonial-author');
-                
+                const list = translations[currentLang].testimonials;
+                if (!list || !list[index]) return;
+
                 quoteEl.style.opacity = 0;
                 authorEl.style.opacity = 0;
                 
                 setTimeout(() => {
-                    quoteEl.textContent = testimonials[index].quote;
-                    authorEl.textContent = testimonials[index].author;
+                    quoteEl.textContent = list[index].quote;
+                    authorEl.innerHTML = list[index].author;
                     quoteEl.style.opacity = 1;
                     authorEl.style.opacity = 1;
                 }, 300);
@@ -978,12 +1138,14 @@
 
             if (prevBtn && nextBtn) {
                 prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                    const list = translations[currentLang].testimonials;
+                    currentIndex = (currentIndex - 1 + list.length) % list.length;
                     updateTestimonial(currentIndex);
                 });
 
                 nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % testimonials.length;
+                    const list = translations[currentLang].testimonials;
+                    currentIndex = (currentIndex + 1) % list.length;
                     updateTestimonial(currentIndex);
                 });
             }
