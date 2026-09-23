@@ -1,11 +1,630 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería</title>
+    <title>Galería - BonCor | Catering Social y Sostenible</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#589b52',
+                            greenDark: '#478142',
+                            greenLight: '#73b36d',
+                            olive: '#7fa043',
+                            bgGray: '#fcfdfc',
+                            textDark: '#333333',
+                            footerGreen: '#599E53'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            background-color: #ffffff;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        
+        /* Lightbox overlay styling */
+        #lightbox {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #lightbox.hidden-lightbox {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+        }
+        #lightbox.visible-lightbox {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+        }
+    </style>
 </head>
-<body>
-    <h1>En desarrollo...</h1>
+<body class="min-h-screen flex flex-col justify-between antialiased bg-white selection:bg-brand-green selection:text-white">
+
+<!-- HEADER -->
+<header class="bg-white sticky top-0 z-40 border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="/Homepage/index.html" class="flex items-center gap-2 group">
+            <img src="/Servicios/Logo2.png" alt="BonCor Logo" class="h-12 w-auto object-contain block" />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-700">
+            <a href="/Nuestrocompromiso/index3.html" class="hover:text-brand-green transition-colors">Nuestro compromiso</a>
+            <a href="/Servicios/index.html" class="hover:text-brand-green transition-colors">Servicios</a>
+            <a href="/Clientes/index.html" class="hover:text-brand-green transition-colors">Clientes</a>
+            <a href="/Blog/index.html" class="hover:text-brand-green transition-colors">Blog</a>
+            <a href="/Galería/index.html" class="text-brand-green border-b-2 border-[#7fa043] pb-1 font-semibold">Galería</a>
+            <a href="/Contacto/index.html" class="hover:text-brand-green transition-colors">Contactar</a>
+        </nav>
+
+        <!-- Social Links & Language Switcher -->
+        <div class="hidden sm:flex items-center space-x-4 text-xs font-medium text-gray-600">
+            <div class="flex items-center space-x-3 text-gray-600 pr-3 border-r border-gray-200">
+                <a href="https://www.instagram.com" class="hover:text-brand-green transition-colors text-base" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" class="hover:text-brand-green transition-colors text-base" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="flex items-center space-x-1 cursor-pointer">
+                <span class="font-bold text-brand-green">Esp</span>
+                <i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
+            </div>
+            <span class="text-gray-300">|</span>
+            <a href="#" class="hover:text-brand-green transition-colors">Cat</a>
+        </div>
+    </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-brand-green focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="/Nuestrocompromiso/index3.html" class="block py-2 text-gray-700 font-medium">Nuestro compromiso</a>
+            <a href="/Servicios/index.html" class="block py-2 text-gray-700 font-medium">Servicios</a>
+            <a href="/Clientes/index.html" class="block py-2 text-gray-700 font-medium">Clientes</a>
+            <a href="/Blog/index.html" class="block py-2 text-gray-700 font-medium">Blog</a>
+            <a href="/Galeria/index.html" class="block py-2 text-brand-green font-semibold">Galería</a>
+            <a href="/Contacto/index.html" class="block py-2 text-gray-700 font-medium">Contactar</a>
+            <div class="flex items-center gap-4 pt-3 border-t border-gray-100">
+                <a href="https://www.instagram.com" class="text-gray-600 text-lg"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" class="text-gray-600 text-lg"><i class="fa-brands fa-linkedin-in"></i></a>
+                <span class="text-xs font-semibold text-brand-green ml-auto">Esp / Cat</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative w-full h-[280px] sm:h-[360px] md:h-[420px] bg-stone-900 overflow-hidden flex items-end">
+        <!-- Hero Background Banner -->
+        <div class="absolute inset-0 z-0">
+            <img src="/Galería/Portada.jpg"
+                 alt="Galería BonCor Catering" 
+                 class="w-full h-full object-cover object-center filter brightness-75 contrast-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10"></div>
+        </div>
+
+        <!-- Hero Content Title -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 w-full pb-8 sm:pb-12">
+            <h1 class="serif-title text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight drop-shadow-md">
+                Galería
+            </h1>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        
+        <!-- Intro Paragraph -->
+        <div class="max-w-3xl mb-12">
+            <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-normal">
+                Explora nuestra galería y déjate inspirar por las infinitas posibilidades que ofrecemos para hacer de tu próximo evento una experiencia inolvidable. En Catering BonCor, estamos aquí para convertir tus sueños gastronómicos en realidad.
+            </p>
+        </div>
+
+        <!-- Gallery Grid (4 Items Per Row on Large Screens) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8" id="gallery-grid">
+
+            <!-- Item 1 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo - Banco Mediolanum" data-img="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/1.jpg" alt="Aperitivo - Banco Mediolanum" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo - Banco Mediolanum</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo - Museo Egipcio" data-img="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/2.jpg" alt="Aperitivo - Museo Egipcio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo - Museo Egipcio</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo - Palacio Real" data-img="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/3.jpg" alt="Aperitivo - Palacio Real" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo - Palacio Real</p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo - Patio de los Naranjos Generalidad de Cataluña" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/4.jpg" alt="Aperitivo - Patio de los Naranjos Generalidad de Cataluña" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo - Patio de los Naranjos Generalidad de Cataluña</p>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo - Universidad de Barcelona" data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/5.jpg" alt="Aperitivo - Universidad de Barcelona" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo - Universidad de Barcelona</p>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo self-service planaras Generalitat - Palacio de la Generalidad de Cataluña" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/6.jpg" alt="Aperitivo self-service planaras Generalitat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo self-service planaras Generalitat - Palacio de la Generalidad de Cataluña</p>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo Sony - Edificio Alta Diagonal, Barcelona" data-img="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/7.jpg" alt="Aperitivo Sony - Edificio Alta Diagonal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo Sony - Edificio Alta Diagonal, Barcelona</p>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="group cursor-pointer gallery-item" data-title="Aperitivo y Comida de dirección - Palau Macaya" data-img="https://images.unsplash.com/photo-1529543544282-ea669407fca3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/8.jpg" alt="Aperitivo y Comida de dirección - Palau Macaya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Aperitivo y Comida de dirección - Palau Macaya</p>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="group cursor-pointer gallery-item" data-title="Boda de Carlos y Marta - Can Pareres, Parque Natural del Montseny" data-img="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/9.jpg" alt="Boda de Carlos y Marta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Boda de Carlos y Marta - Can Pareres, Parque Natural del Montseny</p>
+            </div>
+
+            <!-- Item 10 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena Conferencia Nacional Izquierda Republicana de Cataluña - En la Farga de L'Hospitalet de Llobregat" data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/10.jpg" alt="Cena Conferencia Nacional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena Conferencia Nacional Izquierda Republicana de Cataluña - En la Farga de L'Hospitalet de Llobregat</p>
+            </div>
+
+            <!-- Item 11 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena de gala - Museo Marítimo de Barcelona" data-img="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/11.jpg" alt="Cena de gala - Museo Marítimo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena de gala - Museo Marítimo de Barcelona</p>
+            </div>
+
+            <!-- Item 12 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena de Gala de la conferencia internacional por el clima - Edificio del reloj diputación de Barcelona" data-img="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/12.jpg" alt="Cena de Gala Conferencia Clima" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena de Gala de la conferencia internacional por el clima - Edificio del reloj diputación de Barcelona</p>
+            </div>
+
+            <!-- Item 13 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena de gala Shipsb - Impact Forum - Museo Marítimo de Barcelona" data-img="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/13.jpg" alt="Cena de gala Shipsb" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena de gala Shipsb - Impact Forum - Museo Marítimo de Barcelona</p>
+            </div>
+
+            <!-- Item 14 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena de los izquierdas - Club deportivo INEF Barcelona" data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/14.jpg" alt="Cena de los izquierdas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena de los izquierdas - Club deportivo INEF Barcelona</p>
+            </div>
+
+            <!-- Item 15 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena día internacional de la mujer - Ayuntamiento de Sant Joan Despí" data-img="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/15.jpg" alt="Cena día internacional de la mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena día internacional de la mujer - Ayuntamiento de Sant Joan Despí</p>
+            </div>
+
+            <!-- Item 16 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena entrega de premios - Club Natación Sant Andreu" data-img="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/16.jpg" alt="Cena entrega de premios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena entrega de premios - Club Natación Sant Andreu</p>
+            </div>
+
+            <!-- Item 17 -->
+            <div class="group cursor-pointer gallery-item" data-title="Cena por la gran - 750 personas - Ayuntamiento de Viladecans" data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/17.jpg" alt="Cena por la gran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Cena por la gran - 750 personas - Ayuntamiento de Viladecans</p>
+            </div>
+
+            <!-- Item 18 -->
+            <div class="group cursor-pointer gallery-item" data-title="Coctel - Ayuntamiento de Gavà" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/18.jpg" alt="Coctel - Ayuntamiento de Gavà" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Coctel - Ayuntamiento de Gavà</p>
+            </div>
+
+            <!-- Item 19 -->
+            <div class="group cursor-pointer gallery-item" data-title="Coctel - El Born de Barcelona" data-img="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/19.jpg" alt="Coctel - El Born" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Coctel - El Born de Barcelona</p>
+            </div>
+
+            <!-- Item 20 -->
+            <div class="group cursor-pointer gallery-item" data-title="Coctel producción - Universidad de Barcelona" data-img="https://images.unsplash.com/photo-1529543544282-ea669407fca3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/20.jpg" alt="Coctel producción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Coctel producción - Universidad de Barcelona</p>
+            </div>
+
+            <!-- Item 21 -->
+            <div class="group cursor-pointer gallery-item" data-title="Comida de dirección - Palau Macaya" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/21.jpg" alt="Comida de dirección" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Comida de dirección - Palau Macaya</p>
+            </div>
+
+            <!-- Item 22 -->
+            <div class="group cursor-pointer gallery-item" data-title="Comida de prensa" data-img="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/22.jpg" alt="Comida de prensa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Comida de prensa</p>
+            </div>
+
+            <!-- Item 23 -->
+            <div class="group cursor-pointer gallery-item" data-title="Comida para los ancianos - 1900 personas - Ayuntamiento de Cornellà" data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/23.jpg" alt="Comida para los ancianos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Comida para los ancianos - 1900 personas - Ayuntamiento de Cornellà</p>
+            </div>
+
+            <!-- Item 24 -->
+            <div class="group cursor-pointer gallery-item" data-title="Comida Torneo internacional de waterpolo - Piscinas de Montjuïc" data-img="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/24.jpg" alt="Comida Torneo internacional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Comida Torneo internacional de waterpolo - Piscinas de Montjuïc</p>
+            </div>
+
+            <!-- Item 25 -->
+            <div class="group cursor-pointer gallery-item" data-title="Congreso Inspectores educativos de Cataluña - Convento de Santa Clara de Manresa" data-img="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/25.jpg" alt="Congreso Inspectores educativos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Congreso Inspectores educativos de Cataluña - Convento de Santa Clara de Manresa</p>
+            </div>
+
+            <!-- Item 26 -->
+            <div class="group cursor-pointer gallery-item" data-title="Congreso internacional San Juan de Dios - Fira de Barcelona" data-img="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/26.jpg" alt="Congreso internacional San Juan de Dios" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Congreso internacional San Juan de Dios - Fira de Barcelona</p>
+            </div>
+
+            <!-- Item 27 -->
+            <div class="group cursor-pointer gallery-item" data-title="Desayuno de trabajo" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/27.jpg" alt="Desayuno de trabajo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Desayuno de trabajo</p>
+            </div>
+
+            <!-- Item 28 -->
+            <div class="group cursor-pointer gallery-item" data-title="Desayuno self-service - Palau Macaya" data-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/28.jpg" alt="Desayuno self-service" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Desayuno self-service - Palau Macaya</p>
+            </div>
+
+            <!-- Item 29 -->
+            <div class="group cursor-pointer gallery-item" data-title="Fiesta de cumpleaños particular" data-img="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/29.jpg" alt="Fiesta de cumpleaños particular" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Fiesta de cumpleaños particular</p>
+            </div>
+
+            <!-- Item 30 -->
+            <div class="group cursor-pointer gallery-item" data-title="Fiesta de Navidad para los ancianos - Ayuntamiento de Barcelona" data-img="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/30.jpg" alt="Fiesta de Navidad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Fiesta de Navidad para los ancianos - Ayuntamiento de Barcelona</p>
+            </div>
+
+            <!-- Item 31 -->
+            <div class="group cursor-pointer gallery-item" data-title="Merienda popular - 800 personas - Ayuntamiento Sant Cugat" data-img="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/31.jpg" alt="Merienda popular" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Merienda popular - 800 personas - Ayuntamiento Sant Cugat</p>
+            </div>
+
+            <!-- Item 32 -->
+            <div class="group cursor-pointer gallery-item" data-title="Merienda Popular para la gente mayor de Gavà - Ayuntamiento de Gavà 3" data-img="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/32.jpg" alt="Merienda Popular gente mayor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Merienda Popular para la gente mayor de Gavà - Ayuntamiento de Gavà 3</p>
+            </div>
+
+            <!-- Item 33 -->
+            <div class="group cursor-pointer gallery-item" data-title="Pausa Café - Sala modernista Endesa" data-img="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/33.jpg" alt="Pausa Café - Sala modernista Endesa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Pausa Café - Sala modernista Endesa</p>
+            </div>
+
+            <!-- Item 34 -->
+            <div class="group cursor-pointer gallery-item" data-title="Pausa Café - Universidad de Barcelona" data-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/34.jpg" alt="Pausa Café - Universidad de Barcelona" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Pausa Café - Universidad de Barcelona</p>
+            </div>
+
+            <!-- Item 35 -->
+            <div class="group cursor-pointer gallery-item" data-title="Premios comercio de Barcelona - Museo de arte de Cataluña" data-img="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/35.jpg" alt="Premios comercio de Barcelona" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Premios comercio de Barcelona - Museo de arte de Cataluña</p>
+            </div>
+
+            <!-- Item 36 -->
+            <div class="group cursor-pointer gallery-item" data-title="Premios mejor pan catalán - Ayuntamiento de Gavà" data-img="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/36.jpg" alt="Premios mejor pan catalán" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Premios mejor pan catalán - Ayuntamiento de Gavà</p>
+            </div>
+
+            <!-- Item 37 -->
+            <div class="group cursor-pointer gallery-item" data-title="Programa de Garantía Juvenil - Cena de Gala Viladecans" data-img="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/37.jpg" alt="Programa de Garantía Juvenil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Programa de Garantía Juvenil - Cena de Gala Viladecans</p>
+            </div>
+
+            <!-- Item 38 -->
+            <div class="group cursor-pointer gallery-item" data-title="Sardinada y Botifarrada - 4000 personas - Mercabarna" data-img="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/38.jpg" alt="Sardinada y Botifarrada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Sardinada y Botifarrada - 4000 personas - Mercabarna</p>
+            </div>
+
+            <!-- Item 39 -->
+            <div class="group cursor-pointer gallery-item" data-title="Evento BonCor" data-img="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/39.jpg" alt="Evento BonCor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Evento BonCor</p>
+            </div>
+
+            <!-- Item 40 -->
+            <div class="group cursor-pointer gallery-item" data-title="Evento BonCor" data-img="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/40.jpg" alt="Evento BonCor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Evento BonCor</p>
+            </div>
+
+            <!-- Item 41 -->
+            <div class="group cursor-pointer gallery-item" data-title="Evento BonCor" data-img="https://images.unsplash.com/photo-1529543544282-ea669407fca3?q=80&w=800">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-2 shadow-sm group-hover:shadow-md transition-shadow">
+                    <img src="/Galería/41.jpg" alt="Evento BonCor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <p class="text-xs text-gray-600 group-hover:text-brand-green transition-colors leading-snug">Evento BonCor</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="hidden-lightbox fixed inset-0 z-50 bg-black/90 flex flex-col justify-between items-center p-4 sm:p-8">
+        <!-- Close Button -->
+        <button id="close-lightbox" class="absolute top-4 right-6 text-white text-3xl opacity-80 hover:opacity-100 focus:outline-none transition-opacity">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Preview Image Container -->
+        <div class="w-full h-full flex flex-col items-center justify-center my-auto max-w-5xl">
+            <img id="lightbox-img" src="" alt="Ampliar imagen" class="max-h-[80vh] max-w-full object-contain rounded-sm shadow-2xl">
+            <p id="lightbox-caption" class="text-white text-center mt-4 text-sm sm:text-base font-medium tracking-wide"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-footerGreen text-white pt-12 pb-8 mt-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                
+                <!-- Col 1: White Box Logo Container -->
+                <div class="lg:col-span-1">
+                    <div class>
+                        <img src="/Homepage/Logo.png" alt="Logo BonCor" style="width: 150px; height: auto;">
+                    </div>
+                </div>
+
+                <!-- Col 2: Info & Socials -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 text-lg mb-2">
+                        <a href="https://www.instagram.com" class="hover:text-emerald-100 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" class="hover:text-emerald-100 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="text-xs leading-relaxed text-emerald-50">
+                        BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.
+                    </p>
+                </div>
+
+                <!-- Col 3: Servicios -->
+                <div>
+                    <h3 class="serif-title font-bold text-lg mb-3">Servicios</h3>
+                    <ul class="space-y-2 text-xs text-emerald-50">
+                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline">Pausa café</a></li>
+                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline">Aperitivos y comidas</a></li>
+                        <li><a href="/Homepage/food-box.html" class="hover:underline">Food box</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Sobre nosotros -->
+                <div>
+                    <h3 class="serif-title font-bold text-lg mb-3">Sobre nosotros</h3>
+                    <ul class="space-y-2 text-xs text-emerald-50">
+                        <li><a href="/Nuestrocompromiso/index3.html" class="hover:underline">Nuestro compromiso</a></li>
+                        <li><a href="/Galeria/index.html" class="hover:underline">Galería</a></li>
+                        <li><a href="/Clientes/index.html" class="hover:underline">Clientes</a></li>
+                        <li><a href="/Blog/index.html" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Contacto -->
+                <div id="contacto">
+                    <h3 class="serif-title font-bold text-lg mb-3">Contacto</h3>
+                    <ul class="space-y-2 text-xs text-emerald-50">
+                        <li>C / Font Honrada 2-4,</li>
+                        <li>08004 Barcelona, España</li>
+                        <li class="pt-1"><a href="tel:+34680429120" class="hover:underline">+34 680 429 120</a></li>
+                        <li><a href="mailto:catering@boncor.cat" class="hover:underline">catering@boncor.cat</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="border-t border-emerald-400/40 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-emerald-100 gap-2">
+                <div class="flex items-center space-x-2 flex-wrap">
+                    <a href="/AvisoLegal/index.html" class="hover:underline">Aviso legal</a>
+                    <span>·</span>
+                    <a href="/PoliticaPrivacidad/index.html" class="hover:underline">Política de privacidad</a>
+                    <span>·</span>
+                    <a href="/PoliticaCookies/index.html" class="hover:underline">Política de cookies</a>
+                </div>
+                <div class="text-xs opacity-80">
+                    &copy; 2026 BonCor - Solucions Socials Sostenibles
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR LIGHTBOX & MOBILE NAVIGATION -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Drawer Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Lightbox Modal Functionality
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.getElementById('close-lightbox');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.getAttribute('data-img');
+                    const title = item.getAttribute('data-title');
+
+                    lightboxImg.src = imgSrc;
+                    lightboxCaption.textContent = title;
+                    lightbox.classList.remove('hidden-lightbox');
+                    lightbox.classList.add('visible-lightbox');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('visible-lightbox');
+                lightbox.classList.add('hidden-lightbox');
+                document.body.style.overflow = 'auto'; // Restore scroll
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            // Close lightbox on click outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.parentElement === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Escape key handling
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
