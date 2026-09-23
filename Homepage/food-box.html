@@ -78,17 +78,17 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="/Homepage/index.html" class="flex items-center gap-2 group">
-               <img src = "/Servicios/Logo2.png" alt="BonCor Logo" height="40" width="90">
+               <img src="/Servicios/Logo2.png" alt="BonCor Logo" height="40" width="90">
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-700">
-                <a href="/Nuestrocompromiso/index3.html" class="hover:text-brand-green transition-colors">Nuestro compromiso</a>
-                <a href="/Servicios/index.html" class="hover:text-brand-green transition-colors">Servicios</a>
-                <a href="/Clientes/index.html" class="hover:text-brand-green transition-colors">Clientes</a>
-                <a href="/Blog/index.html" class="hover:text-brand-green transition-colors">Blog</a>
-                <a href="/Galeria/index.html" class="hover:text-brand-green transition-colors">Galería</a>
-                <a href="/Contacto/index.html" class="hover:text-brand-green transition-colors">Contactar</a>   
+                <a href="/Nuestrocompromiso/index3.html" data-i18n="nav_compromise" class="hover:text-brand-green transition-colors">Nuestro compromiso</a>
+                <a href="/Servicios/index.html" data-i18n="nav_services" class="hover:text-brand-green transition-colors">Servicios</a>
+                <a href="/Clientes/index.html" data-i18n="nav_clients" class="hover:text-brand-green transition-colors">Clientes</a>
+                <a href="/Blog/index.html" data-i18n="nav_blog" class="hover:text-brand-green transition-colors">Blog</a>
+                <a href="/Galeria/index.html" data-i18n="nav_gallery" class="hover:text-brand-green transition-colors">Galería</a>
+                <a href="/Contacto/index.html" data-i18n="nav_contact" class="hover:text-brand-green transition-colors">Contactar</a>   
             </nav>
 
             <!-- Social Links & Language Switcher -->
@@ -97,12 +97,14 @@
                     <a href="https://www.instagram.com" class="hover:text-brand-green transition-colors text-base" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.linkedin.com" class="hover:text-brand-green transition-colors text-base" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <div class="flex items-center space-x-1 cursor-pointer">
-                    <span class="font-bold text-brand-green">Esp</span>
-                    <i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
+                <!-- Language Selector -->
+                <div class="flex items-center space-x-2 text-xs">
+                    <button onclick="changeLanguage('es')" id="btn-es" class="hover:text-brand-green transition-colors font-bold text-brand-green">Esp</button>
+                    <span class="text-gray-300">|</span>
+                    <button onclick="changeLanguage('ca')" id="btn-ca" class="hover:text-brand-green transition-colors">Cat</button>
+                    <span class="text-gray-300">|</span>
+                    <button onclick="changeLanguage('en')" id="btn-en" class="hover:text-brand-green transition-colors">Eng</button>
                 </div>
-                <span class="text-gray-300">|</span>
-                <a href="/Contacto/index.html" class="hover:text-brand-green transition-colors">Cat</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -113,43 +115,44 @@
 
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="/Nuestrocompromiso/index3.html" class="block py-2 text-gray-700 font-medium">Nuestro compromiso</a>
-            <a href="/Servicios/index.html" class="block py-2 text-brand-green font-semibold">Servicios</a>
-            <a href="/Clientes/index.html" class="block py-2 text-gray-700 font-medium">Clientes</a>
-            <a href="/Blog/index.html" class="block py-2 text-gray-700 font-medium">Blog</a>
-            <a href="/Galeria/index.html" class="block py-2 text-gray-700 font-medium">Galería</a>
-            <a href="/Contacto/index.html" class="block py-2 text-gray-700 font-medium">Contactar</a>
+            <a href="/Nuestrocompromiso/index3.html" data-i18n="nav_compromise" class="block py-2 text-gray-700 font-medium">Nuestro compromiso</a>
+            <a href="/Servicios/index.html" data-i18n="nav_services" class="block py-2 text-brand-green font-semibold">Servicios</a>
+            <a href="/Clientes/index.html" data-i18n="nav_clients" class="block py-2 text-gray-700 font-medium">Clientes</a>
+            <a href="/Blog/index.html" data-i18n="nav_blog" class="block py-2 text-gray-700 font-medium">Blog</a>
+            <a href="/Galeria/index.html" data-i18n="nav_gallery" class="block py-2 text-gray-700 font-medium">Galería</a>
+            <a href="/Contacto/index.html" data-i18n="nav_contact" class="block py-2 text-gray-700 font-medium">Contactar</a>
             <div class="flex items-center gap-4 pt-3 border-t border-gray-100">
                 <a href="https://www.instagram.com" class="text-gray-600 text-lg"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.linkedin.com" class="text-gray-600 text-lg"><i class="fa-brands fa-linkedin-in"></i></a>
-                <span class="text-xs font-semibold text-brand-green ml-auto">Esp / Cat</span>
+                <div class="flex items-center space-x-2 text-xs font-semibold ml-auto">
+                    <button onclick="changeLanguage('es')" class="hover:text-brand-green">Esp</button>
+                    <span>/</span>
+                    <button onclick="changeLanguage('ca')" class="hover:text-brand-green">Cat</button>
+                    <span>/</span>
+                    <button onclick="changeLanguage('en')" class="hover:text-brand-green">Eng</button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] bg-stone-800 overflow-hidden flex items-end">
-        <!-- Background Image with Simulated Box & Stamp Overlay -->
         <div class="absolute inset-0 z-0">
-            <!-- Simulated High-Quality Catering Craft Box Texture -->
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/Homepage/3.jpg');"></div>
-            <!-- Realistic Box Sticker & Rope Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20 flex items-center justify-center p-4">
-                <!-- Round Eco Sticker Banner Representation -->
                 <div class="bg-[#000] opacity-90 rounded-full w-56 h-56 sm:w-72 sm:h-72 border-4 border-[#e2d8c3] shadow-2xl flex flex-col items-center justify-center p-6 text-center transform -rotate-3 transition hover:rotate-0 duration-500">
                     <div class="text-[#7fa043] mb-1">
                         <img src="/Homepage/Logo.png" alt="Logo Sticker">
                     </div>
-                    <span class="text-[10px] sm:text-xs italic font-serif text-gray-700 mb-2">Cuinem un futur millor</span>
+                    <span data-i18n="sticker_slogan" class="text-[10px] sm:text-xs italic font-serif text-gray-700 mb-2">Cuinem un futur millor</span>
                     <div class="w-12 h-0.5 bg-[#7fa043] my-1"></div>
-                    <span class="text-[8px] sm:text-[10px] font-semibold text-gray-600 uppercase tracking-widest">Solucions Socials</span>
+                    <span data-i18n="sticker_sub" class="text-[8px] sm:text-[10px] font-semibold text-gray-600 uppercase tracking-widest">Solucions Socials</span>
                 </div>
             </div>
         </div>
 
-        <!-- Hero Content Title -->
         <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 w-full pb-10 sm:pb-14">
-            <h1 class="serif-title text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight drop-shadow-md">
+            <h1 data-i18n="hero_title" class="serif-title text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight drop-shadow-md">
                 Food box
             </h1>
         </div>
@@ -160,80 +163,80 @@
 
         <!-- Opción 1 -->
         <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 1</h2>
+            <h2 data-i18n="opt1_title" class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 1</h2>
             <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-                <li>Botella de agua mineral de 33 cl.</li>
-                <li>Sándwich de pan blanco, 120 g de baguette con queso o embutido (sándwich de 23 cm de longitud).</li>
-                <li>Pieza de fruta ecológica de temporada (plátano, manzana, mandarinas).</li>
+                <li data-i18n="opt1_item1">Botella de agua mineral de 33 cl.</li>
+                <li data-i18n="opt1_item2">Sándwich de pan blanco, 120 g de baguette con queso o embutido (sándwich de 23 cm de longitud).</li>
+                <li data-i18n="opt1_item3">Pieza de fruta ecológica de temporada (plátano, manzana, mandarinas).</li>
             </ul>
         </div>
 
         <!-- Opción 2 -->
         <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 2</h2>
+            <h2 data-i18n="opt2_title" class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 2</h2>
             <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-                <li>Sándwich vegetal, 120 g de baguette con lechuga, mayonesa, pavo y queso (sándwich de 23 cm de longitud).</li>
-                <li>Porción de coca de hojaldre con crema de 100 g (elaborada en nuestro taller).</li>
+                <li data-i18n="opt2_item1">Sándwich vegetal, 120 g de baguette con lechuga, mayonesa, pavo y queso (sándwich de 23 cm de longitud).</li>
+                <li data-i18n="opt2_item2">Porción de coca de hojaldre con crema de 100 g (elaborada en nuestro taller).</li>
             </ul>
         </div>
 
         <!-- Opción 3 -->
         <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 3</h2>
+            <h2 data-i18n="opt3_title" class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 3</h2>
             <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-                <li>Sándwich vegetal de atún, pollo asado o pavo, 40 g de pan de aceitunas con lechuga, mayonesa y tomate.</li>
-                <li>Sándwich de pan blanco, 40 g de baguette con queso o embutido.</li>
-                <li>Ensalada con queso de cabra de 220 g (mezcla de lechugas, cerezas, queso de cabra, aceitunas negras, frutos secos y pasas).</li>
-                <li>Vaso de fruta ecológica de temporada de 150 g.</li>
+                <li data-i18n="opt3_item1">Sándwich vegetal de atún, pollo asado o pavo, 40 g de pan de aceitunas con lechuga, mayonesa y tomate.</li>
+                <li data-i18n="opt3_item2">Sándwich de pan blanco, 40 g de baguette con queso o embutido.</li>
+                <li data-i18n="opt3_item3">Ensalada con queso de cabra de 220 g (mezcla de lechugas, cerezas, queso de cabra, aceitunas negras, frutos secos y pasas).</li>
+                <li data-i18n="opt3_item4">Vaso de fruta ecológica de temporada de 150 g.</li>
             </ul>
         </div>
 
         <!-- Opción 4 -->
         <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 4</h2>
+            <h2 data-i18n="opt4_title" class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 4</h2>
             <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-                <li>Sándwich vegetal de pavo, 80 g de pan de espelta y salvado con lechuga, mayonesa y tomate.</li>
-                <li>Empanada de atún de 80 g con tomate, pimiento y huevo duro.</li>
+                <li data-i18n="opt4_item1">Sándwich vegetal de pavo, 80 g de pan de espelta y salvado con lechuga, mayonesa y tomate.</li>
+                <li data-i18n="opt4_item2">Empanada de atún de 80 g con tomate, pimiento y huevo duro.</li>
             </ul>
         </div>
 
         <!-- Opción 5 -->
         <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 5</h2>
+            <h2 data-i18n="opt5_title" class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 5</h2>
             <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
-                <li>Wrap de pavo de 80 g con hoja de roble y queso Cheddar o</li>
-                <li>Wrap de pollo de 80 g con parmesano, mostaza, cebolla, tomate y lechuga.</li>
+                <li data-i18n="opt5_item1">Wrap de pavo de 80 g con hoja de roble y queso Cheddar o</li>
+                <li data-i18n="opt5_item2">Wrap de pollo de 80 g con parmesano, mostaza, cebolla, tomate y lechuga.</li>
             </ul>
         </div>
 
         <!-- Contenido del Food Box -->
         <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Contenido del Food Box</h2>
+            <h2 data-i18n="box_content_title" class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Contenido del Food Box</h2>
             <ul class="custom-bullets space-y-2.5 text-gray-700 text-sm sm:text-base leading-relaxed">
-                <li>Menú elegido.</li>
-                <li>Caja de cartón reciclado, atada con cuerda y etiqueta.</li>
-                <li>Servilleta ecológica, reciclada y reciclable.</li>
-                <li>Aceite de oliva virgen, vinagre y sal (en caso de ensalada).</li>
-                <li>El vaso de fruta es de material orgánico PLA y el tenedor de madera (en caso de vaso de fruta).</li>
-                <li>Tenedor Biodegradable (en caso de ensalada).</li>
-                <li>Podemos adaptar el formato de entrega en bolsa de papel Kraft reciclado.</li>
+                <li data-i18n="box_content_1">Menú elegido.</li>
+                <li data-i18n="box_content_2">Caja de cartón reciclado, atada con cuerda y etiqueta.</li>
+                <li data-i18n="box_content_3">Servilleta ecológica, reciclada y reciclable.</li>
+                <li data-i18n="box_content_4">Aceite de oliva virgen, vinagre y sal (en caso de ensalada).</li>
+                <li data-i18n="box_content_5">El vaso de fruta es de material orgánico PLA y el tenedor de madera (en caso de vaso de fruta).</li>
+                <li data-i18n="box_content_6">Tenedor Biodegradable (en caso de ensalada).</li>
+                <li data-i18n="box_content_7">Podemos adaptar el formato de entrega en bolsa de papel Kraft reciclado.</li>
             </ul>
         </div>
 
         <!-- Note & Call To Action Button -->
         <div class="pt-4 space-y-6">
-            <p class="text-sm sm:text-base text-gray-700 font-normal leading-relaxed">
+            <p data-i18n="note_text" class="text-sm sm:text-base text-gray-700 font-normal leading-relaxed">
                 En todas las opciones de food box se incluye de manera gratuita todo el menaje y cristalería necesaria para realizar el servicio contratado.
             </p>
 
-            <a href="#contacto" class="inline-block bg-brand-green hover:bg-brand-greenDark text-white font-medium px-8 py-3 rounded-full transition-all duration-200 shadow-sm hover:shadow text-center">
+            <a href="#contacto" data-i18n="btn_contact" class="inline-block bg-brand-green hover:bg-brand-greenDark text-white font-medium px-8 py-3 rounded-full transition-all duration-200 shadow-sm hover:shadow text-center">
                 Contactar
             </a>
         </div>
 
         <!-- FAQS SECTION -->
         <section class="pt-12 border-t border-gray-200 mt-16">
-            <h2 class="serif-title text-3xl sm:text-4xl font-bold text-gray-900 mb-8 tracking-tight">FAQS</h2>
+            <h2 data-i18n="faqs_title" class="serif-title text-3xl sm:text-4xl font-bold text-gray-900 mb-8 tracking-tight">FAQS</h2>
 
             <div class="space-y-4">
                 <!-- FAQ 1 -->
@@ -241,11 +244,11 @@
                     <button class="accordion-btn w-full text-left py-3 flex justify-between items-center group focus:outline-none">
                         <span class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-brand-green transition-colors flex items-center gap-3">
                             <span class="text-xs text-gray-400 group-hover:text-brand-green transition-colors">►</span>
-                            ¿Cómo puedo hacer un pedido de FOOD Boxes?
+                            <span data-i18n="faq1_q">¿Cómo puedo hacer un pedido de FOOD Boxes?</span>
                         </span>
                     </button>
                     <div class="accordion-content pl-7 text-sm sm:text-base text-gray-600 leading-relaxed">
-                        <p class="pt-2">Puedes realizar tu pedido poniéndote en contacto directamente con nosotros a través de nuestro formulario web, por correo electrónico a <a href="mailto:catering@boncor.cat" class="text-brand-green underline">catering@boncor.cat</a> o llamando al <strong>+34 680 429 120</strong>. Recomendamos solicitar los pedidos con un mínimo de 48 horas de antelación.</p>
+                        <p class="pt-2" data-i18n="faq1_a">Puedes realizar tu pedido poniéndote en contacto directamente con nosotros a través de nuestro formulario web, por correo electrónico a <a href="mailto:catering@boncor.cat" class="text-brand-green underline">catering@boncor.cat</a> o llamando al <strong>+34 680 429 120</strong>. Recomendamos solicitar los pedidos con un mínimo de 48 horas de antelación.</p>
                     </div>
                 </div>
 
@@ -254,11 +257,11 @@
                     <button class="accordion-btn w-full text-left py-3 flex justify-between items-center group focus:outline-none">
                         <span class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-brand-green transition-colors flex items-center gap-3">
                             <span class="text-xs text-gray-400 group-hover:text-brand-green transition-colors">►</span>
-                            ¿Puedo personalizar el contenido de mi FOOD Box?
+                            <span data-i18n="faq2_q">¿Puedo personalizar el contenido de mi FOOD Box?</span>
                         </span>
                     </button>
                     <div class="accordion-content pl-7 text-sm sm:text-base text-gray-600 leading-relaxed">
-                        <p class="pt-2">¡Sí! Nos adaptamos a necesidades dietéticas específicas como opciones vegetarianas, veganas, sin gluten o sin lactosa. Consúltanos al realizar la reserva para ofrecerte la mejor alternativa personalizada.</p>
+                        <p class="pt-2" data-i18n="faq2_a">¡Sí! Nos adaptamos a necesidades dietéticas específicas como opciones vegetarianas, veganas, sin gluten o sin lactosa. Consúltanos al realizar la reserva para ofrecerte la mejor alternativa personalizada.</p>
                     </div>
                 </div>
 
@@ -267,11 +270,11 @@
                     <button class="accordion-btn w-full text-left py-3 flex justify-between items-center group focus:outline-none">
                         <span class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-brand-green transition-colors flex items-center gap-3">
                             <span class="text-xs text-gray-400 group-hover:text-brand-green transition-colors">►</span>
-                            ¿Las FOOD Boxes son adecuadas para eventos o regalos corporativos?
+                            <span data-i18n="faq3_q">¿Las FOOD Boxes son adecuadas para eventos o regalos corporativos?</span>
                         </span>
                     </button>
                     <div class="accordion-content pl-7 text-sm sm:text-base text-gray-600 leading-relaxed">
-                        <p class="pt-2">Absolutamente. Nuestras Food Boxes están diseñadas especialmente para reuniones de empresa, eventos corporativos, congresos y picnics, garantizando una presentación impecable, ecológica y sostenible.</p>
+                        <p class="pt-2" data-i18n="faq3_a">Absolutamente. Nuestras Food Boxes están diseñadas especialmente para reuniones de empresa, eventos corporativos, congresos y picnics, garantizando una presentación impecable, ecológica y sostenible.</p>
                     </div>
                 </div>
             </div>
@@ -288,7 +291,6 @@
                 <div class="lg:col-span-1">
                     <div class="footer-logo">
                         <img src="/Homepage/Logo.png" alt="BonCor Logo">
-                                      
                     </div>
                 </div>
 
@@ -298,35 +300,35 @@
                         <a href="https://www.instagram.com" class="hover:text-emerald-100 transition-colors"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.linkedin.com" class="hover:text-emerald-100 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
-                    <p class="text-xs leading-relaxed text-emerald-50">
+                    <p data-i18n="footer_desc" class="text-xs leading-relaxed text-emerald-50">
                         BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.
                     </p>
                 </div>
 
                 <!-- Col 3: Servicios -->
                 <div>
-                    <h3 class="serif-title font-bold text-lg mb-3">Servicios</h3>
+                    <h3 data-i18n="footer_services_title" class="serif-title font-bold text-lg mb-3">Servicios</h3>
                     <ul class="space-y-2 text-xs text-emerald-50">
-                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline">Pausa café</a></li>
-                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline">Aperitivos y comidas</a></li>
-                        <li><a href="/Homepage/food-box.html" class="hover:underline">Food box</a></li>
+                        <li><a href="/Homepage/pausa-cafe.html" data-i18n="footer_srv_coffee" class="hover:underline">Pausa café</a></li>
+                        <li><a href="/Homepage/aperitivos-comidas.html" data-i18n="footer_srv_lunch" class="hover:underline">Aperitivos y comidas</a></li>
+                        <li><a href="/Homepage/food-box.html" data-i18n="footer_srv_box" class="hover:underline">Food box</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 4: Sobre nosotros -->
                 <div>
-                    <h3 class="serif-title font-bold text-lg mb-3">Sobre nosotros</h3>
+                    <h3 data-i18n="footer_about_title" class="serif-title font-bold text-lg mb-3">Sobre nosotros</h3>
                     <ul class="space-y-2 text-xs text-emerald-50">
-                        <li><a href="/Nuestrocompromiso/index3.html" class="hover:underline">Nuestro compromiso</a></li>
-                        <li><a href="/Galería/index.html" class="hover:underline">Galería</a></li>
-                        <li><a href="/Clientes/index.html" class="hover:underline">Clientes</a></li>
-                        <li><a href="/Blog/index.html" class="hover:underline">Blog</a></li>
+                        <li><a href="/Nuestrocompromiso/index3.html" data-i18n="nav_compromise" class="hover:underline">Nuestro compromiso</a></li>
+                        <li><a href="/Galería/index.html" data-i18n="nav_gallery" class="hover:underline">Galería</a></li>
+                        <li><a href="/Clientes/index.html" data-i18n="nav_clients" class="hover:underline">Clientes</a></li>
+                        <li><a href="/Blog/index.html" data-i18n="nav_blog" class="hover:underline">Blog</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 5: Contacto -->
                 <div id="contacto">
-                    <h3 class="serif-title font-bold text-lg mb-3">Contacto</h3>
+                    <h3 data-i18n="footer_contact_title" class="serif-title font-bold text-lg mb-3">Contacto</h3>
                     <ul class="space-y-2 text-xs text-emerald-50">
                         <li>C / Font Honrada 2-4,</li>
                         <li>08004 Barcelona, España</li>
@@ -340,11 +342,11 @@
             <!-- Sub-footer Bottom Divider & Legal -->
             <div class="border-t border-emerald-400/40 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-emerald-100 gap-2">
                 <div class="flex items-center space-x-2 flex-wrap">
-                    <a href="/Homepage/aviso-legal.html" class="hover:underline">Aviso legal</a>
+                    <a href="/Homepage/aviso-legal.html" data-i18n="legal_notice" class="hover:underline">Aviso legal</a>
                     <span>·</span>
-                    <a href="/Homepage/politica-privacidad.html" class="hover:underline">Política de privacidad</a>
+                    <a href="/Homepage/politica-privacidad.html" data-i18n="privacy_policy" class="hover:underline">Política de privacidad</a>
                     <span>·</span>
-                    <a href="/Homepage/politica-cookies.html" class="hover:underline">Política de cookies</a>
+                    <a href="/Homepage/politica-cookies.html" data-i18n="cookies_policy" class="hover:underline">Política de cookies</a>
                 </div>
                 <div class="text-xs opacity-80">
                     &copy; 2026 BonCor - Solucions Socials Sostenibles
@@ -353,8 +355,210 @@
         </div>
     </footer>
 
+    <!-- SCRIPT TRADUCCIONES Y LÓGICA -->
     <script>
+        const translations = {
+            es: {
+                nav_compromise: "Nuestro compromiso",
+                nav_services: "Servicios",
+                nav_clients: "Clientes",
+                nav_blog: "Blog",
+                nav_gallery: "Galería",
+                nav_contact: "Contactar",
+                sticker_slogan: "Cuinem un futur millor",
+                sticker_sub: "Solucions Socials",
+                hero_title: "Food box",
+                opt1_title: "Opción 1",
+                opt1_item1: "Botella de agua mineral de 33 cl.",
+                opt1_item2: "Sándwich de pan blanco, 120 g de baguette con queso o embutido (sándwich de 23 cm de longitud).",
+                opt1_item3: "Pieza de fruta ecológica de temporada (plátano, manzana, mandarinas).",
+                opt2_title: "Opción 2",
+                opt2_item1: "Sándwich vegetal, 120 g de baguette con lechuga, mayonesa, pavo y queso (sándwich de 23 cm de longitud).",
+                opt2_item2: "Porción de coca de hojaldre con crema de 100 g (elaborada en nuestro taller).",
+                opt3_title: "Opción 3",
+                opt3_item1: "Sándwich vegetal de atún, pollo asado o pavo, 40 g de pan de aceitunas con lechuga, mayonesa y tomate.",
+                opt3_item2: "Sándwich de pan blanco, 40 g de baguette con queso o embutido.",
+                opt3_item3: "Ensalada con queso de cabra de 220 g (mezcla de lechugas, cerezas, queso de cabra, aceitunas negras, frutos secos y pasas).",
+                opt3_item4: "Vaso de fruta ecológica de temporada de 150 g.",
+                opt4_title: "Opción 4",
+                opt4_item1: "Sándwich vegetal de pavo, 80 g de pan de espelta y salvado con lechuga, mayonesa y tomate.",
+                opt4_item2: "Empanada de atún de 80 g con tomate, pimiento y huevo duro.",
+                opt5_title: "Opción 5",
+                opt5_item1: "Wrap de pavo de 80 g con hoja de roble y queso Cheddar o",
+                opt5_item2: "Wrap de pollo de 80 g con parmesano, mostaza, cebolla, tomate y lechuga.",
+                box_content_title: "Contenido del Food Box",
+                box_content_1: "Menú elegido.",
+                box_content_2: "Caja de cartón reciclado, atada con cuerda y etiqueta.",
+                box_content_3: "Servilleta ecológica, reciclada y reciclable.",
+                box_content_4: "Aceite de oliva virgen, vinagre y sal (en caso de ensalada).",
+                box_content_5: "El vaso de fruta es de material orgánico PLA y el tenedor de madera (en caso de vaso de fruta).",
+                box_content_6: "Tenedor Biodegradable (en caso de ensalada).",
+                box_content_7: "Podemos adaptar el formato de entrega en bolsa de papel Kraft reciclado.",
+                note_text: "En todas las opciones de food box se incluye de manera gratuita todo el menaje y cristalería necesaria para realizar el servicio contratado.",
+                btn_contact: "Contactar",
+                faqs_title: "FAQS",
+                faq1_q: "¿Cómo puedo hacer un pedido de FOOD Boxes?",
+                faq1_a: "Puedes realizar tu pedido poniéndote en contacto directamente con nosotros a través de nuestro formulario web, por correo electrónico a <a href='mailto:catering@boncor.cat' class='text-brand-green underline'>catering@boncor.cat</a> o llamando al <strong>+34 680 429 120</strong>. Recomendamos solicitar los pedidos con un mínimo de 48 horas de antelación.",
+                faq2_q: "¿Puedo personalizar el contenido de mi FOOD Box?",
+                faq2_a: "¡Sí! Nos adaptamos a necesidades dietéticas específicas como opciones vegetarianas, veganas, sin gluten o sin lactosa. Consúltanos al realizar la reserva para ofrecerte la mejor alternativa personalizada.",
+                faq3_q: "¿Las FOOD Boxes son adecuadas para eventos o regalos corporativos?",
+                faq3_a: "Absolutamente. Nuestras Food Boxes están diseñadas especialmente para reuniones de empresa, eventos corporativos, congresos y picnics, garantizando una presentación impecable, ecológica y sostenible.",
+                footer_desc: "BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.",
+                footer_services_title: "Servicios",
+                footer_srv_coffee: "Pausa café",
+                footer_srv_lunch: "Aperitivos y comidas",
+                footer_srv_box: "Food box",
+                footer_about_title: "Sobre nosotros",
+                footer_contact_title: "Contacto",
+                legal_notice: "Aviso legal",
+                privacy_policy: "Política de privacidad",
+                cookies_policy: "Política de cookies"
+            },
+            ca: {
+                nav_compromise: "El nostre compromís",
+                nav_services: "Serveis",
+                nav_clients: "Clients",
+                nav_blog: "Blog",
+                nav_gallery: "Galeria",
+                nav_contact: "Contactar",
+                sticker_slogan: "Cuinem un futur millor",
+                sticker_sub: "Solucions Socials",
+                hero_title: "Food box",
+                opt1_title: "Opció 1",
+                opt1_item1: "Apotella d'aigua mineral de 33 cl.",
+                opt1_item2: "Sandvitx de pa blanc, 120 g de baguette amb formatge o embotit (sandvitx de 23 cm de longitud).",
+                opt1_item3: "Peça de fruita ecològica de temporada (plàtan, poma, mandarines).",
+                opt2_title: "Opció 2",
+                opt2_item1: "Sandvitx vegetal, 120 g de baguette amb enciam, maionesa, gall dindi i formatge (sandvitx de 23 cm de longitud).",
+                opt2_item2: "Porció de coca de full amb crema de 100 g (elaborada al nostre taller).",
+                opt3_title: "Opció 3",
+                opt3_item1: "Sandvitx vegetal de tonyina, pollastre rostit o gall dindi, 40 g de pa d'olives amb enciam, maionesa i tomàquet.",
+                opt3_item2: "Sandvitx de pa blanc, 40 g de baguette amb formatge o embotit.",
+                opt3_item3: "Amanida amb formatge de cabra de 220 g (barreja d'enciams, cireres, formatge de cabra, olives negres, fruits secs i panses).",
+                opt3_item4: "Got de fruita ecològica de temporada de 150 g.",
+                opt4_title: "Opció 4",
+                opt4_item1: "Sandvitx vegetal de gall dindi, 80 g de pa d'espelta i segó amb enciam, maionesa i tomàquet.",
+                opt4_item2: "Empanada de tonyina de 80 g amb tomàquet, pebrot i ou dur.",
+                opt5_title: "Opció 5",
+                opt5_item1: "Wrap de gall dindi de 80 g amb fulla de roure i formatge Cheddar o",
+                opt5_item2: "Wrap de pollastre de 80 g amb parmesà, mostassa, ceba, tomàquet i enciam.",
+                box_content_title: "Contingut del Food Box",
+                box_content_1: "Menú triat.",
+                box_content_2: "Caixa de cartró reciclat, ligada amb corda i etiqueta.",
+                box_content_3: "Gervilleta ecològica, reciclada i reciclable.",
+                box_content_4: "Oli d'oliva verge, vinagre i sal (en cas d'amanida).",
+                box_content_5: "El got de fruita és de material orgànic PLA i la forquilla de fusta (en cas de got de fruita).",
+                box_content_6: "Forquilla Biodegradable (en cas d'amanida).",
+                box_content_7: "Podem adaptar el format de lliurament en bossa de paper Kraft reciclat.",
+                note_text: "En totes les opcions de food box s'inclou de manera gratuïta tot el parament i cristalleria necessària per a realitzar el servei contractat.",
+                btn_contact: "Contactar",
+                faqs_title: "FAQS",
+                faq1_q: "Com puc fer una comanda de FOOD Boxes?",
+                faq1_a: "Pots fer la teva comanda posant-te en contacte directament amb nosaltres a través del nostre formulari web, per correu electrònic a <a href='mailto:catering@boncor.cat' class='text-brand-green underline'>catering@boncor.cat</a> o trucant al <strong>+34 680 429 120</strong>. Recomanem sol·licitar les comandes amb un mínim de 48 hores d'antelació.",
+                faq2_q: "Puc personalitzar el contingut del meu FOOD Box?",
+                faq2_a: "I tant! Ens adaptem a necessitats dietètiques específiques com opcions vegetarianes, veganes, sense gluten o sense lactosa. Consulta'ns en fer la reserva per oferir-te la millor alternativa personalitzada.",
+                faq3_q: "Les FOOD Boxes són adequades per a esdeveniments o regals corporatius?",
+                faq3_a: "Absolutament. Les nostres Food Boxes estan dissenyades especialment per a reunions d'empresa, esdeveniments corporatius, congressos i pícnics, garantint una presentació impecable, ecològica i sostenible.",
+                footer_desc: "BonCor és el càtering de Solucions Socials Sostenibles: gastronomia sostenible i de proximitat que genera oportunitats laborals reals.",
+                footer_services_title: "Serveis",
+                footer_srv_coffee: "Pausa cafè",
+                footer_srv_lunch: "Aperitius i dinars",
+                footer_srv_box: "Food box",
+                footer_about_title: "Sobre nosaltres",
+                footer_contact_title: "Contacte",
+                legal_notice: "Avís legal",
+                privacy_policy: "Política de privacitat",
+                cookies_policy: "Política de cookies"
+            },
+            en: {
+                nav_compromise: "Our commitment",
+                nav_services: "Services",
+                nav_clients: "Clients",
+                nav_blog: "Blog",
+                nav_gallery: "Gallery",
+                nav_contact: "Contact",
+                sticker_slogan: "Cuinem un futur millor",
+                sticker_sub: "Social Solutions",
+                hero_title: "Food box",
+                opt1_title: "Option 1",
+                opt1_item1: "33 cl mineral water bottle.",
+                opt1_item2: "White bread sandwich, 120 g baguette with cheese or cold cuts (23 cm length sandwich).",
+                opt1_item3: "Piece of organic seasonal fruit (banana, apple, mandarins).",
+                opt2_title: "Option 2",
+                opt2_item1: "Veggie sandwich, 120 g baguette with lettuce, mayonnaise, turkey, and cheese (23 cm length sandwich).",
+                opt2_item2: "100 g portion of puff pastry with cream (homemade in our workshop).",
+                opt3_title: "Option 3",
+                opt3_item1: "Veggie sandwich with tuna, roasted chicken or turkey, 40 g olive bread with lettuce, mayonnaise, and tomato.",
+                opt3_item2: "White bread sandwich, 40 g baguette with cheese or cold cuts.",
+                opt3_item3: "220 g Goat cheese salad (mixed lettuce, cherries, goat cheese, black olives, nuts, and raisins).",
+                opt3_item4: "150 g organic seasonal fruit cup.",
+                opt4_title: "Option 4",
+                opt4_item1: "Turkey veggie sandwich, 80 g spelt and bran bread with lettuce, mayonnaise, and tomato.",
+                opt4_item2: "80 g tuna empanada with tomato, pepper, and hard-boiled egg.",
+                opt5_title: "Option 5",
+                opt5_item1: "80 g turkey wrap with oak leaf lettuce and Cheddar cheese OR",
+                opt5_item2: "80 g chicken wrap with parmesan, mustard, onion, tomato, and lettuce.",
+                box_content_title: "Food Box Content",
+                box_content_1: "Selected menu.",
+                box_content_2: "Recycled cardboard box, tied with string and label.",
+                box_content_3: "Eco-friendly napkin, recycled and recyclable.",
+                box_content_4: "Virgin olive oil, vinegar, and salt (in case of salad).",
+                box_content_5: "Fruit cup made of PLA organic material and wooden fork (in case of fruit cup).",
+                box_content_6: "Biodegradable fork (in case of salad).",
+                box_content_7: "We can adapt the delivery format to recycled Kraft paper bags.",
+                note_text: "All food box options include free tableware and glassware needed to carry out the contracted service.",
+                btn_contact: "Contact us",
+                faqs_title: "FAQS",
+                faq1_q: "How can I place an order for FOOD Boxes?",
+                faq1_a: "You can place your order by contacting us directly through our web form, by email at <a href='mailto:catering@boncor.cat' class='text-brand-green underline'>catering@boncor.cat</a> or by calling <strong>+34 680 429 120</strong>. We recommend placing orders at least 48 hours in advance.",
+                faq2_q: "Can I customize the content of my FOOD Box?",
+                faq2_a: "Yes! We adapt to specific dietary needs such as vegetarian, vegan, gluten-free, or lactose-free options. Ask us when making your reservation to get the best custom alternative.",
+                faq3_q: "Are FOOD Boxes suitable for corporate events or gifts?",
+                faq3_a: "Absolutely. Our Food Boxes are specially designed for business meetings, corporate events, congresses, and picnics, ensuring an impeccable, eco-friendly, and sustainable presentation.",
+                footer_desc: "BonCor is the catering arm of Solucions Socials Sostenibles: sustainable and local gastronomy that creates real job opportunities.",
+                footer_services_title: "Services",
+                footer_srv_coffee: "Coffee break",
+                footer_srv_lunch: "Aperitifs & Meals",
+                footer_srv_box: "Food box",
+                footer_about_title: "About us",
+                footer_contact_title: "Contact",
+                legal_notice: "Legal notice",
+                privacy_policy: "Privacy policy",
+                cookies_policy: "Cookies policy"
+            }
+        };
+
+        function changeLanguage(lang) {
+            if (!translations[lang]) return;
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Actualizar estado visual de los botones del idioma si existen
+            ['es', 'ca', 'en'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (btn) {
+                    if (l === lang) {
+                        btn.classList.add('font-bold', 'text-brand-green');
+                    } else {
+                        btn.classList.remove('font-bold', 'text-brand-green');
+                    }
+                }
+            });
+
+            // Guardar preferencia
+            localStorage.setItem('boncor_lang', lang);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            // Cargar idioma guardado o por defecto 'es'
+            const savedLang = localStorage.getItem('boncor_lang') || 'es';
+            changeLanguage(savedLang);
+
             // Mobile Menu Toggle
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
