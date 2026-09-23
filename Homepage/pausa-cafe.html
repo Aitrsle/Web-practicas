@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pausa Café & Servicios - BonCor Catering</title>
+    <title data-i18n="meta_title">Pausa Café & Servicios - BonCor Catering</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -664,7 +664,7 @@
                 grid-template-columns: 1fr 1fr;
             }
             .nav-menu {
-                display: none; /* Can be expanded with hamburger JS if needed */
+                display: none;
             }
         }
 
@@ -691,7 +691,7 @@
 
     <header class="header">
         <a href="/Homepage/index.html" class="logo-container">
-        <img src="/Servicios/Logo2.png" alt="Logo BonCor" height="100" width="125">
+            <img src="/Servicios/Logo2.png" alt="Logo BonCor" height="100" width="125">
         </a>
 
         <nav>
@@ -724,28 +724,16 @@
         <h1 class="section-title-main" data-i18n="hero_title">Pausa café</h1>
 
         <div class="menu-content-grid">
-            <h2 class="sub-title-gourmet" id="optionTitle" data-i18n="option_title">Opción gourmet</h2>
+            <h2 class="sub-title-gourmet" id="optionTitle">Opción gourmet</h2>
 
             <!-- Dynamic Column 1 -->
             <div class="menu-column" id="menuCol1">
-                <div class="menu-item">Sorbo de verduras variadas ecológicas o gazpacho (según temporada).</div>
-                <div class="menu-item">Rollito de Salmón fumado con cebolletas y aguacate.</div>
-                <div class="menu-item">Brocheta de salmón ahumado y queso fresco.</div>
-                <div class="menu-item">Rossejat de fideos con gambas y almejas.</div>
-                <div class="menu-item">Mine aliñada Cèsar o Mediterráneo.</div>
-                <div class="menu-item">Surtido de mini sandwiches.</div>
-                <div class="menu-item">Dátil rellenado de foie.</div>
-                <div class="menu-item">Brocheta de fruta ecológica de temporada y proximidad.</div>
-                <div class="menu-item">Mine tartaleta con crema y frutos rojos.</div>
+                <!-- Se llena mediante JavaScript -->
             </div>
 
             <!-- Dynamic Column 2 -->
             <div class="menu-column" id="menuCol2">
-                <div class="menu-item">Café · Tieso · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.</div>
-                <div class="menu-item">Agua mineral.</div>
-                <div class="menu-item">Refrescos variados.</div>
-                <div class="menu-item">Vino tinto ecológico Can Suriol DO Penedès.</div>
-                <div class="menu-item">Cava Can Suriol ecológico Sucio Nature DO Penedès.</div>
+                <!-- Se llena mediante JavaScript -->
             </div>
 
             <!-- Interactive Lateral Navigation -->
@@ -754,20 +742,15 @@
                 <div class="dot-indicator active" onclick="switchMenuOption(0)"></div>
                 <div class="dot-indicator" onclick="switchMenuOption(1)"></div>
                 <div class="dot-indicator" onclick="switchMenuOption(2)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(3)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(4)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(5)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(6)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(7)"></div>
             </div>
         </div>
 
         <div class="menu-footer-actions">
             <p class="menu-disclaimer" data-i18n="menu_disclaimer">
-                En totes les opcions d'Aperitiu-Dinar s'inclou de manera gratuïta tot el parament i cristalleria necessària per realitzar el servei contractat.
+                En todas las opciones de Pausa Café se incluye gratuitamente todo el menaje y vajilla necesarios para realizar el servicio contratado.
             </p>
             <div class="action-buttons">
-                <a href="#" class="btn btn-green" data-i18n="btn_download">Descarrega Aperitiu-Dinar</a>
+                <a href="#" class="btn btn-green" data-i18n="btn_download">Descargar Pausa Café</a>
                 <a href="/Contactar/index.html" class="btn btn-outline-white" data-i18n="btn_contact">Contactar</a>
             </div>
         </div>
@@ -801,7 +784,7 @@
                     <div class="dietary-icon-circle">
                         <i class="fa-solid fa-moon"></i>
                     </div>
-                    <span class="dietary-label" data-i18n="diet_halal">Jalal</span>
+                    <span class="dietary-label" data-i18n="diet_halal">Halal</span>
                 </div>
                 <div class="dietary-card">
                     <div class="dietary-icon-circle">
@@ -848,7 +831,7 @@
                 <div class="faq-header" onclick="toggleFaq(this)">
                     <div class="faq-title-wrapper">
                         <span class="faq-number">1</span>
-                        <span class="faq-question" data-i18n="faq1_q">¿Cuál es el número mínimo de invitados requerido para contratar el servicio de catering de aperitivos y comidas?</span>
+                        <span class="faq-question" data-i18n="faq1_q">¿Cuál es el número mínimo de invitados requerido para contratar el servicio de catering?</span>
                     </div>
                     <i class="fa-solid fa-plus faq-icon"></i>
                 </div>
@@ -917,12 +900,12 @@
         <form onsubmit="event.preventDefault(); alert('Mensaje enviado con éxito');">
             <div class="contact-form-grid">
                 <div class="form-left-inputs">
-                    <input type="text" class="form-control" placeholder="Nombre y Apellido" required>
-                    <input type="tel" class="form-control" placeholder="Teléfono" required>
-                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                    <input type="text" class="form-control" placeholder="Nombre y Apellido" data-i18n-ph="ph_name" required>
+                    <input type="tel" class="form-control" placeholder="Teléfono" data-i18n-ph="ph_phone" required>
+                    <input type="email" class="form-control" placeholder="Correo electrónico" data-i18n-ph="ph_email" required>
                 </div>
                 <div class="form-right-textarea">
-                    <textarea class="form-control" placeholder="Comentario" rows="6" required></textarea>
+                    <textarea class="form-control" placeholder="Comentario" data-i18n-ph="ph_comment" rows="6" required></textarea>
                 </div>
             </div>
         </form>
@@ -943,9 +926,9 @@
             <div>
                 <h4 class="footer-col-title" data-i18n="nav_servicios">Servicios</h4>
                 <ul class="footer-links-list">
-                    <li><a href="/Homepage/pausa-cafe.html">Pausa café</a></li>
-                    <li><a href="/Homepage/aperitivos-comidas.html">Aperitivos y comidas</a></li>
-                    <li><a href="/Homepage/food-box.html">Food box</a></li>
+                    <li><a href="/Homepage/pausa-cafe.html" data-i18n="tab_coffee">Pausa café</a></li>
+                    <li><a href="/Homepage/aperitivos-comidas.html" data-i18n="tab_appetizers">Aperitivos y comidas</a></li>
+                    <li><a href="/Homepage/food-box.html" data-i18n="tab_foodbox">Food box</a></li>
                 </ul>
             </div>
 
@@ -971,10 +954,14 @@
         </div>
     </footer>
 
+    <!-- ==========================================
+         JAVASCRIPT DE TRADUCCIÓN E INTERACTIVIDAD
+         ========================================== -->
     <script>
-        // Dictionary for Internationalization (i18n)
+        // 1. Diccionario completo de traducciones (ES, CA, EN)
         const i18nData = {
             es: {
+                meta_title: "Pausa Café & Servicios - BonCor Catering",
                 nav_compromiso: "Nuestro compromiso",
                 nav_servicios: "Servicios",
                 nav_clientes: "Clientes",
@@ -982,17 +969,19 @@
                 nav_galeria: "Galería",
                 nav_contactar: "Contactar",
                 hero_title: "Pausa café",
-                option_title: "Opción gourmet",
-                menu_disclaimer: "En totes les opcions d'Aperitiu-Dinar s'inclou de manera gratuïta tot el parament i cristalleria necessària per realitzar el servei contractat.",
-                btn_download: "Descarrega Aperitiu-Dinar",
+                tab_coffee: "Pausa café",
+                tab_appetizers: "Aperitivos y comidas",
+                tab_foodbox: "Food box",
+                menu_disclaimer: "En todas las opciones de Pausa Café se incluye gratuitamente todo el menaje y vajilla necesarios para realizar el servicio contratado.",
+                btn_download: "Descargar Pausa Café",
                 btn_contact: "Contactar",
                 dietary_title: "Adaptaciones dietéticas",
                 diet_vegan: "Vegano",
                 diet_gluten: "Sin gluten",
-                diet_halal: "Jalal",
+                diet_halal: "Halal",
                 diet_intolerances: "Intolerancias",
                 dietary_desc: "Nos adaptamos a las diferentes necesidades y propuestas de nuestros clientes, ya que creemos que un evento debe adaptarse a la realidad de quien lo organiza. Cuidamos, en todo momento, todos los detalles, por pequeños que éstos sean.",
-                faq1_q: "¿Cuál es el número mínimo de invitados requerido para contratar el servicio de catering de aperitivos y comidas?",
+                faq1_q: "¿Cuál es el número mínimo de invitados requerido para contratar el servicio de catering?",
                 faq1_a: "El número mínimo estándar suele ser de 15 personas. No obstante, nos adaptamos a formatos más reducidos bajo petición previa.",
                 faq2_q: "¿BonCor ofrece degustaciones previas a la contratación del servicio completo?",
                 faq2_a: "Sí, ofrecemos sesiones de prueba de menú para eventos de mediano y gran formato una vez definido el presupuesto inicial.",
@@ -1003,11 +992,67 @@
                 faq5_q: "¿BonCor puede proveer referencias o ejemplos de eventos anteriores similares al que estoy planeando?",
                 faq5_a: "Por supuesto, disponemos de un amplio dossier con referencias de empresas e instituciones con las que colaboramos regularmente.",
                 contact_title: "Contacta con nosotros",
+                ph_name: "Nombre y Apellido",
+                ph_phone: "Teléfono",
+                ph_email: "Correo electrónico",
+                ph_comment: "Comentario",
                 footer_about_us: "Sobre nosotros",
                 footer_contact_title: "Contacto",
-                footer_about: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto."
+                menus: [
+                    {
+                        title: "Opción Gourmet",
+                        col1: [
+                            "Sorbo de verduras variadas ecológicas o gazpacho (según temporada).",
+                            "Rollito de salmón ahumado con cebolletas y aguacate.",
+                            "Brocheta de salmón ahumado y queso fresco.",
+                            "Fideuá artesana con gambas y almejas.",
+                            "Mini ensalada aliñada César o Mediterránea.",
+                            "Surtido de mini sándwiches variados.",
+                            "Dátil rellenado de foie.",
+                            "Brocheta de fruta ecológica de temporada y proximidad.",
+                            "Mini tartaleta con crema y frutos rojos."
+                        ],
+                        col2: [
+                            "Café, té, leche y leche de soja de comercio justo.",
+                            "Agua mineral.",
+                            "Refrescos variados.",
+                            "Vino tinto ecológico Can Suriol DO Penedès.",
+                            "Cava Can Suriol ecológico Brut Nature DO Penedès."
+                        ]
+                    },
+                    {
+                        title: "Opción Clásica",
+                        col1: [
+                            "Selección de mini bocadillos de jamón ibérico.",
+                            "Croquetas artesanas de ceps y jamón.",
+                            "Mini quiche de verduras de temporada.",
+                            "Brochetas de tomate cherry y mozzarella.",
+                            "Tabla de quesos artesanos locales."
+                        ],
+                        col2: [
+                            "Café e infusiones ecológicas.",
+                            "Zumos naturales variados.",
+                            "Agua mineral con y sin gas."
+                        ]
+                    },
+                    {
+                        title: "Opción Dulce",
+                        col1: [
+                            "Mini croissants recién horneados.",
+                            "Muffins variados de chocolate y arándanos.",
+                            "Brochetas de fruta de temporada.",
+                            "Mini ensaimadas artesanales."
+                        ],
+                        col2: [
+                            "Café 100% Arábica de comercio justo.",
+                            "Bebidas vegetales (Avena, Soja).",
+                            "Zumo de naranja recién exprimido."
+                        ]
+                    }
+                ]
             },
             ca: {
+                meta_title: "Pausa Cafè & Serveis - BonCor Catering",
                 nav_compromiso: "El nostre compromís",
                 nav_servicios: "Serveis",
                 nav_clientes: "Clients",
@@ -1015,32 +1060,90 @@
                 nav_galeria: "Galeria",
                 nav_contactar: "Contactar",
                 hero_title: "Pausa cafè",
-                option_title: "Opció gourmet",
-                menu_disclaimer: "En totes les opcions d'Aperitiu-Dinar s'inclou de manera gratuïta tot el parament i cristalleria necessària per realitzar el servei contractat.",
-                btn_download: "Descarrega Aperitiu-Dinar",
+                tab_coffee: "Pausa cafè",
+                tab_appetizers: "Aperitius i àpats",
+                tab_foodbox: "Food box",
+                menu_disclaimer: "En totes les opcions de Pausa Cafè s'inclou de manera gratuïta tot el parament i cristalleria necessària per realitzar el servei contractat.",
+                btn_download: "Descarrega Pausa Cafè",
                 btn_contact: "Contactar",
                 dietary_title: "Adaptacions dietètiques",
                 diet_vegan: "Vegà",
                 diet_gluten: "Sense gluten",
-                diet_halal: "Jalal",
+                diet_halal: "Halal",
                 diet_intolerances: "Intoleràncies",
                 dietary_desc: "Ens adaptem a les diferents necessitats i propostes dels nostres clients, ja que creiem que un esdeveniment s'ha d'adaptar a la realitat de qui l'organitza. Cuidem, en tot moment, tots els detalls, per petits que siguin.",
-                faq1_q: "Quin és el nombre mínim d'convidats requerit per contractar el servei de càtering d'aperitius i dinars?",
+                faq1_q: "Quin és el nombre mínim de convidats requerit per contractar el servei de càtering?",
                 faq1_a: "El nombre mínim estàndard sol ser de 15 persones. No obstant això, ens adaptem a formats més reduïts sota petició prèvia.",
-                faq2_q: "BonCor ofereix degustacions prèvies a la contractació del servei complet?",
+                faq2_q: "¿BonCor ofereix degustacions prèvies a la contractació del servei complet?",
                 faq2_a: "Sí, oferim sessions de prova de menú per a esdeveniments de mitjà i gran format quan s'ha definit el pressupost inicial.",
                 faq3_q: "Què està inclòs en el preu del servei de càtering? Hi ha costos addicionals?",
-                faq3_a: "Inclou parament complet, cristalleria, preparació i servei.",
+                faq3_a: "Inclou parament complet, cristalleria, preparació i servei. Els costos addicionals només s'apliquen en cas de requerir muntatge especial o transport fora de l'àrea metropolitana.",
                 faq4_q: "Com es gestiona la cancel·lació o modificació d'un servei de càtering ja contractat?",
-                faq4_a: "Permetem modificacions del nombre de comensals fins a 5 dies feiners abans de l'esdeveniment.",
+                faq4_a: "Permetem modificacions del nombre de comensals fins a 5 dies feiners abans de l'esdeveniment sense penalització.",
                 faq5_q: "BonCor pot proveir referències o exemples d'esdeveniments anteriors similars al que estic planejant?",
-                faq5_a: "I tant, disposem d'un ampli dossier amb referències d'empreses i institucions.",
+                faq5_a: "I tant, disposem d'un ampli dossier amb referències d'empreses i institucions amb les quals col·laborem regularment.",
                 contact_title: "Contacta amb nosaltres",
+                ph_name: "Nom i Cognom",
+                ph_phone: "Telèfon",
+                ph_email: "Correu electrònic",
+                ph_comment: "Comentari",
                 footer_about_us: "Sobre nosaltres",
                 footer_contact_title: "Contacte",
-                footer_about: "Lorem Ipsum és simplement el text de farciment de les impremtes i arxius de text."
+                menus: [
+                    {
+                        title: "Opció Gourmet",
+                        col1: [
+                            "Sorb de verdures variades ecològiques o gaspacho (segons temporada).",
+                            "Cresol de salmó fumat amb cebollat i alvocat.",
+                            "Brocheta de salmón fumat i formatge fresc.",
+                            "Fideuà artesana amb gambes i cloïsses.",
+                            "Mini amanida amanida Cèsar o Mediterrània.",
+                            "Surtit de mini sandvitxos variats.",
+                            "Dàtil reblert de foie.",
+                            "Brocheta de fruita ecològica de temporada i proximitat.",
+                            "Mini tartaleta amb crema i fruits vermells."
+                        ],
+                        col2: [
+                            "Cafè, te, llet i llet de soja de comerç just.",
+                            "Aigua mineral.",
+                            "Refrescos variats.",
+                            "Vi negre ecològic Can Suriol DO Penedès.",
+                            "Cava Can Suriol ecològic Brut Nature DO Penedès."
+                        ]
+                    },
+                    {
+                        title: "Opció Clàssica",
+                        col1: [
+                            "Selecció de mini entrepans de pernil ibèric.",
+                            "Croquetes artesanes de ceps i pernil.",
+                            "Mini quiche de verdures de temporada.",
+                            "Broquetes de tomàquet cherry i mozzarella.",
+                            "Taula de formatges artesans locals."
+                        ],
+                        col2: [
+                            "Cafè i infusions ecològiques.",
+                            "Sucs naturals variats.",
+                            "Aigua mineral amb i sense gas."
+                        ]
+                    },
+                    {
+                        title: "Opció Dolça",
+                        col1: [
+                            "Mini croissants acabats de coure.",
+                            "Muffins variats de xocolata i nabius.",
+                            "Broquetes de fruita de temporada.",
+                            "Mini ensaïmades artesanals."
+                        ],
+                        col2: [
+                            "Cafè 100% Aràbica de comerç just.",
+                            "Begudes vegetals (Avena, Soja).",
+                            "Suc de taronja acabat d'exprémer."
+                        ]
+                    }
+                ]
             },
             en: {
+                meta_title: "Coffee Break & Services - BonCor Catering",
                 nav_compromiso: "Our commitment",
                 nav_servicios: "Services",
                 nav_clientes: "Clients",
@@ -1048,9 +1151,11 @@
                 nav_galeria: "Gallery",
                 nav_contactar: "Contact",
                 hero_title: "Coffee break",
-                option_title: "Gourmet Option",
-                menu_disclaimer: "All Appetizer-Lunch options include free tableware and glassware required for the service.",
-                btn_download: "Download Appetizer-Lunch Menu",
+                tab_coffee: "Coffee break",
+                tab_appetizers: "Appetizers & Meals",
+                tab_foodbox: "Food box",
+                menu_disclaimer: "All Coffee Break options include free tableware and glassware required for the contracted service.",
+                btn_download: "Download Coffee Break Menu",
                 btn_contact: "Contact Us",
                 dietary_title: "Dietary Adaptations",
                 diet_vegan: "Vegan",
@@ -1062,125 +1167,163 @@
                 faq1_a: "The standard minimum is 15 guests. However, we adapt to smaller groups upon request.",
                 faq2_q: "Does BonCor offer tasting sessions prior to full booking?",
                 faq2_a: "Yes, we offer menu tasting sessions for medium and large scale events once initial budget is set.",
-                faq3_q: "What is included in the catering service price?",
-                faq3_a: "Includes complete tableware, glassware, preparation and staff service.",
+                faq3_q: "What is included in the catering service price? Are there additional costs?",
+                faq3_a: "Includes complete tableware, glassware, preparation and staff service. Additional costs only apply for special setups or transport outside the metropolitan area.",
                 faq4_q: "How are cancellations or service modifications managed?",
-                faq4_a: "Guest count modifications are accepted up to 5 business days prior to the event.",
+                faq4_a: "Guest count modifications are accepted up to 5 business days prior to the event without penalty.",
                 faq5_q: "Can BonCor provide references from previous similar events?",
                 faq5_a: "Of course, we have an extensive portfolio with corporate and institutional references.",
                 contact_title: "Contact Us",
+                ph_name: "Full Name",
+                ph_phone: "Phone Number",
+                ph_email: "Email Address",
+                ph_comment: "Comment",
                 footer_about_us: "About Us",
                 footer_contact_title: "Contact",
-                footer_about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                menus: [
+                    {
+                        title: "Gourmet Option",
+                        col1: [
+                            "Sip of organic seasonal vegetables or gazpacho.",
+                            "Smoked salmon roll with chives and avocado.",
+                            "Smoked salmon and fresh cheese skewer.",
+                            "Artisan noodles fideuá with prawns and clams.",
+                            "Mini Caesar or Mediterranean dressed salad.",
+                            "Assorted mini sandwich selection.",
+                            "Foie-stuffed date.",
+                            "Local organic seasonal fruit skewer.",
+                            "Mini tartlet with cream and red berries."
+                        ],
+                        col2: [
+                            "Fair-trade coffee, tea, milk and soy milk.",
+                            "Mineral water.",
+                            "Assorted soft drinks.",
+                            "Can Suriol organic red wine DO Penedès.",
+                            "Can Suriol organic Cava Brut Nature DO Penedès."
+                        ]
+                    },
+                    {
+                        title: "Classic Option",
+                        col1: [
+                            "Selection of Iberian ham mini sandwiches.",
+                            "Artisan mushroom and ham croquettes.",
+                            "Mini seasonal vegetable quiche.",
+                            "Cherry tomato and mozzarella skewers.",
+                            "Local artisan cheese board."
+                        ],
+                        col2: [
+                            "Organic coffee and tea infusions.",
+                            "Assorted natural juices.",
+                            "Still and sparkling mineral water."
+                        ]
+                    },
+                    {
+                        title: "Sweet Option",
+                        col1: [
+                            "Freshly baked mini croissants.",
+                            "Assorted chocolate and blueberry muffins.",
+                            "Seasonal fruit skewers.",
+                            "Artisan mini ensaimadas."
+                        ],
+                        col2: [
+                            "100% Arabica fair-trade coffee.",
+                            "Plant-based milk (Oat, Soy).",
+                            "Freshly squeezed orange juice."
+                        ]
+                    }
+                ]
             }
         };
 
-        // Language Switcher Logic
-        const langSelector = document.getElementById('langSelector');
-        langSelector.addEventListener('change', (e) => {
-            const lang = e.target.value;
-            const dictionary = i18nData[lang];
-            
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (dictionary && dictionary[key]) {
-                    el.textContent = dictionary[key];
-                }
-            });
-        });
+        // Estado Global
+        let currentLang = 'es';
+        let currentOptionIndex = 0;
 
-        // FAQS Accordion Logic
-        function toggleFaq(headerElement) {
-            const faqItem = headerElement.parentElement;
-            const isActive = faqItem.classList.contains('active');
-
-            // Close all open FAQs
-            document.querySelectorAll('.faq-item').forEach(item => {
-                item.classList.remove('active');
-            });
-
-            // Toggle current if it wasn't active
-            if (!isActive) {
-                faqItem.classList.add('active');
-            }
-        }
-
-        // Interactive Menu Options Switching Data
-        const menuOptionsData = [
-            {
-                title: "Opción gourmet",
-                col1: [
-                    "Sorbo de verduras variadas ecológicas o gazpacho (según temporada).",
-                    "Rollito de Salmón fumado con cebolletas y aguacate.",
-                    "Brocheta de salmón ahumado y queso fresco.",
-                    "Rossejat de fideos con gambas y almejas.",
-                    "Mine aliñada Cèsar o Mediterráneo.",
-                    "Surtido de mini sandwiches.",
-                    "Dátil rellenado de foie.",
-                    "Brocheta de fruta ecológica de temporada y proximidad.",
-                    "Mine tartaleta con crema y frutos rojos."
-                ],
-                col2: [
-                    "Café · Tieso · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.",
-                    "Agua mineral.",
-                    "Refrescos variados.",
-                    "Vino tinto ecológico Can Suriol DO Penedès.",
-                    "Cava Can Suriol ecológico Sucio Nature DO Penedès."
-                ]
-            },
-            {
-                title: "Opción Clásica",
-                col1: [
-                    "Selección de minibocadillos de jamón ibérico.",
-                    "Croquetas artesanas de ceps y jamón.",
-                    "Mini quiche de verduras de temporada.",
-                    "Brochetas de tomate cherry y mozzarella.",
-                    "Tabla de quesos artesanos locales."
-                ],
-                col2: [
-                    "Café e infusiones ecológicas.",
-                    "Zumos naturales variados.",
-                    "Agua mineral con y sin gas."
-                ]
-            },
-            {
-                title: "Opción Dulce",
-                col1: [
-                    "Mini croissants recién horneados.",
-                    "Muffins variados de chocolate y arándanos.",
-                    "Brochetas de fruta de temporada.",
-                    "Mini ensaimadas artesanales."
-                ],
-                col2: [
-                    "Café 100% Arábica de comercio justo.",
-                    "Bebidas vegetales (Avena, Soja).",
-                    "Zumo de naranja recién exprimido."
-                ]
-            }
-        ];
-
+        // Función para cambiar de opción de menú
         function switchMenuOption(index) {
-            const optionIndex = index % menuOptionsData.length;
-            const data = menuOptionsData[optionIndex];
+            currentOptionIndex = index;
+            const menuData = i18nData[currentLang].menus[index];
 
-            // Update Number and Title
+            if (!menuData) return;
+
+            // Actualizar Número y Título
             document.getElementById('menuNum').textContent = index + 1;
-            document.getElementById('optionTitle').textContent = data.title;
+            document.getElementById('optionTitle').textContent = menuData.title;
 
-            // Update Column 1
+            // Actualizar Columna 1
             const col1 = document.getElementById('menuCol1');
-            col1.innerHTML = data.col1.map(item => `<div class="menu-item">${item}</div>`).join('');
+            col1.innerHTML = menuData.col1.map(item => `<div class="menu-item">${item}</div>`).join('');
 
-            // Update Column 2
+            // Actualizar Columna 2
             const col2 = document.getElementById('menuCol2');
-            col2.innerHTML = data.col2.map(item => `<div class="menu-item">${item}</div>`).join('');
+            col2.innerHTML = menuData.col2.map(item => `<div class="menu-item">${item}</div>`).join('');
 
-            // Update Active Dots
+            // Actualizar Indicadores (Puntos)
             const dots = document.querySelectorAll('.dot-indicator');
             dots.forEach((dot, idx) => {
                 dot.classList.toggle('active', idx === index);
             });
         }
+
+        // Función para cambiar todo el idioma
+        function applyLanguage(lang) {
+            if (!i18nData[lang]) return;
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            const dict = i18nData[lang];
+
+            // 1. Traducir textos con data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    if (key === 'meta_title') {
+                        document.title = dict[key];
+                    } else {
+                        el.textContent = dict[key];
+                    }
+                }
+            });
+
+            // 2. Traducir Placeholders del formulario
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.getAttribute('data-i18n-ph');
+                if (dict[key]) {
+                    el.placeholder = dict[key];
+                }
+            });
+
+            // 3. Renderizar el menú dinámico en el idioma activo
+            switchMenuOption(currentOptionIndex);
+        }
+
+        // Lógica de FAQs Accordion
+        function toggleFaq(headerElement) {
+            const faqItem = headerElement.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelector = document.getElementById('langSelector');
+            
+            if (langSelector) {
+                langSelector.addEventListener('change', (e) => {
+                    applyLanguage(e.target.value);
+                });
+            }
+
+            // Inicializar idioma por defecto (Español)
+            applyLanguage('es');
+        });
     </script>
 </body>
 </html>
