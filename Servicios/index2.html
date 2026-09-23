@@ -156,12 +156,23 @@
             font-size: 0.9rem;
             cursor: pointer;
             outline: none;
+            font-weight: 500;
+            color: var(--text-main);
         }
 
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+        }
+
+        /* Selector de Idioma Móvil */
+        .mobile-lang-selector {
+            display: none;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 15px;
+            text-align: center;
         }
 
         /* ==========================================
@@ -420,7 +431,6 @@
             filter: grayscale(20%);
         }
 
-
         /* ==========================================
            7. FOOTER
            ========================================== */
@@ -542,6 +552,10 @@
                 align-items: center;
             }
 
+            .mobile-lang-selector {
+                display: block;
+            }
+
             .menu-toggle {
                 display: block;
             }
@@ -581,15 +595,24 @@
         </div>
 
         <nav class="main-nav" id="main-nav">
-    <ul>
-       <li><a href="/NuestroCompromiso/index3.html">Nuestro compromiso</a></li>
-        <li><a href="/Servicios/index2.html" class="active">Servicios</a></li>
-        <li><a href="/Clientes/index.html">Clientes</a></li>
-        <li><a href="/Blog/index.html">Blog</a></li>
-        <li><a href="/Galería/index.html">Galería</a></li>
-        <li><a href="/Contactar/index.html">Contactar</a></li>
-    </ul>
-    </nav>
+            <ul>
+                <li><a href="/NuestroCompromiso/index3.html" data-i18n="navCompromiso">Nuestro compromiso</a></li>
+                <li><a href="/Servicios/index2.html" class="active" data-i18n="navServicios">Servicios</a></li>
+                <li><a href="/Clientes/index.html" data-i18n="navClientes">Clientes</a></li>
+                <li><a href="/Blog/index.html" data-i18n="navBlog">Blog</a></li>
+                <li><a href="/Galería/index.html" data-i18n="navGaleria">Galería</a></li>
+                <li><a href="/Contactar/index.html" data-i18n="navContactar">Contactar</a></li>
+            </ul>
+            
+            <!-- Selector de idioma para menú desplegable en móvil -->
+            <div class="mobile-lang-selector">
+                <select class="lang-selector lang-select-input">
+                    <option value="es">Esp</option>
+                    <option value="ca">Cat</option>
+                    <option value="en">Eng</option>
+                </select>
+            </div>
+        </nav>
 
         <div class="header-actions">
             <div class="social-links">
@@ -597,7 +620,7 @@
                 <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram" style="font-size: 20px;"></i></a>
             </div>
             <span class="divider">|</span>
-            <select class="lang-selector">
+            <select class="lang-selector lang-select-input">
                 <option value="es">Esp</option>
                 <option value="ca">Cat</option>
                 <option value="en">Eng</option>
@@ -609,11 +632,11 @@
          HERO BANNER
          ========================================== -->
     <section class="hero-banner" id="compromiso">
-        <h1>El catering para empresas en Barcelona</h1>
+        <h1 data-i18n="heroTitle">El catering para empresas en Barcelona</h1>
         
-        <p>En BonCor, nuestra misión va más allá de la gastronomía; nos dedicamos a crear experiencias culinarias que dejan una huella social positiva. Nos enorgullecemos de ofrecer platos únicos, sostenibles y artesanales, cuidadosamente elaborados en nuestros obradores.</p>
+        <p data-i18n="heroP1">En BonCor, nuestra misión va más allá de la gastronomía; nos dedicamos a crear experiencias culinarias que dejan una huella social positiva. Nos enorgullecemos de ofrecer platos únicos, sostenibles y artesanales, cuidadosamente elaborados en nuestros obradores.</p>
         
-        <p>Entendemos que cada evento es una plataforma para manifestar la personalidad y los valores de tu empresa. Por ello, como catering para empresas en Barcelona, personalizamos nuestro servicio para asegurarnos de que cada detalle de tu celebración resuene con la identidad y los objetivos sociales de tu empresa, garantizando así que el evento sea tan distintivo (DISTINGUIDO) y significativo como tu marca.</p>
+        <p data-i18n="heroP2">Entendemos que cada evento es una plataforma para manifestar la personalidad y los valores de tu empresa. Por ello, como catering para empresas en Barcelona, personalizamos nuestro servicio para asegurarnos de que cada detalle de tu celebración resuene con la identidad y los objetivos sociales de tu empresa, garantizando así que el evento sea tan distintivo y significativo como tu marca.</p>
 
         <!-- Forma Ondulada Inferior SVG -->
         <div class="wave-container">
@@ -627,14 +650,14 @@
          SECCIÓN SERVICIOS
          ========================================== -->
     <section class="services-section" id="servicios">
-        <h2 class="section-title">NUESTROS SERVICIOS DE CATERING</h2>
+        <h2 class="section-title" data-i18n="servicesTitle">NUESTROS SERVICIOS DE CATERING</h2>
 
         <!-- Servicio 1: Pausa café -->
         <div class="service-row">
             <div class="service-text">
-                <h3>Pausa café</h3>
-                <p>Díganos qué necesita y le propondremos la Pausa Café que mejor se adapte a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.</p>
-                <a href="/Homepage/pausa-cafe.html" class="btn-pill">Ver más</a>
+                <h3 data-i18n="service1Title">Pausa café</h3>
+                <p data-i18n="service1Desc">Díganos qué necesita y le propondremos la Pausa Café que mejor se adapte a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.</p>
+                <a href="/Homepage/pausa-cafe.html" class="btn-pill" data-i18n="btnMore">Ver más</a>
             </div>
             <div class="service-image-mask">
                 <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Pausa café catering">
@@ -644,9 +667,9 @@
         <!-- Servicio 2: Aperitivos y comidas -->
         <div class="service-row reverse">
             <div class="service-text">
-                <h3>Aperitivos y comidas</h3>
-                <p>Díganos qué necesita y le propondremos los Aperitivos y comidas que mejor se adapten a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.</p>
-                <a href="/Homepage/aperitivos-comidas.html" class="btn-pill">Ver más</a>
+                <h3 data-i18n="service2Title">Aperitivos y comidas</h3>
+                <p data-i18n="service2Desc">Díganos qué necesita y le propondremos los Aperitivos y comidas que mejor se adapten a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.</p>
+                <a href="/Homepage/aperitivos-comidas.html" class="btn-pill" data-i18n="btnMore">Ver más</a>
             </div>
             <div class="service-image-mask">
                 <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop" alt="Aperitivos y comidas">
@@ -656,9 +679,9 @@
         <!-- Servicio 3: Food Box -->
         <div class="service-row">
             <div class="service-text">
-                <h3>Food Box</h3>
-                <p>Díganos qué necesita y le propondremos la Food Box que mejor se adapte a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.</p>
-                <a href="/Homepage/food-box.html" class="btn-pill">Ver más</a>
+                <h3 data-i18n="service3Title">Food Box</h3>
+                <p data-i18n="service3Desc">Díganos qué necesita y le propondremos la Food Box que mejor se adapte a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.</p>
+                <a href="/Homepage/food-box.html" class="btn-pill" data-i18n="btnMore">Ver más</a>
             </div>
             <div class="service-image-mask">
                 <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?q=80&w=800&auto=format&fit=crop" alt="Food Box">
@@ -667,11 +690,11 @@
 
         <!-- Texto Desplegable / Acordeón -->
         <div class="expandable-block">
-            <p>En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones, desde reuniones empresariales hasta celebraciones familiares. Nos distinguimos por nuestra propuesta ecológica y local...</p>
-            <div class="expandable-content" id="extra-text">
+            <p data-i18n="accordionMainText">En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones, desde reuniones empresariales hasta celebraciones familiares. Nos distinguimos por nuestra propuesta ecológica y local...</p>
+            <div class="expandable-content" id="extra-text" data-i18n="accordionExtraText">
                 Garantizamos que todos los ingredientes son frescos y de proximidad. Además, trabajamos bajo los principios de inclusión social, permitiendo que cada contratación contribuya directamente a proyectos comunitarios en la ciudad de Barcelona.
             </div>
-            <button class="toggle-btn" id="toggle-btn">Ver más +</button>
+            <button class="toggle-btn" id="toggle-btn" data-i18n="btnAccordionMore">Ver más +</button>
         </div>
     </section>
 
@@ -680,10 +703,10 @@
          ========================================== -->
     <section class="clients-section" id="clientes">
         <div class="clients-info">
-            <h3>Más de 800 clientes creen y confían en nosotros</h3>
+            <h3 data-i18n="clientsTitle">Más de 800 clientes creen y confían en nosotros</h3>
             <div class="slider-controls">
-                <button class="control-btn" id="slide-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="control-btn" id="slide-next"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="control-btn" id="slide-prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="control-btn" id="slide-next" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
 
@@ -721,33 +744,33 @@
 
             <div class="footer-social">
                 <div class="social-icons">
-                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <p>BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.</p>
+                <p data-i18n="footerAbout">BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.</p>
             </div>
 
             <div class="footer-col">
-                <h4>Servicios</h4>
+                <h4 data-i18n="footerServicesTitle">Servicios</h4>
                 <ul>
-                    <li><a href="/Homepage/pausa-cafe.html">Pausa café</a></li>
-                    <li><a href="/Homepage/aperitivos-comidas.html">Aperitivos y comidas</a></li>
-                    <li><a href="/Homepage/food-box.html">Food box</a></li>
+                    <li><a href="/Homepage/pausa-cafe.html" data-i18n="footerPausaCafe">Pausa café</a></li>
+                    <li><a href="/Homepage/aperitivos-comidas.html" data-i18n="footerAperitivos">Aperitivos y comidas</a></li>
+                    <li><a href="/Homepage/food-box.html" data-i18n="footerFoodBox">Food box</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Sobre nosotros</h4>
+                <h4 data-i18n="footerAboutTitle">Sobre nosotros</h4>
                 <ul>
-                    <li><a href="/NuestroCompromiso/index3.html">Nuestro compromiso</a></li>
-                    <li><a href="/Galería/index.html">Galería</a></li>
-                    <li><a href="/Clientes/index.html">Clientes</a></li>
-                    <li><a href="/Blog/index.html">Blog</a></li>
+                    <li><a href="/NuestroCompromiso/index3.html" data-i18n="navCompromiso">Nuestro compromiso</a></li>
+                    <li><a href="/Galería/index.html" data-i18n="navGaleria">Galería</a></li>
+                    <li><a href="/Clientes/index.html" data-i18n="navClientes">Clientes</a></li>
+                    <li><a href="/Blog/index.html" data-i18n="navBlog">Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-contact">
-                <h4>Contacto</h4>
+                <h4 data-i18n="footerContactTitle">Contacto</h4>
                 <p>C / Font Honrada 2-4,</p>
                 <p>08004 Barcelona, España</p>
                 <p>+34 680 429 120</p>
@@ -757,10 +780,149 @@
     </footer>
 
     <!-- ==========================================
-         JAVASCRIPT NATIVO (VANILLA JS)
+         JAVASCRIPT NATIVO Y DICCIONARIO I18N
          ========================================== -->
     <script>
+        // Diccionario de Traducciones
+        const translations = {
+            es: {
+                navCompromiso: "Nuestro compromiso",
+                navServicios: "Servicios",
+                navClientes: "Clientes",
+                navBlog: "Blog",
+                navGaleria: "Galería",
+                navContactar: "Contactar",
+                heroTitle: "El catering para empresas en Barcelona",
+                heroP1: "En BonCor, nuestra misión va más allá de la gastronomía; nos dedicamos a crear experiencias culinarias que dejan una huella social positiva. Nos enorgullecemos de ofrecer platos únicos, sostenibles y artesanales, cuidadosamente elaborados en nuestros obradores.",
+                heroP2: "Entendemos que cada evento es una plataforma para manifestar la personalidad y los valores de tu empresa. Por ello, como catering para empresas en Barcelona, personalizamos nuestro servicio para asegurarnos de que cada detalle de tu celebración resuene con la identidad y los objetivos sociales de tu empresa, garantizando así que el evento sea tan distintivo y significativo como tu marca.",
+                servicesTitle: "NUESTROS SERVICIOS DE CATERING",
+                service1Title: "Pausa café",
+                service1Desc: "Díganos qué necesita y le propondremos la Pausa Café que mejor se adapte a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.",
+                service2Title: "Aperitivos y comidas",
+                service2Desc: "Díganos qué necesita y le propondremos los Aperitivos y comidas que mejor se adapten a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.",
+                service3Title: "Food Box",
+                service3Desc: "Díganos qué necesita y le propondremos la Food Box que mejor se adapte a su acto. Desde un desayuno o merienda sencillo de bienvenida a uno completo para poder continuar después con la jornada.",
+                btnMore: "Ver más",
+                accordionMainText: "En BonCor Catering, transformamos cada evento en una experiencia única y memorable. Nuestra oferta incluye desayunos, meriendas, aperitivos y comidas para todo tipo de ocasiones, desde reuniones empresariales hasta celebraciones familiares. Nos distinguimos por nuestra propuesta ecológica y local...",
+                accordionExtraText: "Garantizamos que todos los ingredientes son frescos y de proximidad. Además, trabajamos bajo los principios de inclusión social, permitiendo que cada contratación contribuya directamente a proyectos comunitarios en la ciudad de Barcelona.",
+                btnAccordionMore: "Ver más +",
+                btnAccordionLess: "Ver menos -",
+                clientsTitle: "Más de 800 clientes creen y confían en nosotros",
+                footerAbout: "BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.",
+                footerServicesTitle: "Servicios",
+                footerPausaCafe: "Pausa café",
+                footerAperitivos: "Aperitivos y comidas",
+                footerFoodBox: "Food box",
+                footerAboutTitle: "Sobre nosotros",
+                footerContactTitle: "Contacto"
+            },
+            ca: {
+                navCompromiso: "El nostre compromís",
+                navServicios: "Serveis",
+                navClientes: "Clients",
+                navBlog: "Blog",
+                navGaleria: "Galeria",
+                navContactar: "Contactar",
+                heroTitle: "El càtering per a empreses a Barcelona",
+                heroP1: "A BonCor, la nostra missió va més enllà de la gastronomia; ens dediquem a crear experiències culinàries que deixen una empremta social positiva. Ens enorgulleix oferir plats únics, sostenibles i artesanals, curosament elaborats als nostres obradors.",
+                heroP2: "Entenem que cada esdeveniment és una plataforma per manifestar la personalitat i els valors de la teva empresa. Per això, com a càtering per a empreses a Barcelona, personalitzem el nostre servei per assegurar-nos que cada detall de la teva celebració ressoni amb la identitat i els objectius socials de la teva empresa.",
+                servicesTitle: "ELS NOSTRES SERVEIS DE CÀTERING",
+                service1Title: "Pausa cafè",
+                service1Desc: "Digui'ns què necessita i li proposarem la Pausa Cafè que millor s'adapti al seu acte. Des d'un esmorzar o berenar senzill de benvinguda fins a un de complet per poder continuar després amb la jornada.",
+                service2Title: "Aperitius i dinars",
+                service2Desc: "Digui'ns què necessita i li proposarem els Aperitius i dinars que millor s'adaptin al seu acte. Des d'un esmorzar o berenar senzill de benvinguda fins a un de complet per poder continuar després amb la jornada.",
+                service3Title: "Food Box",
+                service3Desc: "Digui'ns què necessita i li proposarem la Food Box que millor s'adapti al seu acte. Des d'un esmorzar o berenar senzill de benvinguda fins a un de complet per poder continuar després amb la jornada.",
+                btnMore: "Veure més",
+                accordionMainText: "A BonCor Càtering, transformem cada esdeveniment en una experiència única i memorable. La nostra oferta inclou esmorzars, berenars, aperitius i dinars per a tot tipus d'ocasions, des de reunions empresarials fins a celebracions familiars. Ens distingim per la nostra proposta ecològica i local...",
+                accordionExtraText: "Garantim que tots els ingredients són frescos i de proximitat. A més, treballem sota els principis d'inclusió social, permetent que cada contractació contribueixi directament a projectes comunitaris a la ciutat de Barcelona.",
+                btnAccordionMore: "Veure més +",
+                btnAccordionLess: "Veure menys -",
+                clientsTitle: "Més de 800 clients creuen i confien en nosaltres",
+                footerAbout: "BonCor és el càtering de Solucions Socials Sostenibles: gastronomia sostenible i de proximitat que genera oportunitats laborals reals.",
+                footerServicesTitle: "Serveis",
+                footerPausaCafe: "Pausa cafè",
+                footerAperitivos: "Aperitius i dinars",
+                footerFoodBox: "Food box",
+                footerAboutTitle: "Sobre nosaltres",
+                footerContactTitle: "Contacte"
+            },
+            en: {
+                navCompromiso: "Our Commitment",
+                navServicios: "Services",
+                navClientes: "Clients",
+                navBlog: "Blog",
+                navGaleria: "Gallery",
+                navContactar: "Contact",
+                heroTitle: "Corporate Catering in Barcelona",
+                heroP1: "At BonCor, our mission goes beyond gastronomy; we are dedicated to creating culinary experiences that leave a positive social footprint. We take pride in offering unique, sustainable, and artisanal dishes, carefully crafted in our kitchens.",
+                heroP2: "We understand that every event is a platform to express your company's personality and values. As corporate caterers in Barcelona, we customize our service to ensure that every detail of your celebration aligns with your company's identity and social goals.",
+                servicesTitle: "OUR CATERING SERVICES",
+                service1Title: "Coffee break",
+                service1Desc: "Tell us what you need and we will propose the Coffee Break best suited to your event. From a simple welcome breakfast or snack to a full spread to fuel the rest of your day.",
+                service2Title: "Appetizers & Meals",
+                service2Desc: "Tell us what you need and we will propose the Appetizers and Meals best suited to your event. From a simple welcome break to a complete menu to continue the day.",
+                service3Title: "Food Box",
+                service3Desc: "Tell us what you need and we will propose the Food Box best suited to your event. From a simple welcome snack to a full option for your team.",
+                btnMore: "See more",
+                accordionMainText: "At BonCor Catering, we transform every event into a unique and memorable experience. Our offer includes breakfasts, snacks, appetizers, and meals for all occasions, from business meetings to family celebrations. We stand out for our organic and local approach...",
+                accordionExtraText: "We guarantee that all ingredients are fresh and locally sourced. In addition, we operate under social inclusion principles, ensuring that every booking directly supports community projects in Barcelona.",
+                btnAccordionMore: "See more +",
+                btnAccordionLess: "See less -",
+                clientsTitle: "Over 800 clients believe and trust in us",
+                footerAbout: "BonCor is the catering service of Solucions Socials Sostenibles: sustainable, local gastronomy generating real job opportunities.",
+                footerServicesTitle: "Services",
+                footerPausaCafe: "Coffee break",
+                footerAperitivos: "Appetizers & meals",
+                footerFoodBox: "Food box",
+                footerAboutTitle: "About us",
+                footerContactTitle: "Contact"
+            }
+        };
+
+        // Lógica de cambio de idioma
+        function setLanguage(lang) {
+            const currentLang = translations[lang] ? lang : 'es';
+            const data = translations[currentLang];
+
+            // 1. Traducir elementos con atributo data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (data[key]) {
+                    el.textContent = data[key];
+                }
+            });
+
+            // 2. Actualizar estado del botón acordeón si cambia de idioma
+            const expandableContent = document.getElementById('extra-text');
+            const toggleBtn = document.getElementById('toggle-btn');
+            if (expandableContent.classList.contains('open')) {
+                toggleBtn.textContent = data.btnAccordionLess;
+            } else {
+                toggleBtn.textContent = data.btnAccordionMore;
+            }
+
+            // 3. Sincronizar todos los selectores de idioma de la página
+            document.querySelectorAll('.lang-select-input').forEach(select => {
+                select.value = currentLang;
+            });
+
+            // 4. Guardar preferencia
+            localStorage.setItem('preferred_lang', currentLang);
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar Idioma
+            const savedLang = localStorage.getItem('preferred_lang') || 'es';
+            setLanguage(savedLang);
+
+            // Escuchar cambios en los selectores de idioma
+            document.querySelectorAll('.lang-select-input').forEach(select => {
+                select.addEventListener('change', (e) => {
+                    setLanguage(e.target.value);
+                });
+            });
+
             // 1. Alternar Menú Hamburguesa
             const menuToggle = document.getElementById('menu-toggle');
             const mainNav = document.getElementById('main-nav');
@@ -775,10 +937,13 @@
 
             toggleBtn.addEventListener('click', () => {
                 expandableContent.classList.toggle('open');
+                const currentLang = localStorage.getItem('preferred_lang') || 'es';
+                const data = translations[currentLang];
+
                 if (expandableContent.classList.contains('open')) {
-                    toggleBtn.textContent = 'Ver menos -';
+                    toggleBtn.textContent = data.btnAccordionLess;
                 } else {
-                    toggleBtn.textContent = 'Ver más +';
+                    toggleBtn.textContent = data.btnAccordionMore;
                 }
             });
 
