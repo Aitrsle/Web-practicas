@@ -1,11 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Box</title>
+    <title>Food Box - BonCor | Catering Social y Sostenible</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#589b52',
+                            greenDark: '#478142',
+                            greenLight: '#73b36d',
+                            olive: '#7fa043',
+                            bgGray: '#f9fbf9',
+                            textDark: '#333333',
+                            cardBg: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            background-color: #fcfdfc;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        /* Custom smooth list bullets styling matching design */
+        ul.custom-bullets li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+        ul.custom-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #589b52;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, opacity 0.25s ease-out;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            opacity: 1;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- HEADER -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="/Homepage/index.html" class="flex items-center gap-2 group">
+               <img src = "/Servicios/Logo2.png" alt="BonCor Logo" height="40" width="90">
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-700">
+                <a href="/Nuestrocompromiso/index3.html" class="hover:text-brand-green transition-colors">Nuestro compromiso</a>
+                <a href="/Servicios/index.html" class="hover:text-brand-green transition-colors">Servicios</a>
+                <a href="/Clientes/index.html" class="hover:text-brand-green transition-colors">Clientes</a>
+                <a href="/Blog/index.html" class="hover:text-brand-green transition-colors">Blog</a>
+                <a href="/Galeria/index.html" class="hover:text-brand-green transition-colors">Galería</a>
+                <a href="/Contacto/index.html" class="hover:text-brand-green transition-colors">Contactar</a>   
+            </nav>
+
+            <!-- Social Links & Language Switcher -->
+            <div class="hidden sm:flex items-center space-x-4 text-xs font-medium text-gray-600">
+                <div class="flex items-center space-x-3 text-gray-600 pr-3 border-r border-gray-200">
+                    <a href="https://www.instagram.com" class="hover:text-brand-green transition-colors text-base" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" class="hover:text-brand-green transition-colors text-base" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="flex items-center space-x-1 cursor-pointer">
+                    <span class="font-bold text-brand-green">Esp</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-gray-400"></i>
+                </div>
+                <span class="text-gray-300">|</span>
+                <a href="/Contacto/index.html" class="hover:text-brand-green transition-colors">Cat</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-brand-green focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="/Nuestrocompromiso/index3.html" class="block py-2 text-gray-700 font-medium">Nuestro compromiso</a>
+            <a href="/Servicios/index.html" class="block py-2 text-brand-green font-semibold">Servicios</a>
+            <a href="/Clientes/index.html" class="block py-2 text-gray-700 font-medium">Clientes</a>
+            <a href="/Blog/index.html" class="block py-2 text-gray-700 font-medium">Blog</a>
+            <a href="/Galeria/index.html" class="block py-2 text-gray-700 font-medium">Galería</a>
+            <a href="/Contacto/index.html" class="block py-2 text-gray-700 font-medium">Contactar</a>
+            <div class="flex items-center gap-4 pt-3 border-t border-gray-100">
+                <a href="https://www.instagram.com" class="text-gray-600 text-lg"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" class="text-gray-600 text-lg"><i class="fa-brands fa-linkedin-in"></i></a>
+                <span class="text-xs font-semibold text-brand-green ml-auto">Esp / Cat</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative w-full h-[340px] sm:h-[420px] md:h-[480px] bg-stone-800 overflow-hidden flex items-end">
+        <!-- Background Image with Simulated Box & Stamp Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Simulated High-Quality Catering Craft Box Texture -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/Homepage/3.jpg');"></div>
+            <!-- Realistic Box Sticker & Rope Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/20 flex items-center justify-center p-4">
+                <!-- Round Eco Sticker Banner Representation -->
+                <div class="bg-[#f5f1ea] opacity-90 rounded-full w-56 h-56 sm:w-72 sm:h-72 border-4 border-[#e2d8c3] shadow-2xl flex flex-col items-center justify-center p-6 text-center transform -rotate-3 transition hover:rotate-0 duration-500">
+                    <div class="text-[#7fa043] mb-1">
+                        <svg class="w-12 h-12 sm:w-16 sm:h-16 mx-auto fill-current" viewBox="0 0 100 100">
+                            <path d="M50,25 C40,10 20,15 20,35 C20,60 45,75 50,85 C55,75 80,60 80,35 C80,15 60,10 50,25 Z"/>
+                        </svg>
+                    </div>
+                    <span class="serif-title text-2xl sm:text-3xl font-bold text-[#597e29] leading-none mb-1">BonCor</span>
+                    <span class="text-[10px] sm:text-xs italic font-serif text-gray-700 mb-2">Cuinem un futur millor</span>
+                    <div class="w-12 h-0.5 bg-[#7fa043] my-1"></div>
+                    <span class="text-[8px] sm:text-[10px] font-semibold text-gray-600 uppercase tracking-widest">Solucions Socials</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Content Title -->
+        <div class="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 w-full pb-10 sm:pb-14">
+            <h1 class="serif-title text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight drop-shadow-md">
+                Food box
+            </h1>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT - MENU OPTIONS -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-8">
+
+        <!-- Opción 1 -->
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 1</h2>
+            <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <li>Botella de agua mineral de 33 cl.</li>
+                <li>Sándwich de pan blanco, 120 g de baguette con queso o embutido (sándwich de 23 cm de longitud).</li>
+                <li>Pieza de fruta ecológica de temporada (plátano, manzana, mandarinas).</li>
+            </ul>
+        </div>
+
+        <!-- Opción 2 -->
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 2</h2>
+            <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <li>Sándwich vegetal, 120 g de baguette con lechuga, mayonesa, pavo y queso (sándwich de 23 cm de longitud).</li>
+                <li>Porción de coca de hojaldre con crema de 100 g (elaborada en nuestro taller).</li>
+            </ul>
+        </div>
+
+        <!-- Opción 3 -->
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 3</h2>
+            <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <li>Sándwich vegetal de atún, pollo asado o pavo, 40 g de pan de aceitunas con lechuga, mayonesa y tomate.</li>
+                <li>Sándwich de pan blanco, 40 g de baguette con queso o embutido.</li>
+                <li>Ensalada con queso de cabra de 220 g (mezcla de lechugas, cerezas, queso de cabra, aceitunas negras, frutos secos y pasas).</li>
+                <li>Vaso de fruta ecológica de temporada de 150 g.</li>
+            </ul>
+        </div>
+
+        <!-- Opción 4 -->
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 4</h2>
+            <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <li>Sándwich vegetal de pavo, 80 g de pan de espelta y salvado con lechuga, mayonesa y tomate.</li>
+                <li>Empanada de atún de 80 g con tomate, pimiento y huevo duro.</li>
+            </ul>
+        </div>
+
+        <!-- Opción 5 -->
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Opción 5</h2>
+            <ul class="custom-bullets space-y-2 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <li>Wrap de pavo de 80 g con hoja de roble y queso Cheddar o</li>
+                <li>Wrap de pollo de 80 g con parmesano, mostaza, cebolla, tomate y lechuga.</li>
+            </ul>
+        </div>
+
+        <!-- Contenido del Food Box -->
+        <div class="bg-white rounded-lg p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            <h2 class="serif-title text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">Contenido del Food Box</h2>
+            <ul class="custom-bullets space-y-2.5 text-gray-700 text-sm sm:text-base leading-relaxed">
+                <li>Menú elegido.</li>
+                <li>Caja de cartón reciclado, atada con cuerda y etiqueta.</li>
+                <li>Servilleta ecológica, reciclada y reciclable.</li>
+                <li>Aceite de oliva virgen, vinagre y sal (en caso de ensalada).</li>
+                <li>El vaso de fruta es de material orgánico PLA y el tenedor de madera (en caso de vaso de fruta).</li>
+                <li>Tenedor Biodegradable (en caso de ensalada).</li>
+                <li>Podemos adaptar el formato de entrega en bolsa de papel Kraft reciclado.</li>
+            </ul>
+        </div>
+
+        <!-- Note & Call To Action Button -->
+        <div class="pt-4 space-y-6">
+            <p class="text-sm sm:text-base text-gray-700 font-normal leading-relaxed">
+                En todas las opciones de food box se incluye de manera gratuita todo el menaje y cristalería necesaria para realizar el servicio contratado.
+            </p>
+
+            <a href="#contacto" class="inline-block bg-brand-green hover:bg-brand-greenDark text-white font-medium px-8 py-3 rounded-full transition-all duration-200 shadow-sm hover:shadow text-center">
+                Contactar
+            </a>
+        </div>
+
+        <!-- FAQS SECTION -->
+        <section class="pt-12 border-t border-gray-200 mt-16">
+            <h2 class="serif-title text-3xl sm:text-4xl font-bold text-gray-900 mb-8 tracking-tight">FAQS</h2>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="accordion-btn w-full text-left py-3 flex justify-between items-center group focus:outline-none">
+                        <span class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-brand-green transition-colors flex items-center gap-3">
+                            <span class="text-xs text-gray-400 group-hover:text-brand-green transition-colors">►</span>
+                            ¿Cómo puedo hacer un pedido de FOOD Boxes?
+                        </span>
+                    </button>
+                    <div class="accordion-content pl-7 text-sm sm:text-base text-gray-600 leading-relaxed">
+                        <p class="pt-2">Puedes realizar tu pedido poniéndote en contacto directamente con nosotros a través de nuestro formulario web, por correo electrónico a <a href="mailto:catering@boncor.cat" class="text-brand-green underline">catering@boncor.cat</a> o llamando al <strong>+34 680 429 120</strong>. Recomendamos solicitar los pedidos con un mínimo de 48 horas de antelación.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="accordion-btn w-full text-left py-3 flex justify-between items-center group focus:outline-none">
+                        <span class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-brand-green transition-colors flex items-center gap-3">
+                            <span class="text-xs text-gray-400 group-hover:text-brand-green transition-colors">►</span>
+                            ¿Puedo personalizar el contenido de mi FOOD Box?
+                        </span>
+                    </button>
+                    <div class="accordion-content pl-7 text-sm sm:text-base text-gray-600 leading-relaxed">
+                        <p class="pt-2">¡Sí! Nos adaptamos a necesidades dietéticas específicas como opciones vegetarianas, veganas, sin gluten o sin lactosa. Consúltanos al realizar la reserva para ofrecerte la mejor alternativa personalizada.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border-b border-gray-100 pb-4">
+                    <button class="accordion-btn w-full text-left py-3 flex justify-between items-center group focus:outline-none">
+                        <span class="text-base sm:text-lg font-semibold text-gray-800 group-hover:text-brand-green transition-colors flex items-center gap-3">
+                            <span class="text-xs text-gray-400 group-hover:text-brand-green transition-colors">►</span>
+                            ¿Las FOOD Boxes son adecuadas para eventos o regalos corporativos?
+                        </span>
+                    </button>
+                    <div class="accordion-content pl-7 text-sm sm:text-base text-gray-600 leading-relaxed">
+                        <p class="pt-2">Absolutamente. Nuestras Food Boxes están diseñadas especialmente para reuniones de empresa, eventos corporativos, congresos y picnics, garantizando una presentación impecable, ecológica y sostenible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#599E53] text-white pt-12 pb-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                
+                <!-- Col 1: White Box Logo Placeholder/Image -->
+                <div class="lg:col-span-1">
+                    <div class="footer-logo">
+                        <img src="/Homepage/Logo.png" alt="BonCor Logo">
+                                      
+                    </div>
+                </div>
+
+                <!-- Col 2: Info & Social -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3 text-lg mb-2">
+                        <a href="https://www.instagram.com" class="hover:text-emerald-100 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" class="hover:text-emerald-100 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="text-xs leading-relaxed text-emerald-50">
+                        BonCor es el catering de Solucions Socials Sostenibles: gastronomía sostenible y de proximidad que genera oportunidades laborales reales.
+                    </p>
+                </div>
+
+                <!-- Col 3: Servicios -->
+                <div>
+                    <h3 class="serif-title font-bold text-lg mb-3">Servicios</h3>
+                    <ul class="space-y-2 text-xs text-emerald-50">
+                        <li><a href="/Homepage/pausa-cafe.html" class="hover:underline">Pausa café</a></li>
+                        <li><a href="/Homepage/aperitivos-comidas.html" class="hover:underline">Aperitivos y comidas</a></li>
+                        <li><a href="/Homepage/food-box.html" class="hover:underline">Food box</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Sobre nosotros -->
+                <div>
+                    <h3 class="serif-title font-bold text-lg mb-3">Sobre nosotros</h3>
+                    <ul class="space-y-2 text-xs text-emerald-50">
+                        <li><a href="/Nuestrocompromiso/index3.html" class="hover:underline">Nuestro compromiso</a></li>
+                        <li><a href="/Galería/index.html" class="hover:underline">Galería</a></li>
+                        <li><a href="/Clientes/index.html" class="hover:underline">Clientes</a></li>
+                        <li><a href="/Blog/index.html" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Contacto -->
+                <div id="contacto">
+                    <h3 class="serif-title font-bold text-lg mb-3">Contacto</h3>
+                    <ul class="space-y-2 text-xs text-emerald-50">
+                        <li>C / Font Honrada 2-4,</li>
+                        <li>08004 Barcelona, España</li>
+                        <li class="pt-1"><a href="tel:+34680429120" class="hover:underline">+34 680 429 120</a></li>
+                        <li><a href="mailto:catering@boncor.cat" class="hover:underline">catering@boncor.cat</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Sub-footer Bottom Divider & Legal -->
+            <div class="border-t border-emerald-400/40 pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-emerald-100 gap-2">
+                <div class="flex items-center space-x-2 flex-wrap">
+                    <a href="/Homepage/aviso-legal.html" class="hover:underline">Aviso legal</a>
+                    <span>·</span>
+                    <a href="/Homepage/politica-privacidad.html" class="hover:underline">Política de privacidad</a>
+                    <span>·</span>
+                    <a href="/Homepage/politica-cookies.html" class="hover:underline">Política de cookies</a>
+                </div>
+                <div class="text-xs opacity-80">
+                    &copy; 2026 BonCor - Solucions Socials Sostenibles
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // FAQS Accordion Logic
+            const accordionBtns = document.querySelectorAll('.accordion-btn');
+
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const arrow = btn.querySelector('span span');
+                    const isOpen = content.classList.contains('open');
+
+                    // Close all active accordions for clean UX
+                    document.querySelectorAll('.accordion-content').forEach(c => {
+                        c.classList.remove('open');
+                        c.style.maxHeight = null;
+                    });
+                    document.querySelectorAll('.accordion-btn span span').forEach(a => {
+                        a.textContent = '►';
+                    });
+
+                    // Toggle current click state
+                    if (!isOpen) {
+                        content.classList.add('open');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        arrow.textContent = '▼';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
