@@ -76,10 +76,6 @@
             flex-wrap: wrap;
         }
 
-        .body{
-            align-items: center;
-        }
-
         .logo-container img {
             height: 90px;
             width: auto;
@@ -147,7 +143,8 @@
         .service-detail-section {
             padding: 50px 8% 80px;
             position: relative;
-            background: linear-gradient(135deg, rgba(255,255,255,1) 70%, rgba(240,245,235,0.4) 100%);
+            background: radial-gradient(circle at center, #2c2c2c 0%, #111111 100%);
+            color: var(--white);
         }
 
         .main-title {
@@ -155,7 +152,7 @@
             font-size: clamp(2rem, 5vw, 3rem);
             text-align: center;
             margin-bottom: 40px;
-            color: var(--text-dark);
+            color: var(--white);
             font-weight: 700;
         }
 
@@ -165,13 +162,14 @@
             gap: 40px;
             position: relative;
             margin-bottom: 50px;
-            padding-right: 30px;
+            padding-right: 40px;
+            min-height: 250px;
         }
 
         .option-title {
             font-family: var(--font-serif);
             font-size: clamp(1.6rem, 4vw, 2.2rem);
-            color: var(--primary-green);
+            color: var(--primary-light-green);
             grid-column: 1 / -1;
             margin-bottom: -10px;
         }
@@ -184,9 +182,9 @@
 
         .menu-item {
             font-size: 0.92rem;
-            color: var(--text-dark);
+            color: #E0E0E0;
             padding-left: 15px;
-            border-left: 2px dashed var(--primary-green);
+            border-left: 2px dashed var(--primary-light-green);
         }
 
         /* Side Pagination Dots */
@@ -204,7 +202,7 @@
             font-family: var(--font-serif);
             font-size: 1.8rem;
             font-weight: bold;
-            color: var(--text-dark);
+            color: var(--white);
             margin-bottom: 5px;
         }
 
@@ -212,14 +210,14 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: #D1D1D1;
+            background-color: #555555;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .dot-nav.active,
         .dot-nav:hover {
-            background-color: var(--text-dark);
+            background-color: var(--white);
             transform: scale(1.2);
         }
 
@@ -238,6 +236,7 @@
             font-weight: 600;
             flex: 1 1 300px;
             max-width: 600px;
+            color: #CCCCCC;
         }
 
         .action-buttons {
@@ -265,8 +264,8 @@
         }
 
         .btn-outline-dark {
-            border: 1px solid var(--text-dark);
-            color: var(--text-dark);
+            border: 1px solid var(--white);
+            color: var(--white);
             padding: 10px 45px;
             border-radius: 25px;
             font-weight: 500;
@@ -277,8 +276,8 @@
         }
 
         .btn-outline-dark:hover {
-            background: var(--text-dark);
-            color: var(--white);
+            background: var(--white);
+            color: var(--text-dark);
         }
 
         /* ==========================================
@@ -289,6 +288,7 @@
             padding: 60px 8%;
             text-align: center;
             align-items: center;
+            color: var(--text-dark);
         }
 
         .dietary-title {
@@ -299,7 +299,7 @@
 
         .dietary-content {
             display: grid;
-            grid-template-columns: 1fr ;
+            grid-template-columns: 1fr;
             gap: 20px;
             align-items: center;
         }
@@ -308,6 +308,7 @@
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         .diet-card {
@@ -332,13 +333,6 @@
         .diet-card h4 {
             font-family: var(--font-serif);
             font-size: 1rem;
-        }
-
-        .dietary-text {
-            text-align: left;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.7;
         }
 
         /* ==========================================
@@ -376,6 +370,7 @@
             gap: 25px;
             align-items: center;
             background: var(--white);
+            color: var(--text-dark);
         }
 
         .km0-icon {
@@ -472,8 +467,6 @@
             .nav-links { display: none; flex-direction: column; width: 100%; gap: 10px; padding-top: 15px; }
             .nav-links.show { display: flex; }
             .menu-container { grid-template-columns: 1fr; padding-right: 40px; }
-            .dietary-content { grid-template-columns: 1fr; }
-            .dietary-text { text-align: center; }
             .action-buttons { align-items: stretch; width: 100%; }
             .service-footer-wrapper { flex-direction: column; align-items: center; text-align: center; }
             .km0-card { flex-direction: column; text-align: center; padding: 25px 20px; }
@@ -539,30 +532,14 @@
         <section class="service-detail-section">
             <h1 class="main-title" data-i18n="mainTitle">Aperitivos y comidas</h1>
 
-            <div class="menu-container" id="menuContent">
-                <h2 class="option-title">Opción gourmet</h2>
+            <div class="menu-container" id="menuContainer">
+                <h2 class="option-title" id="optionTitle">Opción básica</h2>
 
                 <!-- Left Column Menu -->
-                <div class="menu-list">
-                    <div class="menu-item" data-i18n="menuItem1">Sorbo de verduras variadas ecológicas o gazpacho (según temporada).</div>
-                    <div class="menu-item" data-i18n="menuItem2">Rollito de Salmón ahumado con cebolletas y aguacate.</div>
-                    <div class="menu-item" data-i18n="menuItem3">Brocheta de salmón ahumado y queso fresco.</div>
-                    <div class="menu-item" data-i18n="menuItem4">Rossejat de fideos con gambas y almejas.</div>
-                    <div class="menu-item" data-i18n="menuItem5">Mini aliñada César o Mediterráneo.</div>
-                    <div class="menu-item" data-i18n="menuItem6">Surtido de mini sandwiches.</div>
-                    <div class="menu-item" data-i18n="menuItem7">Dátil rellenado de foie.</div>
-                    <div class="menu-item" data-i18n="menuItem8">Brocheta de fruta ecológica de temporada y proximidad.</div>
-                    <div class="menu-item" data-i18n="menuItem9">Mini tartaleta con crema y frutos rojos.</div>
-                </div>
+                <div class="menu-list" id="menuListLeft"></div>
 
                 <!-- Right Column Menu -->
-                <div class="menu-list">
-                    <div class="menu-item" data-i18n="menuItem10">Café · Té · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.</div>
-                    <div class="menu-item" data-i18n="menuItem11">Agua mineral.</div>
-                    <div class="menu-item" data-i18n="menuItem12">Refrescos variados.</div>
-                    <div class="menu-item" data-i18n="menuItem13">Vino tinto ecológico Can Suriol DO Penedès.</div>
-                    <div class="menu-item" data-i18n="menuItem14">Cava Can Suriol ecológico Brut Nature DO Penedès.</div>
-                </div>
+                <div class="menu-list" id="menuListRight"></div>
 
                 <!-- Side Pagination Dots -->
                 <div class="side-navigation">
@@ -572,6 +549,9 @@
                     <div class="dot-nav" onclick="switchMenu(2)"></div>
                     <div class="dot-nav" onclick="switchMenu(3)"></div>
                     <div class="dot-nav" onclick="switchMenu(4)"></div>
+                    <div class="dot-nav" onclick="switchMenu(5)"></div>
+                    <div class="dot-nav" onclick="switchMenu(6)"></div>
+                    <div class="dot-nav" onclick="switchMenu(7)"></div>
                 </div>
             </div>
 
@@ -687,7 +667,272 @@
             navLinks.classList.toggle('show');
         });
 
-        // Diccionario de Traducciones
+        // Opciones del Menú mapeadas directamente de las imágenes suministradas
+        const menuData = {
+            es: [
+                {
+                    title: "Opción básica",
+                    items: [
+                        "Chips de verduras ecológicas variadas.",
+                        "Agua mineral."
+                    ]
+                },
+                {
+                    title: "Opción 1",
+                    items: [
+                        "Surtido de pasta salada.",
+                        "Grissinis con queso Emmental.",
+                        "Agua mineral.",
+                        "Refrescos variados.",
+                        "Vino tinto ecológico Can Suriol DO Penedès.",
+                        "Cava Can Suriol ecológico Brut Nature DO Penedès."
+                    ]
+                },
+                {
+                    title: "Opción 2",
+                    items: [
+                        "Surtido de pasta salada.",
+                        "Brocheta de tomate seco, mozzarella y pesto (producto vegetariano).",
+                        "Mini bocadillos (con embutidos, jamón dulce y de queso).",
+                        "Agua mineral.",
+                        "Refrescos variados."
+                    ]
+                },
+                {
+                    title: "Opción 3",
+                    items: [
+                        "Surtido de croquetas rústicas de temporada.",
+                        "Coca de escalivada (producto vegetariano).",
+                        "Pincho de tortilla de patatas.",
+                        "Agua mineral.",
+                        "Refrescos variados."
+                    ]
+                },
+                {
+                    title: "Opción 4",
+                    items: [
+                        "Mini bocadillos (con embutidos, de queso y de vegetales).",
+                        "Pincho de queso y membrillo.",
+                        "Volovanes rellenos de gambas.",
+                        "Brocheta de fruta ecológica de temporada y proximidad.",
+                        "Agua mineral.",
+                        "Refrescos variados."
+                    ]
+                },
+                {
+                    title: "Opción 5",
+                    items: [
+                        "Rollito de jamón dulce relleno de gambas.",
+                        "Wrap de jamón y huevo hilado.",
+                        "Coca de verduritas del huerto (producto vegetariano).",
+                        "Sorbete de verduras variadas ecológicas o Gazpacho (según temporada).",
+                        "Café · Tés · Leche · Leche de Soja e Infusiones ecológicas y de comercio justo.",
+                        "Agua mineral.",
+                        "Refrescos variados."
+                    ]
+                },
+                {
+                    title: "Opción 6",
+                    items: [
+                        "Rollito de Salmón ahumado con cebollas tiernas y aguacate.",
+                        "Sorbete de verduras variadas ecológicas o gazpacho (según temporada).",
+                        "Pincho de jamón de pato con piña.",
+                        "Surtido de mini canapés.",
+                        "Arroz de fideos con gambas y almejas.",
+                        "Agua mineral.",
+                        "Refrescos variados."
+                    ]
+                },
+                {
+                    title: "Opción Gourmet",
+                    items: [
+                        "Mini tartaleta con crema y frutos rojos.",
+                        "Brocheta de salmón ahumado y queso fresco.",
+                        "Mini ensalada César o Mediterránea.",
+                        "Surtido de mini sándwiches.",
+                        "Dátil relleno de foie.",
+                        "Agua mineral.",
+                        "Refrescos variados."
+                    ]
+                }
+            ],
+            cat: [
+                {
+                    title: "Opció bàsica",
+                    items: [
+                        "Xips de verdures ecològiques variades.",
+                        "Aigua mineral."
+                    ]
+                },
+                {
+                    title: "Opció 1",
+                    items: [
+                        "Surtit de pasta salada.",
+                        "Grissinis amb formatge Emmental.",
+                        "Aigua mineral.",
+                        "Refrescs variats.",
+                        "Vi negre ecològic Can Suriol DO Penedès.",
+                        "Cava Can Suriol ecològic Brut Nature DO Penedès."
+                    ]
+                },
+                {
+                    title: "Opció 2",
+                    items: [
+                        "Surtit de pasta salada.",
+                        "Broqueta de tomàquet sec, mozzarella i pesto (producte vegetarià).",
+                        "Mini sandvitxos (amb embotits, pernil dolç i de formatge).",
+                        "Aigua mineral.",
+                        "Refrescs variats."
+                    ]
+                },
+                {
+                    title: "Opció 3",
+                    items: [
+                        "Surtit de croquetes rústiques de temporada.",
+                        "Coca d'escalivada (producte vegetarià).",
+                        "Broqueta de truita de patates.",
+                        "Aigua mineral.",
+                        "Refrescs variats."
+                    ]
+                },
+                {
+                    title: "Opció 4",
+                    items: [
+                        "Mini sandvitxos (amb embotits, de formatge i de vegetals).",
+                        "Broqueta de formatge i codonyat.",
+                        "Vol-au-vents farcits de gambes.",
+                        "Broqueta de fruita ecològica de temporada i proximitat.",
+                        "Aigua mineral.",
+                        "Refrescs variats."
+                    ]
+                },
+                {
+                    title: "Opció 5",
+                    items: [
+                        "Rullet de pernil dolç farcit de gambes.",
+                        "Wrap de pernil i ou filat.",
+                        "Coca de verdures de l'hort (producte vegetarià).",
+                        "Sorbet de verdures variades ecològiques o Gaspatxo (segons temporada).",
+                        "Cafè · Tes · Llet · Llet de Soja i Infusions ecològiques i de comerç just.",
+                        "Aigua mineral.",
+                        "Refrescs variats."
+                    ]
+                },
+                {
+                    title: "Opció 6",
+                    items: [
+                        "Rullet de salmó fumat amb ceba tendra i alvocat.",
+                        "Sorbet de verdures variades ecològiques o gaspatxo (segons temporada).",
+                        "Broqueta de pernil d'ànec amb pinya.",
+                        "Surtit de mini canapès.",
+                        "Arròs de fideus amb gambes i cloïsses.",
+                        "Aigua mineral.",
+                        "Refrescs variats."
+                    ]
+                },
+                {
+                    title: "Opció Gourmet",
+                    items: [
+                        "Mini tartaleta amb crema i fruits vermells.",
+                        "Broqueta de salmó fumat i formatge fresc.",
+                        "Mini amanida Cèsar o Mediterrània.",
+                        "Surtit de mini sandvitxos.",
+                        "Dàtil farcit de foie.",
+                        "Aigua mineral.",
+                        "Refrescs variats."
+                    ]
+                }
+            ],
+            en: [
+                {
+                    title: "Basic option",
+                    items: [
+                        "Assorted organic vegetable chips.",
+                        "Mineral water."
+                    ]
+                },
+                {
+                    title: "Option 1",
+                    items: [
+                        "Assorted savory pastries.",
+                        "Grissini with Emmental cheese.",
+                        "Mineral water.",
+                        "Assorted soft drinks.",
+                        "Can Suriol DO Penedès organic red wine.",
+                        "Can Suriol DO Penedès organic Brut Nature cava."
+                    ]
+                },
+                {
+                    title: "Option 2",
+                    items: [
+                        "Assorted savory pastries.",
+                        "Dried tomato, mozzarella, and pesto skewer (vegetarian product).",
+                        "Mini sandwiches (cured meats, cooked ham, and cheese).",
+                        "Mineral water.",
+                        "Assorted soft drinks."
+                    ]
+                },
+                {
+                    title: "Option 3",
+                    items: [
+                        "Assorted seasonal rustic croquettes.",
+                        "Escalivada coca flatbread (vegetarian product).",
+                        "Spanish potato omelet skewer.",
+                        "Mineral water.",
+                        "Assorted soft drinks."
+                    ]
+                },
+                {
+                    title: "Option 4",
+                    items: [
+                        "Mini sandwiches (cured meats, cheese, and vegetable).",
+                        "Cheese and quince skewer.",
+                        "Vol-au-vents stuffed with prawns.",
+                        "Organic seasonal and local fruit skewer.",
+                        "Mineral water.",
+                        "Assorted soft drinks."
+                    ]
+                },
+                {
+                    title: "Option 5",
+                    items: [
+                        "Ham roll stuffed with prawns.",
+                        "Ham and spun egg wrap.",
+                        "Garden vegetable coca flatbread (vegetarian product).",
+                        "Organic vegetable sorbet or gazpacho (seasonal).",
+                        "Coffee · Tea · Milk · Soy milk and fair-trade organic infusions.",
+                        "Mineral water.",
+                        "Assorted soft drinks."
+                    ]
+                },
+                {
+                    title: "Option 6",
+                    items: [
+                        "Smoked salmon roll with spring onion and avocado.",
+                        "Organic vegetable sorbet or gazpacho (seasonal).",
+                        "Duck ham and pineapple skewer.",
+                        "Assorted mini canapés.",
+                        "Noodle rice with prawns and clams.",
+                        "Mineral water.",
+                        "Assorted soft drinks."
+                    ]
+                },
+                {
+                    title: "Gourmet Option",
+                    items: [
+                        "Mini tartlet with cream and red berries.",
+                        "Smoked salmon and fresh cheese skewer.",
+                        "Mini Caesar or Mediterranean salad.",
+                        "Assorted mini sandwiches.",
+                        "Foie-stuffed date.",
+                        "Mineral water.",
+                        "Assorted soft drinks."
+                    ]
+                }
+            ]
+        };
+
+        // Diccionario de Traducciones General
         const i18n = {
             es: {
                 pageTitle: "Aperitivos y Comidas - BonCor Catering",
@@ -698,27 +943,6 @@
                 navGallery: "Galería",
                 navContact: "Contactar",
                 mainTitle: "Aperitivos y comidas",
-                menuOptions: [
-                    "Opción gourmet",
-                    "Opción tradicional",
-                    "Opción executive",
-                    "Opción saludable",
-                    "Opción vegetal"
-                ],
-                menuItem1: "Sorbo de verduras variadas ecológicas o gazpacho (según temporada).",
-                menuItem2: "Rollito de Salmón ahumado con cebolletas y aguacate.",
-                menuItem3: "Brocheta de salmón ahumado y queso fresco.",
-                menuItem4: "Rossejat de fideos con gambas y almejas.",
-                menuItem5: "Mini aliñada César o Mediterráneo.",
-                menuItem6: "Surtido de mini sandwiches.",
-                menuItem7: "Dátil rellenado de foie.",
-                menuItem8: "Brocheta de fruta ecológica de temporada y proximidad.",
-                menuItem9: "Mini tartaleta con crema y frutos rojos.",
-                menuItem10: "Café · Té · Leche · Leche de Soja e infusiones ecológicos y de comercio justo.",
-                menuItem11: "Agua mineral.",
-                menuItem12: "Refrescos variados.",
-                menuItem13: "Vino tinto ecológico Can Suriol DO Penedès.",
-                menuItem14: "Cava Can Suriol ecológico Brut Nature DO Penedès.",
                 footerNote: "En todas las opciones de Aperitivo-Comida se incluye de forma gratuita todo el menaje y cristalería necesaria para realizar el servicio contratado.",
                 btnDownload: "Descargar Aperitivo-Comida",
                 btnContact: "Contactar",
@@ -756,27 +980,6 @@
                 navGallery: "Galeria",
                 navContact: "Contactar",
                 mainTitle: "Aperitius i dinars",
-                menuOptions: [
-                    "Opció gourmet",
-                    "Opció tradicional",
-                    "Opció executive",
-                    "Opció saludable",
-                    "Opció vegetal"
-                ],
-                menuItem1: "Sorb de verdures variades ecològiques o gaspatxo (segons temporada).",
-                menuItem2: "Rullet de salmó fumat amb cebollat i alvocat.",
-                menuItem3: "Broqueta de salmó fumat i formatge fresc.",
-                menuItem4: "Rossejat de fideus amb gambes i cloïsses.",
-                menuItem5: "Mini amanida Cèsar o Mediterrània.",
-                menuItem6: "Surtit de mini sandvitxos.",
-                menuItem7: "Dàtil farcit de foie.",
-                menuItem8: "Broqueta de fruita ecològica de temporada i proximitat.",
-                menuItem9: "Mini tartaleta amb crema i fruits vermells.",
-                menuItem10: "Cafè · Te · Llet · Llet de Soja i infusions ecològiques i de comerç just.",
-                menuItem11: "Aigua mineral.",
-                menuItem12: "Refrescs variats.",
-                menuItem13: "Vi negre ecològic Can Suriol DO Penedès.",
-                menuItem14: "Cava Can Suriol ecològic Brut Nature DO Penedès.",
                 footerNote: "En totes les opcions d'Aperitiu-Dinar s'inclou de manera gratuïta tot el parament i cristalleria necessària per realitzar el servei contractat.",
                 btnDownload: "Descarrega Aperitiu-Dinar",
                 btnContact: "Contactar",
@@ -814,27 +1017,6 @@
                 navGallery: "Gallery",
                 navContact: "Contact",
                 mainTitle: "Appetizers and lunches",
-                menuOptions: [
-                    "Gourmet option",
-                    "Traditional option",
-                    "Executive option",
-                    "Healthy option",
-                    "Vegetal option"
-                ],
-                menuItem1: "Organic vegetable shot or gazpacho (seasonal).",
-                menuItem2: "Smoked salmon roll with chives and avocado.",
-                menuItem3: "Smoked salmon and fresh cheese skewer.",
-                menuItem4: "Rossejat noodle paella with prawns and clams.",
-                menuItem5: "Mini Caesar or Mediterranean salad.",
-                menuItem6: "Assorted mini sandwiches.",
-                menuItem7: "Foie-stuffed date.",
-                menuItem8: "Organic seasonal and local fruit skewer.",
-                menuItem9: "Mini tartlet with cream and red berries.",
-                menuItem10: "Coffee · Tea · Milk · Soy milk and fair-trade organic infusions.",
-                menuItem11: "Mineral water.",
-                menuItem12: "Assorted soft drinks.",
-                menuItem13: "Can Suriol DO Penedès organic red wine.",
-                menuItem14: "Can Suriol DO Penedès organic Brut Nature cava.",
                 footerNote: "All Appetizer-Lunch options include all necessary tableware and glassware free of charge for the contracted service.",
                 btnDownload: "Download Appetizer-Lunch",
                 btnContact: "Contact us",
@@ -869,6 +1051,32 @@
         let currentMenuIdx = 0;
         let currentSlide = 0;
 
+        // Renderiza el contenido del menú según el índice y el idioma
+        function renderMenu(index) {
+            const currentData = menuData[currentLang][index];
+            if (!currentData) return;
+
+            document.getElementById('optionTitle').innerText = currentData.title;
+
+            const leftContainer = document.getElementById('menuListLeft');
+            const rightContainer = document.getElementById('menuListRight');
+
+            leftContainer.innerHTML = '';
+            rightContainer.innerHTML = '';
+
+            const half = Math.ceil(currentData.items.length / 2);
+            currentData.items.forEach((item, i) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'menu-item';
+                itemDiv.innerText = item;
+                if (i < half) {
+                    leftContainer.appendChild(itemDiv);
+                } else {
+                    rightContainer.appendChild(itemDiv);
+                }
+            });
+        }
+
         // Language Switcher Handler
         const langSelect = document.getElementById('langSelect');
         langSelect.addEventListener('change', (e) => {
@@ -890,11 +1098,8 @@
                 }
             });
 
-            // Update current menu title option
-            const titleElement = document.querySelector('.option-title');
-            if (titleElement) {
-                titleElement.innerText = i18n[lang].menuOptions[currentMenuIdx];
-            }
+            // Re-render menu item
+            renderMenu(currentMenuIdx);
 
             // Update active slider text
             updateSlide();
@@ -912,10 +1117,7 @@
                     dot.classList.remove('active');
                 }
             });
-            const titleElement = document.querySelector('.option-title');
-            if (titleElement) {
-                titleElement.innerText = i18n[currentLang].menuOptions[index];
-            }
+            renderMenu(index);
         }
 
         // KM0 Slider Data & Functions
@@ -934,6 +1136,11 @@
             currentSlide = (currentSlide - 1 + i18n[currentLang].slides.length) % i18n[currentLang].slides.length;
             updateSlide();
         }
+
+        // Inicialización al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu(0);
+        });
     </script>
 </body>
 </html>
