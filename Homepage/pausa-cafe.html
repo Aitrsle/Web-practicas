@@ -68,28 +68,6 @@
             gap: 10px;
         }
 
-        .logo-svg {
-            width: 45px;
-            height: 45px;
-            fill: var(--light-green);
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 700;
-            color: var(--primary-green);
-            line-height: 1;
-        }
-
-        .logo-text span {
-            display: block;
-            font-size: 9px;
-            font-family: 'Poppins', sans-serif;
-            color: var(--light-green);
-            letter-spacing: 0.5px;
-        }
-
         .nav-menu {
             display: flex;
             list-style: none;
@@ -176,7 +154,7 @@
 
         .menu-content-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr auto;
+            grid-template-columns: 1fr auto;
             gap: 50px;
             position: relative;
             z-index: 2;
@@ -197,9 +175,21 @@
         }
 
         .menu-item {
-            font-size: 14px;
+            font-size: 15px;
             color: #E0E0E0;
             font-weight: 300;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .menu-item::before {
+            content: "•";
+            color: var(--light-green);
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            line-height: 1;
+            top: 2px;
         }
 
         .menu-sidebar-nav {
@@ -502,53 +492,6 @@
             padding-top: 10px;
         }
 
-        .contact-section {
-            padding: 60px 8% 100px;
-            background-color: var(--white);
-        }
-
-        .contact-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 45px;
-            color: var(--text-dark);
-        }
-
-        .contact-form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .form-left-inputs {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 22px;
-            border: 1px solid #CCC;
-            border-radius: 30px;
-            font-size: 14px;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(85, 166, 71, 0.15);
-        }
-
-        textarea.form-control {
-            border-radius: 20px;
-            height: 100%;
-            resize: none;
-        }
-
         .footer {
             background-color: #599b4d;
             color: var(--white);
@@ -568,24 +511,6 @@
             gap: 20px;
         }
 
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-logo svg {
-            width: 45px;
-            height: 45px;
-            fill: var(--white);
-        }
-
-        .footer-logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-        }
-
         .footer-socials {
             display: flex;
             gap: 15px;
@@ -600,13 +525,6 @@
         .footer-socials a:hover {
             opacity: 0.8;
             transform: translateY(-2px);
-        }
-
-        .footer-about-text {
-            font-size: 12px;
-            line-height: 1.6;
-            opacity: 0.9;
-            max-width: 260px;
         }
 
         .footer-col-title {
@@ -650,15 +568,13 @@
             .menu-sidebar-nav {
                 flex-direction: row;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             .dietary-grid {
                 grid-template-columns: 1fr;
             }
             .gallery-container {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .contact-form-grid {
-                grid-template-columns: 1fr;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -707,7 +623,7 @@
 
         <div class="header-actions">
             <div class="social-links-header">
-                <a href="https://es.linkedin.com/company/solucions-socials-sostenibles" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-linkedin" style="font-size: 25px;"></i></a>
+                <a href="https://es.linkedin.com/company/solucions-socials-sostenibles" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="font-size: 25px;"></i></a>
                 <a href="https://www.instagram.com/solucions_socials_sostenibles/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram" style="font-size: 25px;"></i></a>
             </div>
             <div class="lang-selector-wrapper">
@@ -724,24 +640,19 @@
         <h1 class="section-title-main" data-i18n="hero_title">Pausa café</h1>
 
         <div class="menu-content-grid">
-            <h2 class="sub-title-gourmet" id="optionTitle">Opción gourmet</h2>
+            <div>
+                <h2 class="sub-title-gourmet" id="optionTitle">Opción básica</h2>
 
-            <!-- Dynamic Column 1 -->
-            <div class="menu-column" id="menuCol1">
-                <!-- Se llena mediante JavaScript -->
-            </div>
-
-            <!-- Dynamic Column 2 -->
-            <div class="menu-column" id="menuCol2">
-                <!-- Se llena mediante JavaScript -->
+                <!-- Dynamic Items Column -->
+                <div class="menu-column" id="menuCol1">
+                    <!-- Se llena mediante JavaScript -->
+                </div>
             </div>
 
             <!-- Interactive Lateral Navigation -->
-            <div class="menu-sidebar-nav">
+            <div class="menu-sidebar-nav" id="sidebarNav">
                 <div class="menu-number" id="menuNum">1</div>
-                <div class="dot-indicator active" onclick="switchMenuOption(0)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(1)"></div>
-                <div class="dot-indicator" onclick="switchMenuOption(2)"></div>
+                <!-- Puntos generados dinámicamente -->
             </div>
         </div>
 
@@ -894,23 +805,6 @@
         </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <h2 class="contact-title serif-font" data-i18n="contact_title">Contacta con nosotros</h2>
-
-        <form onsubmit="event.preventDefault(); alert('Mensaje enviado con éxito');">
-            <div class="contact-form-grid">
-                <div class="form-left-inputs">
-                    <input type="text" class="form-control" placeholder="Nombre y Apellido" data-i18n-ph="ph_name" required>
-                    <input type="tel" class="form-control" placeholder="Teléfono" data-i18n-ph="ph_phone" required>
-                    <input type="email" class="form-control" placeholder="Correo electrónico" data-i18n-ph="ph_email" required>
-                </div>
-                <div class="form-right-textarea">
-                    <textarea class="form-control" placeholder="Comentario" data-i18n-ph="ph_comment" rows="6" required></textarea>
-                </div>
-            </div>
-        </form>
-    </section>
-
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand-col">
@@ -958,7 +852,7 @@
          JAVASCRIPT DE TRADUCCIÓN E INTERACTIVIDAD
          ========================================== -->
     <script>
-        // 1. Diccionario completo de traducciones (ES, CA, EN)
+        // 1. Diccionario completo de traducciones con los menús de la imagen
         const i18nData = {
             es: {
                 meta_title: "Pausa Café & Servicios - BonCor Catering",
@@ -991,62 +885,64 @@
                 faq4_a: "Permitimos modificaciones de número de comensales hasta 5 días hábiles antes del evento sin penalización.",
                 faq5_q: "¿BonCor puede proveer referencias o ejemplos de eventos anteriores similares al que estoy planeando?",
                 faq5_a: "Por supuesto, disponemos de un amplio dossier con referencias de empresas e instituciones con las que colaboramos regularmente.",
-                contact_title: "Contacta con nosotros",
-                ph_name: "Nombre y Apellido",
-                ph_phone: "Teléfono",
-                ph_email: "Correo electrónico",
-                ph_comment: "Comentario",
                 footer_about_us: "Sobre nosotros",
                 footer_contact_title: "Contacto",
                 menus: [
                     {
-                        title: "Opción Gourmet",
-                        col1: [
-                            "Sorbo de verduras variadas ecológicas o gazpacho (según temporada).",
-                            "Rollito de salmón ahumado con cebolletas y aguacate.",
-                            "Brocheta de salmón ahumado y queso fresco.",
-                            "Fideuá artesana con gambas y almejas.",
-                            "Mini ensalada aliñada César o Mediterránea.",
-                            "Surtido de mini sándwiches variados.",
-                            "Dátil rellenado de foie.",
-                            "Brocheta de fruta ecológica de temporada y proximidad.",
-                            "Mini tartaleta con crema y frutos rojos."
-                        ],
-                        col2: [
-                            "Café, té, leche y leche de soja de comercio justo.",
-                            "Agua mineral.",
-                            "Refrescos variados.",
-                            "Vino tinto ecológico Can Suriol DO Penedès.",
-                            "Cava Can Suriol ecológico Brut Nature DO Penedès."
+                        title: "Opción básica",
+                        items: [
+                            "Zumos de fruta ecológicos (Naranja · Manzana · Melocotón · Piña).",
+                            "Agua · Café · Tés · Leche · Leche de Soja e Infusiones ecológicas y de comercio justo."
                         ]
                     },
                     {
-                        title: "Opción Clásica",
-                        col1: [
-                            "Selección de mini bocadillos de jamón ibérico.",
-                            "Croquetas artesanas de ceps y jamón.",
-                            "Mini quiche de verduras de temporada.",
-                            "Brochetas de tomate cherry y mozzarella.",
-                            "Tabla de quesos artesanos locales."
-                        ],
-                        col2: [
-                            "Café e infusiones ecológicas.",
-                            "Zumos naturales variados.",
-                            "Agua mineral con y sin gas."
+                        title: "Opción 1",
+                        items: [
+                            "Mini napolitana de crema.",
+                            "Surtido de mini croissants dulces (Mantequilla · Chocolate)."
                         ]
                     },
                     {
-                        title: "Opción Dulce",
-                        col1: [
-                            "Mini croissants recién horneados.",
-                            "Muffins variados de chocolate y arándanos.",
-                            "Brochetas de fruta de temporada.",
-                            "Mini ensaimadas artesanales."
-                        ],
-                        col2: [
-                            "Café 100% Arábica de comercio justo.",
-                            "Bebidas vegetales (Avena, Soja).",
-                            "Zumo de naranja recién exprimido."
+                        title: "Opción 2",
+                        items: [
+                            "Surtido de mini croissants dulces (Mantequilla · Chocolate · Crema).",
+                            "Mini bocadillo con embutidos, jamón dulce y quesos.",
+                            "Mini napolitana de crema."
+                        ]
+                    },
+                    {
+                        title: "Opción 3",
+                        items: [
+                            "Surtido de mini muffins caseros (producto vegetariano).",
+                            "Brocheta de fruta ecológica de temporada y proximidad."
+                        ]
+                    },
+                    {
+                        title: "Opción 4",
+                        items: [
+                            "Mini Tarta Tatín (producto vegetariano)."
+                        ]
+                    },
+                    {
+                        title: "Opción 5",
+                        items: [
+                            "Mini bocadillo vegetal (producto vegetariano).",
+                            "Surtido de mini muffins (producto vegetariano)."
+                        ]
+                    },
+                    {
+                        title: "Opción 6",
+                        items: [
+                            "Yogur con muesli y mermelada."
+                        ]
+                    },
+                    {
+                        title: "Opción vegetariana",
+                        items: [
+                            "Mini bocadillo vegetal.",
+                            "Surtido de mini muffins (Frutos rojos· Caramelo· Manzana).",
+                            "Mini Tarta Tatín.",
+                            "Agua · Café · Tés · Leche de Soja · e infusiones ecológicas y de comercio justo."
                         ]
                     }
                 ]
@@ -1082,62 +978,64 @@
                 faq4_a: "Permetem modificacions del nombre de comensals fins a 5 dies feiners abans de l'esdeveniment sense penalització.",
                 faq5_q: "BonCor pot proveir referències o exemples d'esdeveniments anteriors similars al que estic planejant?",
                 faq5_a: "I tant, disposem d'un ampli dossier amb referències d'empreses i institucions amb les quals col·laborem regularment.",
-                contact_title: "Contacta amb nosaltres",
-                ph_name: "Nom i Cognom",
-                ph_phone: "Telèfon",
-                ph_email: "Correu electrònic",
-                ph_comment: "Comentari",
                 footer_about_us: "Sobre nosaltres",
                 footer_contact_title: "Contacte",
                 menus: [
                     {
-                        title: "Opció Gourmet",
-                        col1: [
-                            "Sorb de verdures variades ecològiques o gaspacho (segons temporada).",
-                            "Cresol de salmó fumat amb cebollat i alvocat.",
-                            "Brocheta de salmón fumat i formatge fresc.",
-                            "Fideuà artesana amb gambes i cloïsses.",
-                            "Mini amanida amanida Cèsar o Mediterrània.",
-                            "Surtit de mini sandvitxos variats.",
-                            "Dàtil reblert de foie.",
-                            "Brocheta de fruita ecològica de temporada i proximitat.",
-                            "Mini tartaleta amb crema i fruits vermells."
-                        ],
-                        col2: [
-                            "Cafè, te, llet i llet de soja de comerç just.",
-                            "Aigua mineral.",
-                            "Refrescos variats.",
-                            "Vi negre ecològic Can Suriol DO Penedès.",
-                            "Cava Can Suriol ecològic Brut Nature DO Penedès."
+                        title: "Opció bàsica",
+                        items: [
+                            "Sucs de fruita ecològics (Taronja · Poma · Préssec · Pinya).",
+                            "Aigua · Cafè · Tés · Llet · Llet de Soja i Infusions ecològiques i de comerç just."
                         ]
                     },
                     {
-                        title: "Opció Clàssica",
-                        col1: [
-                            "Selecció de mini entrepans de pernil ibèric.",
-                            "Croquetes artesanes de ceps i pernil.",
-                            "Mini quiche de verdures de temporada.",
-                            "Broquetes de tomàquet cherry i mozzarella.",
-                            "Taula de formatges artesans locals."
-                        ],
-                        col2: [
-                            "Cafè i infusions ecològiques.",
-                            "Sucs naturals variats.",
-                            "Aigua mineral amb i sense gas."
+                        title: "Opció 1",
+                        items: [
+                            "Mini napolitana de crema.",
+                            "Surtit de mini croissants dolços (Mantaquilla · Xocolata)."
                         ]
                     },
                     {
-                        title: "Opció Dolça",
-                        col1: [
-                            "Mini croissants acabats de coure.",
-                            "Muffins variats de xocolata i nabius.",
-                            "Broquetes de fruita de temporada.",
-                            "Mini ensaïmades artesanals."
-                        ],
-                        col2: [
-                            "Cafè 100% Aràbica de comerç just.",
-                            "Begudes vegetals (Avena, Soja).",
-                            "Suc de taronja acabat d'exprémer."
+                        title: "Opció 2",
+                        items: [
+                            "Surtit de mini croissants dolços (Mantequilla · Xocolata · Crema).",
+                            "Mini entrepà amb embotits, pernil dolç i formatges.",
+                            "Mini napolitana de crema."
+                        ]
+                    },
+                    {
+                        title: "Opció 3",
+                        items: [
+                            "Surtit de mini muffins casolans (producte vegetarià).",
+                            "Broqueta de fruita ecològica de temporada i proximitat."
+                        ]
+                    },
+                    {
+                        title: "Opció 4",
+                        items: [
+                            "Mini Tarta Tatín (producte vegetarià)."
+                        ]
+                    },
+                    {
+                        title: "Opció 5",
+                        items: [
+                            "Mini entrepà vegetal (producte vegetarià).",
+                            "Surtit de mini muffins (producte vegetarià)."
+                        ]
+                    },
+                    {
+                        title: "Opció 6",
+                        items: [
+                            "Iogurt amb muesli i melmelada."
+                        ]
+                    },
+                    {
+                        title: "Opció vegetariana",
+                        items: [
+                            "Mini entrepà vegetal.",
+                            "Surtit de mini muffins (Fruits vermells· Caramel· Poma).",
+                            "Mini Tarta Tatín.",
+                            "Aigua · Cafè · Tés · Llet de Soja · i infusions ecològiques i de comerç just."
                         ]
                     }
                 ]
@@ -1173,62 +1071,64 @@
                 faq4_a: "Guest count modifications are accepted up to 5 business days prior to the event without penalty.",
                 faq5_q: "Can BonCor provide references from previous similar events?",
                 faq5_a: "Of course, we have an extensive portfolio with corporate and institutional references.",
-                contact_title: "Contact Us",
-                ph_name: "Full Name",
-                ph_phone: "Phone Number",
-                ph_email: "Email Address",
-                ph_comment: "Comment",
                 footer_about_us: "About Us",
                 footer_contact_title: "Contact",
                 menus: [
                     {
-                        title: "Gourmet Option",
-                        col1: [
-                            "Sip of organic seasonal vegetables or gazpacho.",
-                            "Smoked salmon roll with chives and avocado.",
-                            "Smoked salmon and fresh cheese skewer.",
-                            "Artisan noodles fideuá with prawns and clams.",
-                            "Mini Caesar or Mediterranean dressed salad.",
-                            "Assorted mini sandwich selection.",
-                            "Foie-stuffed date.",
-                            "Local organic seasonal fruit skewer.",
-                            "Mini tartlet with cream and red berries."
-                        ],
-                        col2: [
-                            "Fair-trade coffee, tea, milk and soy milk.",
-                            "Mineral water.",
-                            "Assorted soft drinks.",
-                            "Can Suriol organic red wine DO Penedès.",
-                            "Can Suriol organic Cava Brut Nature DO Penedès."
+                        title: "Basic Option",
+                        items: [
+                            "Organic fruit juices (Orange · Apple · Peach · Pineapple).",
+                            "Water · Coffee · Teas · Milk · Soy Milk and Fair Trade Organic Infusions."
                         ]
                     },
                     {
-                        title: "Classic Option",
-                        col1: [
-                            "Selection of Iberian ham mini sandwiches.",
-                            "Artisan mushroom and ham croquettes.",
-                            "Mini seasonal vegetable quiche.",
-                            "Cherry tomato and mozzarella skewers.",
-                            "Local artisan cheese board."
-                        ],
-                        col2: [
-                            "Organic coffee and tea infusions.",
-                            "Assorted natural juices.",
-                            "Still and sparkling mineral water."
+                        title: "Option 1",
+                        items: [
+                            "Mini cream napolitana.",
+                            "Assorted mini sweet croissants (Butter · Chocolate)."
                         ]
                     },
                     {
-                        title: "Sweet Option",
-                        col1: [
-                            "Freshly baked mini croissants.",
-                            "Assorted chocolate and blueberry muffins.",
-                            "Seasonal fruit skewers.",
-                            "Artisan mini ensaimadas."
-                        ],
-                        col2: [
-                            "100% Arabica fair-trade coffee.",
-                            "Plant-based milk (Oat, Soy).",
-                            "Freshly squeezed orange juice."
+                        title: "Option 2",
+                        items: [
+                            "Assorted mini sweet croissants (Butter · Chocolate · Cream).",
+                            "Mini sandwich with cold cuts, cooked ham and cheeses.",
+                            "Mini cream napolitana."
+                        ]
+                    },
+                    {
+                        title: "Option 3",
+                        items: [
+                            "Assorted homemade mini muffins (vegetarian product).",
+                            "Local organic seasonal fruit skewer."
+                        ]
+                    },
+                    {
+                        title: "Option 4",
+                        items: [
+                            "Mini Tarte Tatin (vegetarian product)."
+                        ]
+                    },
+                    {
+                        title: "Option 5",
+                        items: [
+                            "Mini veggie sandwich (vegetarian product).",
+                            "Assorted mini muffins (vegetarian product)."
+                        ]
+                    },
+                    {
+                        title: "Option 6",
+                        items: [
+                            "Yogurt with muesli and jam."
+                        ]
+                    },
+                    {
+                        title: "Vegetarian Option",
+                        items: [
+                            "Mini veggie sandwich.",
+                            "Assorted mini muffins (Red berries · Caramel · Apple).",
+                            "Mini Tarte Tatin.",
+                            "Water · Coffee · Teas · Soy Milk · and Fair Trade Organic Infusions."
                         ]
                     }
                 ]
@@ -1238,6 +1138,18 @@
         // Estado Global
         let currentLang = 'es';
         let currentOptionIndex = 0;
+
+        // Renderizar navegadores laterales (puntos)
+        function renderSidebarDots() {
+            const sidebar = document.getElementById('sidebarNav');
+            const totalMenus = i18nData[currentLang].menus.length;
+            
+            let html = `<div class="menu-number" id="menuNum">${currentOptionIndex + 1}</div>`;
+            for (let i = 0; i < totalMenus; i++) {
+                html += `<div class="dot-indicator ${i === currentOptionIndex ? 'active' : ''}" onclick="switchMenuOption(${i})"></div>`;
+            }
+            sidebar.innerHTML = html;
+        }
 
         // Función para cambiar de opción de menú
         function switchMenuOption(index) {
@@ -1250,13 +1162,9 @@
             document.getElementById('menuNum').textContent = index + 1;
             document.getElementById('optionTitle').textContent = menuData.title;
 
-            // Actualizar Columna 1
+            // Actualizar Ítems
             const col1 = document.getElementById('menuCol1');
-            col1.innerHTML = menuData.col1.map(item => `<div class="menu-item">${item}</div>`).join('');
-
-            // Actualizar Columna 2
-            const col2 = document.getElementById('menuCol2');
-            col2.innerHTML = menuData.col2.map(item => `<div class="menu-item">${item}</div>`).join('');
+            col1.innerHTML = menuData.items.map(item => `<div class="menu-item">${item}</div>`).join('');
 
             // Actualizar Indicadores (Puntos)
             const dots = document.querySelectorAll('.dot-indicator');
@@ -1285,15 +1193,8 @@
                 }
             });
 
-            // 2. Traducir Placeholders del formulario
-            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-                const key = el.getAttribute('data-i18n-ph');
-                if (dict[key]) {
-                    el.placeholder = dict[key];
-                }
-            });
-
-            // 3. Renderizar el menú dinámico en el idioma activo
+            // 2. Renderizar puntos de navegación y menú activo
+            renderSidebarDots();
             switchMenuOption(currentOptionIndex);
         }
 
