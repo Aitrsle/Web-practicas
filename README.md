@@ -6,3 +6,5 @@
 Este repositorio incluye los **bocetos** de la página web: **(https://boncor.org)**.
 
 ---
+
+<i>Hecho por</i> : **Aitor Solé**
